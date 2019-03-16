@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>t-tani blog</title>
-    <link>https://t-tani.github.io/blog/</link>
+    <link>https://t-tani.github.io/</link>
     <description>Recent content on t-tani blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 10 Mar 2019 16:53:02 +0900</lastBuildDate>
     
-	<atom:link href="https://t-tani.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://t-tani.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FirstPost_Hugoではじめるblog</title>
-      <link>https://t-tani.github.io/blog/first-post/</link>
+      <link>https://t-tani.github.io/first-post/</link>
       <pubDate>Sun, 10 Mar 2019 14:07:30 +0900</pubDate>
       
-      <guid>https://t-tani.github.io/blog/first-post/</guid>
+      <guid>https://t-tani.github.io/first-post/</guid>
       <description>    This blog will mainly written in Japanese.
 日本語で書くことが多くなる予定です。
   このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえずHugoを使ってみたかったので、Hugoでブログを作成。備忘録として残したい。

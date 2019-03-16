@@ -513,7 +513,7 @@ caption {
 }
 .note.warning {
     border-left: 0;
-    background-image: url(https://t-tani.github.io/blog/css/images/stripe.svg);
+    background-image: url(https://t-tani.github.io/css/images/stripe.svg);
     background-size: 0.5rem auto;
     background-repeat: repeat-y;
 }
@@ -537,7 +537,7 @@ caption {
     width: 1rem;
     height: 1rem;
     margin-right: 0.25rem;
-    background-image: url(https://t-tani.github.io/blog/css/images/icon-tick.svg);
+    background-image: url(https://t-tani.github.io/css/images/icon-tick.svg);
     background-size: 100% auto;
     position: absolute;
     left: -1.25rem;
