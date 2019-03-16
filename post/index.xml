@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on t-tani blog</title>
+    <link>https://t-tani.github.io/blog/post/</link>
+    <description>Recent content in Posts on t-tani blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 10 Mar 2019 14:07:30 +0900</lastBuildDate>
+    
+	<atom:link href="https://t-tani.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FirstPost_Hugoではじめるblog</title>
+      <link>https://t-tani.github.io/blog/first-post/</link>
+      <pubDate>Sun, 10 Mar 2019 14:07:30 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/blog/first-post/</guid>
+      <description>    This blog will mainly written in Japanese.
+日本語で書くことが多くなる予定です。
+  このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえずHugoを使ってみたかったので、Hugoでブログを作成。備忘録として残したい。
+Hugoについて 以下の構成。  Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS用Icon)   なお、テーマについては、一部編集を加えている
+なぜHugoか Hugoイケてるよね、の一言が心に響いたため。
+今後の書いてみたいテーマ  reverse engineering tips Python coding tips secuiry tips Hugo etc.  </description>
+    </item>
+    
+  </channel>
+</rss>
