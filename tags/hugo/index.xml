@@ -19,13 +19,12 @@
       <guid>https://t-tani.github.io/hugo_tips/</guid>
       <description> TL;DR Hugo構築memo
 Hugo + Github Pages でブログを構築したときにのTipsをまとめ
-Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.github.io)に作っている。
+Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.github.io)に作っている。
 エラー対応履歴 エンコードエラー: 0x08 契機 hugoでRSSフィード用のindex.xmlにアクセスすると、以下のようなエラーを出した。
 Input is not proper UTF-8, indicate encoding ! Bytes: 0x08
-調査 MacOSの日本語IMEのバグ。日本語入力時に特定の条件で不要なバックスペース(0x08)が入力される。かなり致命的なバグだと思うのだが、現時点（2019.03.17）で修正はまだされていない模様。
- Using IME with markdown preview enabled, press ESC/BACKSPACE leads in control characters #37114  自身の環境は以下の通り。
- ProductName: Mac OS X ProductVersion: 10.14.3 BuildVersion: 18D109  対処 日本語入力をmacOS純正IMEからGoogle日本語入力に変更。導入したものは以下の通り。再発はしていない模様&amp;hellip;?
- GoogleJapaneseInput-2.24.3250.1+24.2.9  </description>
+調査 MacOSの日本語IMEのバグ。日本語入力時に特定の条件で不要なバックスペース(0x08)が入力される。かなり致命的なバグだと思うのだが、現時点（2019.03.17）で修正はまだされていない模様。
+ Using IME with markdown preview enabled, press ESC/BACKSPACE leads in control characters #37114  自身の環境は以下の通り。
+ ProductName: Mac OS X ProductVersion: 10.14.3 BuildVersion: 18D109  対処  日本語入力をmacOS純正IMEからGoogle日本語入力に変更。 効果なし。 GoogleJapaneseInput-2.24.3250.1+24.2.9 Atomプラグイン追加 show-invisibles-plus 正規表現で一括削除 [\b]*で検索、削除  </description>
     </item>
     
     <item>
