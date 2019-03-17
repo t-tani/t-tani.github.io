@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.54.0" />
-  <link rel="canonical" href="https://t-tani.github.io/tags/">
+  <link rel="canonical" href="https://t-tani.github.io/hugo_tips/">
 
   
 
@@ -44,10 +44,18 @@
          "@type": "WebPage",
          "@id": "https://t-tani.github.io"
     },
-    "articleSection" : "tags",
-    "name" : "Tags",
-    "headline" : "Tags",
-    "description" : "",
+    "articleSection" : "post",
+    "name" : "Hugo &#43; GitHubPages: 構築Tips",
+    "headline" : "Hugo &#43; GitHubPages: 構築Tips",
+    "description" : " TL;DR Hugo構築memo
+Hugo + Github Pages でブログを構築したときにのTipsをまとめ
+Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.github.io)に作っている。
+エラー対応履歴 エンコードエラー: 0x08 契機 hugoでRSSフィード用のindex.xmlにアクセスすると、以下のようなエラーを出した。
+Input is not proper UTF-8, indicate encoding ! Bytes: 0x08
+調査 MacOSの日本語IMEのバグ。日本語入力時に特定の条件で不要なバックスペース(0x08)が入力される。かなり致命的なバグだと思うのだが、現時点（2019.03.17）で修正はまだされていない模様。
+ Using IME with markdown preview enabled, press ESC/BACKSPACE leads in control characters #37114  自身の環境は以下の通り。
+ ProductName: Mac OS X ProductVersion: 10.14.3 BuildVersion: 18D109  対処 日本語入力をmacOS純正IMEからGoogle日本語入力に変更。導入したものは以下の通り。再発はしていない模様&hellip;?
+ GoogleJapaneseInput-2.24.3250.1+24.2.9  ",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -57,13 +65,13 @@
     "copyrightYear" : "2019",
     "datePublished": "2019-03-17 15:46:20 &#43;0900 JST",
     "dateModified" : "2019-03-17 15:46:20 &#43;0900 JST",
-    "url" : "https://t-tani.github.io/tags/",
-    "wordCount" : "0",
-    "keywords" : [ "Blog" ]
+    "url" : "https://t-tani.github.io/hugo_tips/",
+    "wordCount" : "58",
+    "keywords" : [ "hugo","Blog" ]
 }
 </script>
 
-  <title>Tags | t-tani blog</title>
+  <title>Hugo &#43; GitHubPages: 構築Tips | t-tani blog</title>
 </head>
 
   <body>
@@ -199,7 +207,7 @@
       
       
       
-      <a href="https://t-tani.github.io/post/" >
+      <a href="https://t-tani.github.io/post/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -212,7 +220,7 @@
       
       
       
-      <a href="https://t-tani.github.io/tags/" aria-current="page">
+      <a href="https://t-tani.github.io/tags/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -242,42 +250,171 @@
         <div>
           
   <main id="main">
-    <h1>Tags</h1>
-    <ul class="patterns-list">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Hugo &#43; GitHubPages: 構築Tips
+    </h1>
+    <div class="date">
       
-      
-        
-        
-        
-        <li>
-          <h2>
-            <a href="https://t-tani.github.io/tags/hugo/">
+      <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 17, 2019
+    </div>
+    
+      <div class="tags">
+        <strong aria-hidden="true">Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
               <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
                 <use xlink:href="#tag"></use>
               </svg>
-              (2) hugo
-            </a>
-          </h2>
-        </li>
-        
+              
+              <a href="https://t-tani.github.io/tags/hugo/">hugo</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
       
-        
-        
-        
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
         <li>
-          <h2>
-            <a href="https://t-tani.github.io/tags/%E6%97%A5%E8%A8%98/">
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              (1) 日記
-            </a>
-          </h2>
+          
+          
+          
+          
+          <a href="#tl-dr">
+            TL;DR
+          </a>
         </li>
-        
       
-    </ul>
+        <li>
+          
+          
+          
+          
+          <a href="#github-pages">
+            Github Pages
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e3%82%a8%e3%83%a9%e3%83%bc%e5%af%be%e5%bf%9c%e5%b1%a5%e6%ad%b4">
+            エラー対応履歴
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    
+
+<h2 id="tl-dr">TL;DR</h2>
+
+<p><strong>Hugo構築memo</strong><br>
+Hugo + Github Pages でブログを構築したときにのTipsをまとめ</p>
+
+<h2 id="github-pages">Github Pages</h2>
+
+<h3 id="hugo-hosting-on-github">Hugo | Hosting on GitHub</h3>
+
+<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a> <br>
+HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(<a href="https://github.com/t-tani/t-tani.github.io">t-tani/t-tani.github.io</a>)に作っている。</p>
+
+<h2 id="エラー対応履歴">エラー対応履歴</h2>
+
+<h3 id="エンコードエラー-0x08">エンコードエラー: 0x08</h3>
+
+<h4 id="契機">契機</h4>
+
+<p>hugoでRSSフィード用のindex.xmlにアクセスすると、以下のようなエラーを出した。<br>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">Input is not proper UTF-8, indicate encoding ! Bytes: 0x08</code></pre></div></p>
+
+<h4 id="調査">調査</h4>
+
+<p>MacOSの日本語IMEのバグ。日本語入力時に特定の条件で不要なバックスペース(0x08)が入力される。かなり致命的なバグだと思うのだが、現時点（2019.03.17）で修正はまだされていない模様。</p>
+
+<ul>
+<li><a href="https://github.com/Microsoft/vscode/issues/37114">Using IME with markdown preview enabled, press ESC/BACKSPACE leads in control characters #37114</a></li>
+</ul>
+
+<p>自身の環境は以下の通り。</p>
+
+<ul>
+<li>ProductName:    Mac OS X</li>
+<li>ProductVersion: 10.14.3</li>
+<li>BuildVersion:   18D109</li>
+</ul>
+
+<h4 id="対処">対処</h4>
+
+<p>日本語入力をmacOS純正IMEからGoogle日本語入力に変更。導入したものは以下の通り。再発はしていない模様&hellip;?</p>
+
+<ul>
+<li>GoogleJapaneseInput-2.24.3250.1+24.2.9</li>
+</ul>
+
   </main>
+  
+
+<section class="section sns_parent">
+  <div class="container sns_section">
+      <div class="sns_button twitter">
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2ft-tani.github.io%2fhugo_tips%2f&text=Hugo%20%2b%20GitHubPages%3a%20%e6%a7%8b%e7%af%89Tips" target="_blank" title="Tweet"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="sns_button facebook">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ft-tani.github.io%2fhugo_tips%2f&t=Hugo%20%2b%20GitHubPages%3a%20%e6%a7%8b%e7%af%89Tips" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+  </div>
+</section>
+
+
+  <div id="disqus-container">
+  
+    <button id="disqus-button" onclick="showComments()">Show comments</button>
+    <div id="disqus-comments">
+      
+      
+      
+        <div id="disqus_thread">
+        </div>
+        <script type="application/javascript">
+          function showComments() {
+            // Config
+var disqus_config = function () {
+};
+// Build and append comments 
+var d = document;
+var s = d.createElement('script');
+s.async = true;
+s.src = '//' + "t-tani-blog" + '.disqus.com/embed.js';
+s.setAttribute('data-timestamp', + new Date());
+(d.head || d.body).appendChild(s);
+            // Remove button
+var disqusButton = document.getElementById('disqus-button');
+disqusButton.parentNode.removeChild(disqusButton); 
+// Un-hide comments
+var disqusComments = document.getElementById('disqus-comments');
+disqusComments.style.display = 'block'; 
+          }
+        </script>
+      
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  
+</div>
+
 
           <footer role="contentinfo">
   

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://t-tani.github.io/hugo_tips/</loc>
+    <lastmod>2019-03-17T15:46:20+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://t-tani.github.io/</loc>
     <lastmod>2019-03-10T16:53:02+09:00</lastmod>
   </url>
@@ -14,19 +19,19 @@
   
   <url>
     <loc>https://t-tani.github.io/tags/hugo/</loc>
-    <lastmod>2019-03-14T14:07:30+09:00</lastmod>
+    <lastmod>2019-03-17T15:46:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://t-tani.github.io/post/</loc>
-    <lastmod>2019-03-14T14:07:30+09:00</lastmod>
+    <lastmod>2019-03-17T15:46:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://t-tani.github.io/tags/</loc>
-    <lastmod>2019-03-14T14:07:30+09:00</lastmod>
+    <lastmod>2019-03-17T15:46:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
