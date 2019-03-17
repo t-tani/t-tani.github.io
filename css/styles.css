@@ -17,7 +17,7 @@
     box-sizing: border-box;
 }
 html {
-    font-size: calc(1em + 0.15vw);
+    font-size: calc(0.8em + 0.15vw);
     font-family: "Noto Sans JP";
     line-height: 1.8;
     color: #111;
@@ -148,13 +148,13 @@ pre,
 .file-tree {
     overflow-x: auto;
     padding: 0.6rem;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #aaaaaa;
     line-height: 0.9rem;
 }
 code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
 .cmd {
     padding: 0.65rem;
@@ -173,7 +173,7 @@ code {
 /* Lists */
 main ul,
 main ol {
-    margin-left: 2.25rem;
+    margin-left: 1.25rem;
 }
 main li + li {
     margin-top: 0.5rem;
@@ -368,7 +368,7 @@ caption {
 /* Patterns navigation */
 .patterns {
     overflow: auto;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
 }
 .patterns * {
     margin-top: 0;
@@ -462,9 +462,9 @@ caption {
     line-height: 1.6;
 }
 .patterns-list li + li {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 2px solid;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed;
 }
 .patterns-list a {
     border: 0;
@@ -567,7 +567,7 @@ figcaption::before {
 /* Code blocks */
 pre[class*=language-] {
     background: none;
-    margin-top: 1.25rem;
+    margin-top: 0rem;
     margin-bottom: 0;
     overflow-y: hidden;
     overflow-x: auto;
@@ -589,13 +589,14 @@ pre[class*=language-] code * {
 .code-annotated {
     overflow-y: hidden;
     overflow-x: auto;
-    padding: 1.5rem;
+    padding: 0.6rem;
     border: 1px solid;
+    border-color: #aaaaaa;
     white-space: pre;
     counter-reset: annotation;
 }
 .highlight {
-    background: #fafafa;
+    background: #bbffff;
 }
 .numbered .highlight::after,
 .code-annotated.numbered + ol li::before  {
@@ -910,11 +911,14 @@ h1 svg {
     .intro {
         text-align: center;
     }
+    .logo img {
+        max-width: 20%;
+    }
     .intro-and-nav {
         border-right: none;
     }
     .intro-and-nav > div {
-        padding: 1.5rem;
+        padding: 0.3rem;
     }
     .library-desc {
       display: none;

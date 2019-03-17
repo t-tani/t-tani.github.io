@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.54.0" />
-  <link rel="canonical" href="https://t-tani.github.io/post/">
+  <link rel="canonical" href="https://t-tani.github.io/0x00_reverseengineering_basic/">
 
   
 
@@ -45,9 +45,16 @@
          "@id": "https://t-tani.github.io"
     },
     "articleSection" : "post",
-    "name" : "Posts",
-    "headline" : "Posts",
-    "description" : "",
+    "name" : "0x00: ReverseEngineering Basic 1",
+    "headline" : "0x00: ReverseEngineering Basic 1",
+    "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
+主要なレジスタ(X86) GPR (general-purpose register) EAX (Accumulator register) 一番よく使われる変数。算術演算、戻り値で利用される。
+EDX (Data register) 一種の変数。さまざま演算の用途で利用される。基本的な役割はEAXと同じだが、戻り値に 利用できない 。
+ECX (Count register) ループを実行するときのカウントに利用する。for文の int i みたいなもの。ただし、通常 i++ ではなく、事前にループ回数をECXに格納し、 i-- のように減算処理し、ECXが0になるまでカウントする形で使われる。変数と使用しても問題ない。
+EBX (Base register) 特定の目的を持って作られたレジスタではない。ECX,EDX,ECXが足りない場合に利用される。データのポインタとして使われることが多い。
+インデックスレジスタ ESI(Source Index register),EDI(Destination Index register) 主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレス、ディスティネーションアドレスが入ることが多い。
+セグメントレジスタ メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。
+CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラ命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 CMP,JMP: 比較してジャンプする命令  C言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -55,15 +62,15 @@
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-17 15:46:20 &#43;0900 JST",
-    "dateModified" : "2019-03-17 15:46:20 &#43;0900 JST",
-    "url" : "https://t-tani.github.io/post/",
-    "wordCount" : "0",
-    "keywords" : [ "Blog" ]
+    "datePublished": "2019-03-17 15:38:57 &#43;0900 JST",
+    "dateModified" : "2019-03-17 15:38:57 &#43;0900 JST",
+    "url" : "https://t-tani.github.io/0x00_reverseengineering_basic/",
+    "wordCount" : "140",
+    "keywords" : [ "ReverseEngineering","C lang","Assembly","Blog" ]
 }
 </script>
 
-  <title>Posts | t-tani blog</title>
+  <title>0x00: ReverseEngineering Basic 1 | t-tani blog</title>
 </head>
 
   <body>
@@ -242,44 +249,288 @@
         <div>
           
   <main id="main">
-    <h1>Posts</h1>
-    <ul class="patterns-list">
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      0x00: ReverseEngineering Basic 1
+    </h1>
+    <div class="date">
+      
+      <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 17, 2019
+    </div>
     
-      <li>
-        <h2>
-          <a href="https://t-tani.github.io/hugo_tips/">
-            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            Hugo &#43; GitHubPages: 構築Tips
+      <div class="tags">
+        <strong aria-hidden="true">Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://t-tani.github.io/tags/reverseengineering/">ReverseEngineering</a>
+            </li>
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://t-tani.github.io/tags/c-lang/">C lang</a>
+            </li>
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://t-tani.github.io/tags/assembly/">Assembly</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e4%b8%bb%e8%a6%81%e3%81%aa%e3%83%ac%e3%82%b8%e3%82%b9%e3%82%bf-x86">
+            主要なレジスタ(X86)
           </a>
-        </h2>
-      </li>        
-    
-      <li>
-        <h2>
-          <a href="https://t-tani.github.io/0x00_reverseengineering_basic/">
-            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            0x00: ReverseEngineering Basic 1
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e4%b8%bb%e8%a6%81%e3%81%aa%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9%e5%91%bd%e4%bb%a4">
+            主要なアセンブラ命令
           </a>
-        </h2>
-      </li>        
-    
-      <li>
-        <h2>
-          <a href="https://t-tani.github.io/first-post/">
-            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            FirstPost:Hugoではじめるblog
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#c-%e8%a8%80%e8%aa%9e%e3%81%ae%e9%80%86%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%ab">
+            C言語の逆アセンブル
           </a>
-        </h2>
-      </li>        
+        </li>
+      
+    </ol>
+  </nav>
+
+
     
-    </ul>
+    
+
+<p>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。</p>
+
+<h2 id="主要なレジスタ-x86">主要なレジスタ(X86)</h2>
+
+<h3 id="gpr-general-purpose-register">GPR (general-purpose register)</h3>
+
+<h4 id="eax-accumulator-register">EAX (Accumulator register)</h4>
+
+<p>一番よく使われる変数。算術演算、戻り値で利用される。</p>
+
+<h4 id="edx-data-register">EDX (Data register)</h4>
+
+<p>一種の変数。さまざま演算の用途で利用される。基本的な役割はEAXと同じだが、戻り値に <strong>利用できない</strong> 。</p>
+
+<h4 id="ecx-count-register">ECX (Count register)</h4>
+
+<p>ループを実行するときのカウントに利用する。for文の <code>int i</code> みたいなもの。ただし、通常 <code>i++</code> ではなく、事前にループ回数をECXに格納し、 <code>i--</code> のように減算処理し、ECXが0になるまでカウントする形で使われる。変数と使用しても問題ない。</p>
+
+<h4 id="ebx-base-register">EBX (Base register)</h4>
+
+<p>特定の目的を持って作られたレジスタではない。ECX,EDX,ECXが足りない場合に利用される。データのポインタとして使われることが多い。</p>
+
+<h3 id="インデックスレジスタ">インデックスレジスタ</h3>
+
+<h4 id="esi-source-index-register-edi-destination-index-register">ESI(Source Index register),EDI(Destination Index register)</h4>
+
+<p>主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレス、ディスティネーションアドレスが入ることが多い。</p>
+
+<h3 id="セグメントレジスタ">セグメントレジスタ</h3>
+
+<p>メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。</p>
+
+<h4 id="cs-ds-ss-es">CS/DS/SS/ES</h4>
+
+<ul>
+<li>CS (code segment):命令フェッチ</li>
+<li>DS (data segment): データの読み書き</li>
+<li>SS (stack segment): スタックへのアクセス</li>
+<li>ES (extra segment): データの読み書き</li>
+</ul>
+
+<h2 id="主要なアセンブラ命令">主要なアセンブラ命令</h2>
+
+<h3 id="データ移送">データ移送</h3>
+
+<ul>
+<li>PUSH: スタックに値を入れる命令</li>
+<li>POP: スタックの値を取得する命令</li>
+<li>MOV: 値を入れる命令</li>
+<li>LEA: アドレスを入れる命令</li>
+</ul>
+
+<h3 id="算術論理演算">算術論理演算</h3>
+
+<ul>
+<li>ADD: ソースからディスティネーションに値を加算する命令</li>
+<li>SUB: ソースからディスティネーションに値を減算する命令</li>
+<li>INC: <code>i++</code>と同じ</li>
+<li>DEC: <code>i--</code>と同じ</li>
+<li>AND,OR,XOR: そのまま</li>
+</ul>
+
+<h3 id="制御">制御</h3>
+
+<ul>
+<li>CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令</li>
+<li>NOP: 何もしない命令</li>
+<li>CMP,JMP: 比較してジャンプする命令</li>
+</ul>
+
+<h2 id="c-言語の逆アセンブル">C言語の逆アセンブル</h2>
+
+<p>リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には <code>CALL</code> される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</p>
+
+<h3 id="関数の基本的な構造">関数の基本的な構造</h3>
+
+<h4 id="始まり方">始まり方</h4>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+55            <span class='highlight'>push      ebp</span>
+8B EC         <span class='highlight'>mov       ebp, esp</span>
+</code></div>
+
+
+<ol>
+<li>これまでのベースアドレスをスタックに保存</li>
+<li>現在のスタックポインタアドレスをEBPに入れ、新たなスタックのベースアドレスにする</li>
+</ol>
+
+<h4 id="終わり方">終わり方</h4>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+89 EC         <span class='highlight'>mov    esp, ebp</span>
+5D            <span class='highlight'>pop    ebp</span>
+</code></div>
+
+
+<ol>
+<li>ベースアドレスをスタックポインターESPへ入れる</li>
+<li>保存していたベースアドレスをスタックから取り出す、もとのスタックに戻る</li>
+</ol>
+
+<h4 id="スタックを使う関数の始まり">スタックを使う関数の始まり</h4>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+55            push      ebp
+8B EC         mov       ebp, esp
+83 EC 50      <span class='highlight'>sub       esp, 50h</span>
+</code></div>
+
+
+<ol>
+<li>50hのサイズをローカル変数のスタックとして利用する。</li>
+</ol>
+
+<h3 id="代表的な関数の呼び出し規約">代表的な関数の呼び出し規約</h3>
+
+<h4 id="cdecl">__cdecl</h4>
+
+<ul>
+<li>インテルx86ベースのシステム上のC/C++で使われることが多い</li>
+<li>関数への引数は右から左の順でスタックに積まれる</li>
+<li>関数の戻り値は EAXに格納される</li>
+<li>呼び出された側の関数ではEAX, ECX, EDXのレジスタの元の値を保存することなく使用してよい</li>
+<li>呼び出し側の関数では必要ならば呼び出す前にそれらのレジスタをスタック上などに保存する</li>
+<li>スタックポインタの処理は呼び出し側で行う</li>
+</ul>
+
+<h4 id="stdcall">__stdcall</h4>
+
+<h4 id="fastcall">__fastcall</h4>
+
+<h4 id="thiscall">__thiscall</h4>
+
   </main>
+  
+
+<section class="section sns_parent">
+  <div class="container sns_section">
+      <div class="sns_button twitter">
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2ft-tani.github.io%2f0x00_reverseengineering_basic%2f&text=0x00%3a%20ReverseEngineering%20Basic%201" target="_blank" title="Tweet"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="sns_button facebook">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ft-tani.github.io%2f0x00_reverseengineering_basic%2f&t=0x00%3a%20ReverseEngineering%20Basic%201" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+  </div>
+</section>
+
+
+  <div id="disqus-container">
+  
+    <button id="disqus-button" onclick="showComments()">Show comments</button>
+    <div id="disqus-comments">
+      
+      
+      
+        <div id="disqus_thread">
+        </div>
+        <script type="application/javascript">
+          function showComments() {
+            // Config
+var disqus_config = function () {
+};
+// Build and append comments 
+var d = document;
+var s = d.createElement('script');
+s.async = true;
+s.src = '//' + "t-tani-blog" + '.disqus.com/embed.js';
+s.setAttribute('data-timestamp', + new Date());
+(d.head || d.body).appendChild(s);
+            // Remove button
+var disqusButton = document.getElementById('disqus-button');
+disqusButton.parentNode.removeChild(disqusButton); 
+// Un-hide comments
+var disqusComments = document.getElementById('disqus-comments');
+disqusComments.style.display = 'block'; 
+          }
+        </script>
+      
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  
+</div>
+
 
           <footer role="contentinfo">
   

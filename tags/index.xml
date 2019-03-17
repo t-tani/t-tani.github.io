@@ -6,10 +6,28 @@
     <description>Recent content in Tags on t-tani blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 17 Mar 2019 15:46:20 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 Mar 2019 15:38:57 +0900</lastBuildDate>
     
 	<atom:link href="https://t-tani.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Assembly</title>
+      <link>https://t-tani.github.io/tags/assembly/</link>
+      <pubDate>Sun, 17 Mar 2019 15:38:57 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/tags/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C Lang</title>
+      <link>https://t-tani.github.io/tags/c-lang/</link>
+      <pubDate>Sun, 17 Mar 2019 15:38:57 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/tags/c-lang/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hugo</title>
@@ -17,6 +35,15 @@
       <pubDate>Sun, 17 Mar 2019 15:46:20 +0900</pubDate>
       
       <guid>https://t-tani.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverseengineering</title>
+      <link>https://t-tani.github.io/tags/reverseengineering/</link>
+      <pubDate>Sun, 17 Mar 2019 15:38:57 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/tags/reverseengineering/</guid>
       <description></description>
     </item>
     
