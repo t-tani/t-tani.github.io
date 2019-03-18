@@ -12,19 +12,24 @@
     
     
     <item>
-      <title>Hugo &#43; GitHubPages: 構築Tips</title>
+      <title>Hugo &#43; GitHubPages: 構築メモ</title>
       <link>https://t-tani.github.io/hugo_tips/</link>
       <pubDate>Sun, 17 Mar 2019 15:46:20 +0900</pubDate>
       
       <guid>https://t-tani.github.io/hugo_tips/</guid>
-      <description> TL;DR Hugo構築memo
+      <description>TL;DR Hugo構築memo
 Hugo + Github Pages でブログを構築したときにのTipsをまとめ
-Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.github.io)に作っている。
-エラー対応履歴 エンコードエラー: 0x08 契機 hugoでRSSフィード用のindex.xmlにアクセスすると、以下のようなエラーを出した。
-Input is not proper UTF-8, indicate encoding ! Bytes: 0x08
-調査 MacOSの日本語IMEのバグ。日本語入力時に特定の条件で不要なバックスペース(0x08)が入力される。かなり致命的なバグだと思うのだが、現時点（2019.03.17）で修正はまだされていない模様。
- Using IME with markdown preview enabled, press ESC/BACKSPACE leads in control characters #37114  自身の環境は以下の通り。
- ProductName: Mac OS X ProductVersion: 10.14.3 BuildVersion: 18D109  対処  日本語入力をmacOS純正IMEからGoogle日本語入力に変更。 効果なし。 GoogleJapaneseInput-2.24.3250.1+24.2.9 Atomプラグイン追加 show-invisibles-plus 正規表現で一括削除 [\b]*で検索、削除  </description>
+Hugo Tips 公式ドキュメント 困ったときには公式ドキュメントを読めばおおよそのことは解決する。
+https://gohugo.io/documentation/ Hugo themeについて 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法ではgit submoduleコマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
+git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマのCSSを直接編集することになっているため、予期しないところで不都合は出てくるかも&amp;hellip;? [repo_base]/themes/cupper-theme/assets/css/template-styles.css
+Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
+SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
+Hugoで作ったサイトにシェアボタンを足した | AABrain
+Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
+Twitter埋め込み(サンプル) コード例:
+{{&amp;lt; tweet 1090855037201375232 &amp;gt;}} 出力例:
+#JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
+&amp;mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.</description>
     </item>
     
     <item>
