@@ -65,7 +65,7 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
     "datePublished": "2019-03-17 15:38:57 &#43;0900 JST",
     "dateModified" : "2019-03-17 15:38:57 &#43;0900 JST",
     "url" : "https://t-tani.github.io/0x00_reverseengineering_basic/",
-    "wordCount" : "194",
+    "wordCount" : "419",
     "keywords" : [ "ReverseEngineering","C lang","Assembly","Blog" ]
 }
 </script>
@@ -257,7 +257,7 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
     </h1>
     <div class="date">
       
-      <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 18, 2019
+      <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 19, 2019
     </div>
     
       <div class="tags">
@@ -523,8 +523,126 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 <span class="nf">push</span>   <span class="nb">eax</span>
 <span class="nf">mov</span>    <span class="nb">edx</span><span class="p">,</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">10h</span><span class="p">]</span>
 <span class="nf">push</span>   <span class="nb">edx</span>
-<span class="nf">lea</span>    <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="nf">lea</span>    <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>     <span class="o">//</span><span class="nv">callの前にオブジェクトポインタをecxに格納</span>
 <span class="nf">call</span>   <span class="mh">402000h</span></code></pre></div>
+<h3 id="基本的なif文">基本的なif文</h3>
+
+<p>条件文のコードは<code>cmp</code>後に<code>jnz</code>,<code>jz</code>などで処理するため、レジスタや比較対象となっているスタックを確認することで処理を確認する</p>
+
+<h3 id="基本的なループ">基本的なループ</h3>
+
+<p>以下の例は、ローカル変数の加算処理を行い<code>i++</code>、ループ条件と比較する部分。特定の値と比較し、結果的に処理を再び行うとこを判定しているものはループだと思えば良い。</p>
+<div class="highlight"><pre class="chroma"><code class="language-nasm" data-lang="nasm"><span class="nf">mov</span>  <span class="nb">eax</span><span class="p">,[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">8</span><span class="p">]</span>
+<span class="nf">add</span>  <span class="nb">eax</span><span class="p">,</span><span class="mi">1</span>
+<span class="nf">mov</span>  <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">8</span><span class="p">],</span><span class="nb">eax</span>
+<span class="nf">cmp</span>  <span class="kt">dword</span> <span class="nv">ptr</span><span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">8</span><span class="p">],</span> <span class="mh">100h</span>
+<span class="nf">jg</span>   <span class="nv">short</span> <span class="nv">loc_401035</span></code></pre></div>
+<h3 id="構造体とapiコール">構造体とAPIコール</h3>
+
+<p>C言語の文法において構造体は非常に重要な要素である。プログラムを分析する際には構造体の各メンバーがどのように使用されているか確認する必要がある。リバースエンジニアリングにおいて、スタックポインタだけをみて、構造体の大きさとそのAPIの引数にはどのようなものが入るか把握する必要がでてくる。いつスタックを確保し、確保したスタックをどのように使用したかによって、構造体がどのようなものか推定していく必要がある。<br>
+以下の例は、CreateProcessにおいて、2つの構造体を利用したCのコードとそのアセンブリの例。</p>
+<div class="highlight"><pre class="chroma"><code class="language-process_create.c" data-lang="process_create.c"><span class="kt">void</span> <span class="nf">RunProcess</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">STARTUPINFO</span> <span class="n">si</span><span class="p">;</span>
+  <span class="n">PROCESS_INFORMATION</span> <span class="n">pi</span><span class="p">;</span>
+
+  <span class="n">ZeroMemory</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">si</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">));</span>
+  <span class="n">si</span><span class="p">.</span><span class="n">cb</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">);</span>
+  <span class="n">ZeroMemory</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">pi</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">pi</span><span class="p">));</span>
+
+  <span class="c1">// Start the child process.
+</span><span class="c1"></span>  <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">CreateProcess</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span>
+    <span class="s">&#34;ChildProcess&#34;</span><span class="p">,</span>
+    <span class="nb">NULL</span><span class="p">,</span>
+    <span class="nb">NULL</span><span class="p">,</span>
+    <span class="n">FALSE</span><span class="p">,</span>
+    <span class="mi">0</span><span class="p">,</span>
+    <span class="nb">NULL</span><span class="p">,</span>
+    <span class="nb">NULL</span><span class="p">,</span>
+    <span class="o">&amp;</span><span class="n">si</span><span class="p">,</span>
+    <span class="o">&amp;</span><span class="n">pi</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">printf</span><span class="p">(</span> <span class="s">&#34;CreateProcess failed.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Wait until child process exit
+</span><span class="c1"></span>    <span class="n">WaitForSingleObject</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span> <span class="n">INFINITE</span> <span class="p">);</span>
+
+    <span class="c1">// Close process and thread handles.
+</span><span class="c1"></span>    <span class="n">CloseHandle</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span> <span class="p">);</span>
+    <span class="n">CloseHandle</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hThread</span> <span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+
+
+
+<div class="code-annotated numbered"><code>
+push      ebp
+mov       ebp, esp
+<span class='highlight'>sub       esp, 54h</span>
+<span class='highlight'>push      44h
+push      0
+lea       eax,dword ptr ss:[ebp-54]
+push      eax
+call      calling.004011A0
+add       esp,0C</span>
+<span class='highlight'>mov       dword ptr ss:[ebp-54],44h</span>
+<span class='highlight'>push      10
+push      0
+lea       ecx,dword ptr ss:[ebp-10]
+push      ecx
+call      calling.004011A0
+add       esp,0C</span>
+<span class='highlight'>lea       edx,dword ptr ss:[ebp-10]
+push      edx</span>
+<span class='highlight'>lea       eax,dword ptr ss:[ebp-54]
+push      eax</span>
+<span class='highlight'>push      0
+push      0
+push      0
+push      0
+push      0
+push      0
+push      calling.00407030
+push      0</span>
+call      dword ptr ds:CreateProcessA
+<span class='highlight'>test      eax,eax</span>
+<span class='highlight'>jnz       short calling.00401061
+push      calling.00407040
+call      calling.0040116F
+add       esp,4
+jmp       short calling.00401081</span>
+<span class='highlight'>push      -1
+mov       ecx,dword ptr ss[ebp-10]
+push      ecx
+call      dword ptr ds:WaitForSingleObject
+mov       edx,dword ptr ss:[ebp-10]
+push      edx
+call      dword ptr ds:CloseHandle
+mov       eax,dword ptr ss:[ebp-C]
+push      eax
+call      dword ptr ds:CloseHandle</span>
+mov       esp,ebp
+pop       ebp
+retn
+</code></div>
+
+
+<ol>
+<li>0x54byte分のスタックを増加している</li>
+<li><code>ZeroMemory( &amp;si, sizeof(si));</code> に対応する部分。スタックの0x44byteを初期化している</li>
+<li><code>mov</code>で構造体の１番目のメンバー変数の処理。<code>si.cb = sizeof(si);</code>に該当</li>
+<li><code>ZeroMemory( &amp;pi, sizeof(pi));</code> に対応する部分。スタックの0x10byteを初期化している</li>
+<li>CreateProcessAの1番最後の引数を積んでいる。ここでは<code>&amp;pi</code>に該当。</li>
+<li>CreateProcessAの後ろから2番最後の引数を積んでいる。ここでは<code>&amp;si</code>に該当。</li>
+<li>残りの引数を積んでいる</li>
+<li>実行結果の確認。<code>test eax,eax</code>は値が0であるか確認するときによく使われる。<code>test</code>は<code>and</code>と実行している演算は同じ。</li>
+<li>NULLリターン時のエラー処理</li>
+<li>待機後のCloseルーチン</li>
+</ol>
+
   </main>
   
 
