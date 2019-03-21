@@ -6,34 +6,32 @@
     <description>Recent content in Posts on t-tani blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 17 Mar 2019 15:46:20 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 Mar 2019 21:09:34 +0900</lastBuildDate>
     
 	<atom:link href="https://t-tani.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo &#43; GitHubPages: 構築メモ</title>
-      <link>https://t-tani.github.io/hugo_tips/</link>
-      <pubDate>Sun, 17 Mar 2019 15:46:20 +0900</pubDate>
+      <title>0x01:ReverseEngineering Basic2</title>
+      <link>https://t-tani.github.io/0x01_reverseengineering_basic/</link>
+      <pubDate>Thu, 21 Mar 2019 21:09:34 +0900</pubDate>
       
-      <guid>https://t-tani.github.io/hugo_tips/</guid>
-      <description>TL;DR Hugo構築memo
-Hugo + Github Pages でブログを構築したときにのTipsをまとめ
-Hugo Tips 公式ドキュメント 困ったときには公式ドキュメントを読めばおおよそのことは解決する。
-https://gohugo.io/documentation/ Hugo themeについて 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法ではgit submoduleコマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
-git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマのCSSを直接編集することになっているため、予期しないところで不都合は出てくるかも&amp;hellip;? [repo_base]/themes/cupper-theme/assets/css/template-styles.css
-Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
-SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
-Hugoで作ったサイトにシェアボタンを足した | AABrain
-Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
-Twitter埋め込み(サンプル) コード例:
-{{&amp;lt; tweet 1090855037201375232 &amp;gt;}} 出力例:
-#JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
-&amp;mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.</description>
+      <guid>https://t-tani.github.io/0x01_reverseengineering_basic/</guid>
+      <description>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
+C++の開発環境の準備 C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。
+ OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。
+コンパイラ コンパイラを入れるため、以下をインストール。
+Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Codeの設定 C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルして確認してみる。
+TBU
+参考 リバースエンジニアリングバイブル コード再創造の美学
+https://book.impress.co.jp/books/1113101030
+Visual Studio のインストール | Microsoft Docs
+https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017</description>
     </item>
     
     <item>
-      <title>0x00: ReverseEngineering Basic 1</title>
+      <title>0x00:ReverseEngineering Basic1</title>
       <link>https://t-tani.github.io/0x00_reverseengineering_basic/</link>
       <pubDate>Sun, 17 Mar 2019 15:38:57 +0900</pubDate>
       
@@ -46,6 +44,27 @@ EBX (Base register) 特定の目的を持って作られたレジスタではな
 インデックスレジスタ ESI(Source Index register),EDI(Destination Index register) 主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレス、ディスティネーションアドレスが入ることが多い。
 セグメントレジスタ メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。
 CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラ命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -&amp;gt; DebugBreak()  CMP,JMP: 比較してジャンプする命令  C言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</description>
+    </item>
+    
+    <item>
+      <title>Hugo &#43; GitHubPages: メモ</title>
+      <link>https://t-tani.github.io/hugo_tips/</link>
+      <pubDate>Sun, 17 Mar 2019 15:15:20 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/hugo_tips/</guid>
+      <description>TL;DR Hugo構築memo
+Hugo + Github Pages でブログを構築したときにのTipsをまとめ
+Hugo Tips 公式ドキュメント 困ったときには公式ドキュメントを読めばおおよそのことは解決する。
+https://gohugo.io/documentation/ Hugo themeについて 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法ではgit submoduleコマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
+git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマのCSSを直接編集することになっているため、予期しないところで不都合は出てくるかも&amp;hellip;? [repo_base]/themes/cupper-theme/assets/css/template-styles.css
+Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
+SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
+Hugoで作ったサイトにシェアボタンを足した | AABrain
+GitのコミットログからLast Modifyを記事に反映  configにenableGitInfo = trueを追加 templateのhtmlに以下の変数を追記  {{.GitInfo.AuthorDate.Format &amp;#34;Jan 02, 2006&amp;#34;}} Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
+Twitter埋め込み(サンプル) コード例:
+{{&amp;lt; tweet 1090855037201375232 &amp;gt;}} 出力例:
+#JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
+&amp;mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.</description>
     </item>
     
     <item>

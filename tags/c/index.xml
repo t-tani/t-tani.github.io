@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>t-tani blog</title>
-    <link>https://t-tani.github.io/</link>
-    <description>Recent content on t-tani blog</description>
+    <title>C on t-tani blog</title>
+    <link>https://t-tani.github.io/tags/c/</link>
+    <description>Recent content in C on t-tani blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 10 Mar 2019 16:53:02 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 Mar 2019 21:09:34 +0900</lastBuildDate>
     
-	<atom:link href="https://t-tani.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://t-tani.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -44,41 +44,6 @@ EBX (Base register) 特定の目的を持って作られたレジスタではな
 インデックスレジスタ ESI(Source Index register),EDI(Destination Index register) 主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレス、ディスティネーションアドレスが入ることが多い。
 セグメントレジスタ メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。
 CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラ命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -&amp;gt; DebugBreak()  CMP,JMP: 比較してジャンプする命令  C言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</description>
-    </item>
-    
-    <item>
-      <title>Hugo &#43; GitHubPages: メモ</title>
-      <link>https://t-tani.github.io/hugo_tips/</link>
-      <pubDate>Sun, 17 Mar 2019 15:15:20 +0900</pubDate>
-      
-      <guid>https://t-tani.github.io/hugo_tips/</guid>
-      <description>TL;DR Hugo構築memo
-Hugo + Github Pages でブログを構築したときにのTipsをまとめ
-Hugo Tips 公式ドキュメント 困ったときには公式ドキュメントを読めばおおよそのことは解決する。
-https://gohugo.io/documentation/ Hugo themeについて 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法ではgit submoduleコマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
-git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマのCSSを直接編集することになっているため、予期しないところで不都合は出てくるかも&amp;hellip;? [repo_base]/themes/cupper-theme/assets/css/template-styles.css
-Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
-SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
-Hugoで作ったサイトにシェアボタンを足した | AABrain
-GitのコミットログからLast Modifyを記事に反映  configにenableGitInfo = trueを追加 templateのhtmlに以下の変数を追記  {{.GitInfo.AuthorDate.Format &amp;#34;Jan 02, 2006&amp;#34;}} Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
-Twitter埋め込み(サンプル) コード例:
-{{&amp;lt; tweet 1090855037201375232 &amp;gt;}} 出力例:
-#JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
-&amp;mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.</description>
-    </item>
-    
-    <item>
-      <title>FirstPost:Hugoではじめるblog</title>
-      <link>https://t-tani.github.io/first-post/</link>
-      <pubDate>Sun, 10 Mar 2019 14:07:30 +0900</pubDate>
-      
-      <guid>https://t-tani.github.io/first-post/</guid>
-      <description>    This blog will mainly written in Japanese.
-日本語で書くことが多くなる予定です。
-  このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえずHugoを使ってみたかったので、Hugoでブログを作成。備忘録として残したい。
-Hugoについて 以下の構成。  Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS用Icon)   なお、テーマについては、一部編集を加えている
-なぜHugoか Hugoイケてるよね、の一言が心に響いたため。
-今後の書いてみたいテーマ  reverse engineering tips Python coding tips secuiry tips Hugo etc.  </description>
     </item>
     
   </channel>

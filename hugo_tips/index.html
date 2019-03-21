@@ -45,8 +45,8 @@
          "@id": "https://t-tani.github.io"
     },
     "articleSection" : "post",
-    "name" : "Hugo &#43; GitHubPages: 構築メモ",
-    "headline" : "Hugo &#43; GitHubPages: 構築メモ",
+    "name" : "Hugo &#43; GitHubPages: メモ",
+    "headline" : "Hugo &#43; GitHubPages: メモ",
     "description" : "TL;DR Hugo構築memo
 Hugo + Github Pages でブログを構築したときにのTipsをまとめ
 Hugo Tips 公式ドキュメント 困ったときには公式ドキュメントを読めばおおよそのことは解決する。
@@ -55,11 +55,11 @@ git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupp
 Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
 SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
 Hugoで作ったサイトにシェアボタンを足した | AABrain
-Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
+GitのコミットログからLast Modifyを記事に反映  configにenableGitInfo = trueを追加 templateのhtmlに以下の変数を追記  {{.GitInfo.AuthorDate.Format &#34;Jan 02, 2006&#34;}} Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
 Twitter埋め込み(サンプル) コード例:
 {{&lt; tweet 1090855037201375232 &gt;}} 出力例:
 #JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
-&mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.",
+&mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -67,15 +67,15 @@ Twitter埋め込み(サンプル) コード例:
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-17 15:46:20 &#43;0900 JST",
-    "dateModified" : "2019-03-17 15:46:20 &#43;0900 JST",
+    "datePublished": "2019-03-17 15:15:20 &#43;0900 JST",
+    "dateModified" : "2019-03-17 15:15:20 &#43;0900 JST",
     "url" : "https://t-tani.github.io/hugo_tips/",
-    "wordCount" : "116",
+    "wordCount" : "126",
     "keywords" : [ "hugo","Blog" ]
 }
 </script>
 
-  <title>Hugo &#43; GitHubPages: 構築メモ | t-tani blog</title>
+  <title>Hugo &#43; GitHubPages: メモ | t-tani blog</title>
 </head>
 
   <body>
@@ -253,35 +253,35 @@ Twitter埋め込み(サンプル) コード例:
       <div class="main-and-footer">
         <div>
           
-  <main id="main">
-    <h1>
+<main id="main">
+  <h1>
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Hugo &#43; GitHubPages: 構築メモ
+      Hugo &#43; GitHubPages: メモ
     </h1>
-    <div class="date">
+  <div class="date">
+    
+    <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 21, 2019
+  </div>
+  
+  <div class="tags">
+    <strong aria-hidden="true">Tags: </strong>
+    <ul aria-label="tags">
       
-      <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 18, 2019
-    </div>
-    
-      <div class="tags">
-        <strong aria-hidden="true">Tags: </strong>
-        <ul aria-label="tags">
-          
-            <li>
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              
-              <a href="https://t-tani.github.io/tags/hugo/">hugo</a>
-            </li>
-          
-        </ul>
-      </div>
-    
-    
+      <li>
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://t-tani.github.io/tags/hugo/">hugo</a>
+      </li>
       
+    </ul>
+  </div>
+  
+  
+  
 
   <nav class="toc" aria-labelledby="toc-heading">
     <h2 id="toc-heading">Table of contents</h2>
@@ -331,8 +331,8 @@ Twitter埋め込み(サンプル) コード例:
   </nav>
 
 
-    
-    
+  
+  
 
 <h2 id="tl-dr">TL;DR</h2>
 
@@ -364,6 +364,13 @@ Hugo + Github Pages でブログを構築したときにのTipsをまとめ</p>
 <p>以下のサイトを参考に作成。非常に参考になった。<br>
 <a href="https://aakira.app/blog/2018/08/share/">Hugoで作ったサイトにシェアボタンを足した | AABrain</a></p>
 
+<h4 id="gitのコミットログからlast-modifyを記事に反映">GitのコミットログからLast Modifyを記事に反映</h4>
+
+<ol>
+<li>configに<code>enableGitInfo = true</code>を追加</li>
+<li>templateのhtmlに以下の変数を追記</li>
+</ol>
+<div class="highlight"><pre class="chroma">{{.GitInfo.AuthorDate.Format &#34;Jan 02, 2006&#34;}}</pre></div>
 <h3 id="shortcodes">Shortcodes</h3>
 
 <p><a href="https://gohugo.io/content-management/shortcodes/">https://gohugo.io/content-management/shortcodes/</a> <br>
@@ -431,22 +438,22 @@ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構�
 </ul></li>
 </ol>
 
-  </main>
-  
+</main>
+
 
 <section class="section sns_parent">
   <div class="container sns_section">
       <div class="sns_button twitter">
-        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2ft-tani.github.io%2fhugo_tips%2f&text=Hugo%20%2b%20GitHubPages%3a%20%e6%a7%8b%e7%af%89%e3%83%a1%e3%83%a2" target="_blank" title="Tweet"><i class="fab fa-twitter"></i></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2ft-tani.github.io%2fhugo_tips%2f&text=Hugo%20%2b%20GitHubPages%3a%20%e3%83%a1%e3%83%a2" target="_blank" title="Tweet"><i class="fab fa-twitter"></i></a>
       </div>
       <div class="sns_button facebook">
-        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ft-tani.github.io%2fhugo_tips%2f&t=Hugo%20%2b%20GitHubPages%3a%20%e6%a7%8b%e7%af%89%e3%83%a1%e3%83%a2" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ft-tani.github.io%2fhugo_tips%2f&t=Hugo%20%2b%20GitHubPages%3a%20%e3%83%a1%e3%83%a2" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
       </div>
   </div>
 </section>
 
 
-  <div id="disqus-container">
+<div id="disqus-container">
   
     <button id="disqus-button" onclick="showComments()">Show comments</button>
     <div id="disqus-comments">

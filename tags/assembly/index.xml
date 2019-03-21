@@ -6,13 +6,32 @@
     <description>Recent content in Assembly on t-tani blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 17 Mar 2019 15:38:57 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 Mar 2019 21:09:34 +0900</lastBuildDate>
     
 	<atom:link href="https://t-tani.github.io/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>0x00: ReverseEngineering Basic 1</title>
+      <title>0x01:ReverseEngineering Basic2</title>
+      <link>https://t-tani.github.io/0x01_reverseengineering_basic/</link>
+      <pubDate>Thu, 21 Mar 2019 21:09:34 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/0x01_reverseengineering_basic/</guid>
+      <description>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
+C++の開発環境の準備 C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。
+ OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。
+コンパイラ コンパイラを入れるため、以下をインストール。
+Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Codeの設定 C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルして確認してみる。
+TBU
+参考 リバースエンジニアリングバイブル コード再創造の美学
+https://book.impress.co.jp/books/1113101030
+Visual Studio のインストール | Microsoft Docs
+https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017</description>
+    </item>
+    
+    <item>
+      <title>0x00:ReverseEngineering Basic1</title>
       <link>https://t-tani.github.io/0x00_reverseengineering_basic/</link>
       <pubDate>Sun, 17 Mar 2019 15:38:57 +0900</pubDate>
       

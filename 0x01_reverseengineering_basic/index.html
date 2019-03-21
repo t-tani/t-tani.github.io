@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.54.0" />
-  <link rel="canonical" href="https://t-tani.github.io/tags/hugo/">
+  <link rel="canonical" href="https://t-tani.github.io/0x01_reverseengineering_basic/">
 
   
 
@@ -44,10 +44,20 @@
          "@type": "WebPage",
          "@id": "https://t-tani.github.io"
     },
-    "articleSection" : "tags",
-    "name" : "Hugo",
-    "headline" : "Hugo",
-    "description" : "",
+    "articleSection" : "post",
+    "name" : "0x01:ReverseEngineering Basic2",
+    "headline" : "0x01:ReverseEngineering Basic2",
+    "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
+C++の開発環境の準備 C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。
+ OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。
+コンパイラ コンパイラを入れるため、以下をインストール。
+Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Codeの設定 C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルして確認してみる。
+TBU
+参考 リバースエンジニアリングバイブル コード再創造の美学
+https://book.impress.co.jp/books/1113101030
+Visual Studio のインストール | Microsoft Docs
+https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -55,15 +65,15 @@
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-17 15:15:20 &#43;0900 JST",
-    "dateModified" : "2019-03-17 15:15:20 &#43;0900 JST",
-    "url" : "https://t-tani.github.io/tags/hugo/",
-    "wordCount" : "0",
-    "keywords" : [ "Blog" ]
+    "datePublished": "2019-03-21 21:09:34 &#43;0900 JST",
+    "dateModified" : "2019-03-21 21:09:34 &#43;0900 JST",
+    "url" : "https://t-tani.github.io/0x01_reverseengineering_basic/",
+    "wordCount" : "68",
+    "keywords" : [ "ReverseEngineering","C","Assembly","Blog" ]
 }
 </script>
 
-  <title>Hugo | t-tani blog</title>
+  <title>0x01:ReverseEngineering Basic2 | t-tani blog</title>
 </head>
 
   <body>
@@ -199,7 +209,7 @@
       
       
       
-      <a href="https://t-tani.github.io/post/" >
+      <a href="https://t-tani.github.io/post/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -212,7 +222,7 @@
       
       
       
-      <a href="https://t-tani.github.io/tags/" aria-current="page">
+      <a href="https://t-tani.github.io/tags/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -241,34 +251,196 @@
       <div class="main-and-footer">
         <div>
           
-  <main id="main">
-    <h1>Hugo</h1>
-    <ul class="patterns-list">
+<main id="main">
+  <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      0x01:ReverseEngineering Basic2
+    </h1>
+  <div class="date">
     
+    <strong aria-hidden="true">Publish date: </strong>Mar 21, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 21, 2019
+  </div>
+  
+  <div class="tags">
+    <strong aria-hidden="true">Tags: </strong>
+    <ul aria-label="tags">
+      
       <li>
-        <h2>
-          <a href="https://t-tani.github.io/hugo_tips/">
-            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            Hugo &#43; GitHubPages: メモ
-          </a>
-        </h2>
-      </li>        
-    
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://t-tani.github.io/tags/reverseengineering/">ReverseEngineering</a>
+      </li>
+      
       <li>
-        <h2>
-          <a href="https://t-tani.github.io/first-post/">
-            <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            FirstPost:Hugoではじめるblog
-          </a>
-        </h2>
-      </li>        
-    
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://t-tani.github.io/tags/c/">C</a>
+      </li>
+      
+      <li>
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://t-tani.github.io/tags/assembly/">Assembly</a>
+      </li>
+      
     </ul>
-  </main>
+  </div>
+  
+  
+  
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#c-%e3%81%ae%e9%96%8b%e7%99%ba%e7%92%b0%e5%a2%83%e3%81%ae%e6%ba%96%e5%82%99">
+            C&#43;&#43;の開発環境の準備
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#c-%e3%81%ae%e3%82%af%e3%83%a9%e3%82%b9%e3%81%a8%e3%83%aa%e3%83%90%e3%83%bc%e3%82%b9%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e3%83%aa%e3%83%b3%e3%82%b0">
+            C&#43;&#43;のクラスとリバースエンジニアリング
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e5%8f%82%e8%80%83">
+            参考
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+  
+  
+
+<p>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。</p>
+
+<h2 id="c-の開発環境の準備">C++の開発環境の準備</h2>
+
+<p>C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。</p>
+
+<ul>
+<li>OS 名: Microsoft Windows 10 Pro</li>
+<li>OS バージョン: 10.0.17134 N/A ビルド 17134</li>
+</ul>
+
+<h3 id="ide">IDE</h3>
+
+<p>Visual Studio Code : <a href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/">https://azure.microsoft.com/ja-jp/products/visual-studio-code/</a><br>
+今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。</p>
+
+<h3 id="コンパイラ">コンパイラ</h3>
+
+<p>コンパイラを入れるため、以下をインストール。</p>
+
+<ul class="task-list">
+<li>Visual Studio Community 2017 : <a href="https://visualstudio.microsoft.com/ja/downloads/">https://visualstudio.microsoft.com/ja/downloads/</a>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> C++によるデスクトップ開発</label></li>
+</ul></li>
+<li>Msys2 : <a href="http://www.msys2.org/">http://www.msys2.org/</a>
+
+<ul>
+<li>インストールファイル : msys2-x86_64-20180531.exe</li>
+<li><code>pacman -S base-devel</code></li>
+<li><code>pacman -S mingw-w64-x86_64-toolchain</code></li>
+<li><code>pacman -S mingw-w64-i686-toolchain</code></li>
+</ul></li>
+</ul>
+
+<h3 id="visual-studio-codeの設定">Visual Studio Codeの設定</h3>
+
+<h2 id="c-のクラスとリバースエンジニアリング">C++のクラスとリバースエンジニアリング</h2>
+
+<p>C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルして確認してみる。</p>
+
+<p>TBU</p>
+
+<h2 id="参考">参考</h2>
+
+<p>リバースエンジニアリングバイブル コード再創造の美学<br>
+<a href="https://book.impress.co.jp/books/1113101030">https://book.impress.co.jp/books/1113101030</a><br>
+Visual Studio のインストール | Microsoft Docs<br>
+<a href="https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017">https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017</a><br>
+MSYS2/MinGW-w64 (64bit/32bit) インストール手順 メモ<br>
+<a href="https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d">https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d</a><br></p>
+
+</main>
+
+
+<section class="section sns_parent">
+  <div class="container sns_section">
+      <div class="sns_button twitter">
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2ft-tani.github.io%2f0x01_reverseengineering_basic%2f&text=0x01%3aReverseEngineering%20Basic2" target="_blank" title="Tweet"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="sns_button facebook">
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ft-tani.github.io%2f0x01_reverseengineering_basic%2f&t=0x01%3aReverseEngineering%20Basic2" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+  </div>
+</section>
+
+
+<div id="disqus-container">
+  
+    <button id="disqus-button" onclick="showComments()">Show comments</button>
+    <div id="disqus-comments">
+      
+      
+      
+        <div id="disqus_thread">
+        </div>
+        <script type="application/javascript">
+          function showComments() {
+            // Config
+var disqus_config = function () {
+};
+// Build and append comments 
+var d = document;
+var s = d.createElement('script');
+s.async = true;
+s.src = '//' + "t-tani-blog" + '.disqus.com/embed.js';
+s.setAttribute('data-timestamp', + new Date());
+(d.head || d.body).appendChild(s);
+            // Remove button
+var disqusButton = document.getElementById('disqus-button');
+disqusButton.parentNode.removeChild(disqusButton); 
+// Un-hide comments
+var disqusComments = document.getElementById('disqus-comments');
+disqusComments.style.display = 'block'; 
+          }
+        </script>
+      
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  
+</div>
+
 
           <footer role="contentinfo">
   

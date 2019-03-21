@@ -45,8 +45,8 @@
          "@id": "https://t-tani.github.io"
     },
     "articleSection" : "post",
-    "name" : "0x00: ReverseEngineering Basic 1",
-    "headline" : "0x00: ReverseEngineering Basic 1",
+    "name" : "0x00:ReverseEngineering Basic1",
+    "headline" : "0x00:ReverseEngineering Basic1",
     "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
 主要なレジスタ(X86) GPR (general-purpose register) EAX (Accumulator register) 一番よく使われる変数。算術演算、戻り値で利用される。
 EDX (Data register) 一種の変数。さまざま演算の用途で利用される。基本的な役割はEAXと同じだが、戻り値に 利用できない 。
@@ -65,12 +65,12 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
     "datePublished": "2019-03-17 15:38:57 &#43;0900 JST",
     "dateModified" : "2019-03-17 15:38:57 &#43;0900 JST",
     "url" : "https://t-tani.github.io/0x00_reverseengineering_basic/",
-    "wordCount" : "419",
-    "keywords" : [ "ReverseEngineering","C lang","Assembly","Blog" ]
+    "wordCount" : "427",
+    "keywords" : [ "ReverseEngineering","C","Assembly","Blog" ]
 }
 </script>
 
-  <title>0x00: ReverseEngineering Basic 1 | t-tani blog</title>
+  <title>0x00:ReverseEngineering Basic1 | t-tani blog</title>
 </head>
 
   <body>
@@ -248,51 +248,51 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
       <div class="main-and-footer">
         <div>
           
-  <main id="main">
-    <h1>
+<main id="main">
+  <h1>
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      0x00: ReverseEngineering Basic 1
+      0x00:ReverseEngineering Basic1
     </h1>
-    <div class="date">
+  <div class="date">
+    
+    <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 21, 2019
+  </div>
+  
+  <div class="tags">
+    <strong aria-hidden="true">Tags: </strong>
+    <ul aria-label="tags">
       
-      <strong aria-hidden="true">Publish date: </strong>Mar 17, 2019<strong aria-hidden="true">&nbsp;Last Modify: </strong>Mar 19, 2019
-    </div>
-    
-      <div class="tags">
-        <strong aria-hidden="true">Tags: </strong>
-        <ul aria-label="tags">
-          
-            <li>
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              
-              <a href="https://t-tani.github.io/tags/reverseengineering/">ReverseEngineering</a>
-            </li>
-          
-            <li>
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              
-              <a href="https://t-tani.github.io/tags/c-lang/">C lang</a>
-            </li>
-          
-            <li>
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              
-              <a href="https://t-tani.github.io/tags/assembly/">Assembly</a>
-            </li>
-          
-        </ul>
-      </div>
-    
-    
+      <li>
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://t-tani.github.io/tags/reverseengineering/">ReverseEngineering</a>
+      </li>
       
+      <li>
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://t-tani.github.io/tags/c/">C</a>
+      </li>
+      
+      <li>
+        <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+          <use xlink:href="#tag"></use>
+        </svg>
+        
+        <a href="https://t-tani.github.io/tags/assembly/">Assembly</a>
+      </li>
+      
+    </ul>
+  </div>
+  
+  
+  
 
   <nav class="toc" aria-labelledby="toc-heading">
     <h2 id="toc-heading">Table of contents</h2>
@@ -328,12 +328,22 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
           </a>
         </li>
       
+        <li>
+          
+          
+          
+          
+          <a href="#%e5%8f%82%e8%80%83">
+            参考
+          </a>
+        </li>
+      
     </ol>
   </nav>
 
 
-    
-    
+  
+  
 
 <p>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。</p>
 
@@ -643,22 +653,29 @@ retn
 <li>待機後のCloseルーチン</li>
 </ol>
 
-  </main>
-  
+<h2 id="参考">参考</h2>
+
+<p>リバースエンジニアリングバイブル コード再創造の美学<br>
+<a href="https://book.impress.co.jp/books/1113101030">https://book.impress.co.jp/books/1113101030</a><br>
+コンピュータの構成と設計 第5版 上<br>
+<a href="https://www.nikkeibp.co.jp/atclpubmkt/book/14/P98420/">https://www.nikkeibp.co.jp/atclpubmkt/book/14/P98420/</a></p>
+
+</main>
+
 
 <section class="section sns_parent">
   <div class="container sns_section">
       <div class="sns_button twitter">
-        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2ft-tani.github.io%2f0x00_reverseengineering_basic%2f&text=0x00%3a%20ReverseEngineering%20Basic%201" target="_blank" title="Tweet"><i class="fab fa-twitter"></i></a>
+        <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2ft-tani.github.io%2f0x00_reverseengineering_basic%2f&text=0x00%3aReverseEngineering%20Basic1" target="_blank" title="Tweet"><i class="fab fa-twitter"></i></a>
       </div>
       <div class="sns_button facebook">
-        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ft-tani.github.io%2f0x00_reverseengineering_basic%2f&t=0x00%3a%20ReverseEngineering%20Basic%201" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ft-tani.github.io%2f0x00_reverseengineering_basic%2f&t=0x00%3aReverseEngineering%20Basic1" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
       </div>
   </div>
 </section>
 
 
-  <div id="disqus-container">
+<div id="disqus-container">
   
     <button id="disqus-button" onclick="showComments()">Show comments</button>
     <div id="disqus-comments">

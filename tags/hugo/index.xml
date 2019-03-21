@@ -6,15 +6,15 @@
     <description>Recent content in Hugo on t-tani blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 17 Mar 2019 15:46:20 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 Mar 2019 15:15:20 +0900</lastBuildDate>
     
 	<atom:link href="https://t-tani.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo &#43; GitHubPages: 構築メモ</title>
+      <title>Hugo &#43; GitHubPages: メモ</title>
       <link>https://t-tani.github.io/hugo_tips/</link>
-      <pubDate>Sun, 17 Mar 2019 15:46:20 +0900</pubDate>
+      <pubDate>Sun, 17 Mar 2019 15:15:20 +0900</pubDate>
       
       <guid>https://t-tani.github.io/hugo_tips/</guid>
       <description>TL;DR Hugo構築memo
@@ -25,11 +25,11 @@ git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupp
 Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
 SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
 Hugoで作ったサイトにシェアボタンを足した | AABrain
-Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
+GitのコミットログからLast Modifyを記事に反映  configにenableGitInfo = trueを追加 templateのhtmlに以下の変数を追記  {{.GitInfo.AuthorDate.Format &amp;#34;Jan 02, 2006&amp;#34;}} Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
 Twitter埋め込み(サンプル) コード例:
 {{&amp;lt; tweet 1090855037201375232 &amp;gt;}} 出力例:
 #JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
-&amp;mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.io/hosting-and-deployment/hosting-on-github/ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(t-tani/t-tani.</description>
+&amp;mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.</description>
     </item>
     
     <item>
