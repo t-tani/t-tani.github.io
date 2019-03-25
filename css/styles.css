@@ -153,8 +153,8 @@ pre,
     line-height: 0.95rem;
 }
 code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.8em;
+    font-family: 'Ubuntu Mono',Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 0.9rem;
 }
 .cmd {
     padding: 0.65rem;

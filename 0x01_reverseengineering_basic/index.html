@@ -18,7 +18,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP%7COrbitron" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP%7COrbitron%7CUbuntu+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
   <link rel="stylesheet" href="https://t-tani.github.io/css/chroma-styles.css" media="none" onload="this.media='all';">
   <link rel="stylesheet" href="https://t-tani.github.io/css/sns.css" media="none" onload="this.media='all';">
@@ -29,9 +29,20 @@
   <link rel="stylesheet" type="text/css" href="https://t-tani.github.io/css/styles.css">
 
   <style id="inverter" media="none">
-    html { filter: invert(100%) }
-    * { background-color: inherit }
-    img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
+    html {
+      filter: invert(100%)
+    }
+
+    * {
+      background-color: inherit
+    }
+
+    img:not([src*=".svg"]),
+    .colors,
+    iframe,
+    .demo-container {
+      filter: invert(100%)
+    }
   </style>
 
   
@@ -72,7 +83,6 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 
   <title>0x01:ReverseEngineering Basic2 | t-tani blog</title>
 </head>
-
   <body>
     <a href="#main">skip to content</a>
     <svg style="display: none">
@@ -589,7 +599,7 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">4</span><span class="nv">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="nf">E8</span> <span class="nv">E5</span> <span class="nv">FC</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_4011A9</span></code></pre></div>
-<p>参考までに。gccでコンパイルしたものも掲載。IDAが自動命名で非常に読みやすくしてくれている。形が変われど、メンバー変数を呼び出す際には、thisポインターを<code>ECX</code>にいれて呼び出す部分には変わりなく、同じように読み進められる。</p>
+<p>参考までにgccでコンパイルしたものも掲載。IDAの自動命名で非常に読みやすくしてくれている。形が変われど、メンバー変数を呼び出す際には、thisポインターを<code>ECX</code>にいれて呼び出す部分には変わりなく、MSVS2017と同じように読み進められる。</p>
 
 <h4 id="gccでコンパイル-ディスアセンブル">gccでコンパイル -&gt; ディスアセンブル</h4>
 
