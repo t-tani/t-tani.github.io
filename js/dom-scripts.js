@@ -1,6 +1,6 @@
 /* Expandable sections */
 (function () {
-  function toggle (button, target) {
+  function toggle(button, target) {
     var expanded = button.getAttribute('aria-expanded') === 'true';
     button.setAttribute('aria-expanded', !expanded);
     target.hidden = !target.hidden;
@@ -22,7 +22,7 @@
   var button = document.getElementById('menu-button');
   if (button) {
     var menu = document.getElementById('patterns-list');
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       var expanded = this.getAttribute('aria-expanded') === 'true';
       this.setAttribute('aria-expanded', !expanded);
     })
@@ -97,10 +97,10 @@
 
 /* Switch and persist theme */
 (function () {
-  function CSSSupported (property, value) {
+  function CSSSupported(property, value) {
     var prop = property + ':',
-        el = document.createElement('test'),
-        mStyle = el.style;
+      el = document.createElement('test'),
+      mStyle = el.style;
     el.style.cssText = prop + value;
     return mStyle[property];
   }

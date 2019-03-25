@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on t-tani blog</title>
+    <link>https://t-tani.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on t-tani blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 21 Mar 2019 21:09:34 +0900</lastBuildDate>
+    
+	<atom:link href="https://t-tani.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>0x01:ReverseEngineering Basic2</title>
+      <link>https://t-tani.github.io/0x01_reverseengineering_basic/</link>
+      <pubDate>Thu, 21 Mar 2019 21:09:34 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/0x01_reverseengineering_basic/</guid>
+      <description>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
+C++の開発環境の準備 C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。
+ OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。
+コンパイラ コンパイラを入れるため、以下をインストール。
+Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Codeの設定 TBU
+C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルしてthisポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017とGCCでコンパイルしたPEファイルを利用する。
+クラスを含むソース（sample） sampl_class.cpp #include &amp;#34;windows.h&amp;#34;#include &amp;#34;tchar.h&amp;#34;#include &amp;lt;stdio.h&amp;gt; classEmployee { public: int number; char name[128]; long pay; void ShowData(); void Test(); }; void Employee::ShowData() { printf(&amp;#34;number: %d\n&amp;#34;, number); printf(&amp;#34;name: %s\n&amp;#34;, name); printf(&amp;#34;pay: %d\n&amp;#34;, pay); Test(); } void Employee::Test() { printf(&amp;#34;Test function\n&amp;#34;); return; } //Employee t_tani; int main(int argc, char *argv[]) { Employee t_tani; printf(&amp;#34;size: %X\n&amp;#34;, sizeof(Employee)); t_tani.</description>
+    </item>
+    
+  </channel>
+</rss>

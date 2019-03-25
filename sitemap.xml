@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://t-tani.github.io/0x01_reverseengineering_basic/</loc>
-    <lastmod>2019-03-21T23:43:46+09:00</lastmod>
+    <lastmod>2019-03-26T00:04:01+09:00</lastmod>
   </url>
   
   <url>
@@ -29,13 +29,19 @@
   
   <url>
     <loc>https://t-tani.github.io/tags/assembly/</loc>
-    <lastmod>2019-03-21T23:43:46+09:00</lastmod>
+    <lastmod>2019-03-26T00:04:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://t-tani.github.io/tags/c/</loc>
-    <lastmod>2019-03-21T23:43:46+09:00</lastmod>
+    <lastmod>2019-03-26T00:04:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-tani.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2019-03-26T00:04:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,19 +53,19 @@
   
   <url>
     <loc>https://t-tani.github.io/post/</loc>
-    <lastmod>2019-03-21T23:43:46+09:00</lastmod>
+    <lastmod>2019-03-26T00:04:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://t-tani.github.io/tags/reverseengineering/</loc>
-    <lastmod>2019-03-21T23:43:46+09:00</lastmod>
+    <lastmod>2019-03-26T00:04:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://t-tani.github.io/tags/</loc>
-    <lastmod>2019-03-21T23:43:46+09:00</lastmod>
+    <lastmod>2019-03-26T00:04:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
