@@ -58,19 +58,16 @@
     "articleSection" : "post",
     "name" : "Hugo &#43; GitHubPages: メモ",
     "headline" : "Hugo &#43; GitHubPages: メモ",
-    "description" : "TL;DR Hugo構築memo
-Hugo + Github Pages でブログを構築したときにのTipsをまとめ
+    "description" : "TL;DR Hugo 構築 memo
+Hugo + GitHub Pages でブログを構築したときにの Tips をまとめる。
 Hugo Tips 公式ドキュメント 困ったときには公式ドキュメントを読めばおおよそのことは解決する。
-https://gohugo.io/documentation/ Hugo themeについて 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法ではgit submoduleコマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
-git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマのCSSを直接編集することになっているため、予期しないところで不都合は出てくるかも&hellip;? [repo_base]/themes/cupper-theme/assets/css/template-styles.css
-Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
-SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
-Hugoで作ったサイトにシェアボタンを足した | AABrain
-GitのコミットログからLast Modifyを記事に反映  configにenableGitInfo = trueを追加 templateのhtmlに以下の変数を追記  {{.GitInfo.AuthorDate.Format &#34;Jan 02, 2006&#34;}} Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
-Twitter埋め込み(サンプル) コード例:
-{{&lt; tweet 1090855037201375232 &gt;}} 出力例:
-#JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
-&mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.",
+https://gohugo.io/documentation/
+Hugo theme について 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法では git submodule コマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
+git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS 編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマの CSS を直接編集することになっているため、予期しないところで不都合は出てくるかも&hellip;? [repository_base]/themes/cupper-theme/assets/css/template-styles.css
+Syntax Highlighting Cupper で採用されているものがモノトーンであまり好みでなかったため、Hugo のデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScript を減らしたかったため削除。
+SNS 関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
+Hugo で作ったサイトにシェアボタンを足した | AABrain
+Git のコミットログから Last Modify を記事に反映  config に enableGitInfo = true を追加 template の html に以下の変数を追記  {{.GitInfo.AuthorDate.Format &#34;Jan 02, 2006&#34;}} Shortcodes https://gohugo.",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -81,7 +78,7 @@ Twitter埋め込み(サンプル) コード例:
     "datePublished": "2019-03-17 15:15:20 &#43;0900 JST",
     "dateModified" : "2019-03-17 15:15:20 &#43;0900 JST",
     "url" : "https://t-tani.github.io/hugo_tips/",
-    "wordCount" : "126",
+    "wordCount" : "179",
     "keywords" : [ "hugo","Blog" ]
 }
 </script>
@@ -323,7 +320,7 @@ Twitter埋め込み(サンプル) コード例:
           
           
           <a href="#github-pages">
-            Github Pages
+            GitHub Pages
           </a>
         </li>
       
@@ -346,47 +343,47 @@ Twitter埋め込み(サンプル) コード例:
 
 <h2 id="tl-dr">TL;DR</h2>
 
-<p><strong>Hugo構築memo</strong><br>
-Hugo + Github Pages でブログを構築したときにのTipsをまとめ</p>
+<p><strong>Hugo 構築 memo</strong><br />
+Hugo + GitHub Pages でブログを構築したときにの Tips をまとめる。</p>
 
 <h2 id="hugo-tips">Hugo Tips</h2>
 
 <h3 id="公式ドキュメント">公式ドキュメント</h3>
 
-<p>困ったときには公式ドキュメントを読めばおおよそのことは解決する。<br>
-<a href="https://gohugo.io/documentation/">https://gohugo.io/documentation/</a> <br></p>
+<p>困ったときには公式ドキュメントを読めばおおよそのことは解決する。<br />
+<a href="https://gohugo.io/documentation/">https://gohugo.io/documentation/</a></p>
 
-<h3 id="hugo-themeについて">Hugo themeについて</h3>
+<h3 id="hugo-theme-について">Hugo theme について</h3>
 
-<p>今回は<a href="https://themes.gohugo.io/cupper-hugo-theme/">Cupper</a>を採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法では<code>git submodule</code>コマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、<code>git clone</code>で行った。</p>
-<div class="highlight"><pre class="chroma">git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme</pre></div>
-<h4 id="css編集">CSS編集</h4>
+<p>今回は<a href="https://themes.gohugo.io/cupper-hugo-theme/">Cupper</a>を採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法では <code>git submodule</code> コマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、<code>git clone</code>で行った。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme</code></pre></div>
+<h4 id="css-編集">CSS 編集</h4>
 
-<p>テーマの細かいところを編集するために以下のファイルを書き換えている。テーマのCSSを直接編集することになっているため、予期しないところで不都合は出てくるかも&hellip;?
-<code>[repo_base]/themes/cupper-theme/assets/css/template-styles.css</code></p>
+<p>テーマの細かいところを編集するために以下のファイルを書き換えている。テーマの CSS を直接編集することになっているため、予期しないところで不都合は出てくるかも&hellip;?
+<code>[repository_base]/themes/cupper-theme/assets/css/template-styles.css</code></p>
 
 <h4 id="syntax-highlighting">Syntax Highlighting</h4>
 
-<p>Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとは<a href="https://prismjs.com/">prism.js</a>が使われていたが、JavaScriptを減らしたかったため削除。</p>
+<p>Cupper で採用されているものがモノトーンであまり好みでなかったため、Hugo のデフォルトのものに変更した。もともとは<a href="https://prismjs.com/">prism.js</a>が使われていたが、JavaScript を減らしたかったため削除。</p>
 
-<h4 id="sns関連ボタンの追加">SNS関連ボタンの追加</h4>
+<h4 id="sns-関連ボタンの追加">SNS 関連ボタンの追加</h4>
 
 <p>以下のサイトを参考に作成。非常に参考になった。<br>
-<a href="https://aakira.app/blog/2018/08/share/">Hugoで作ったサイトにシェアボタンを足した | AABrain</a></p>
+<a href="https://aakira.app/blog/2018/08/share/">Hugo で作ったサイトにシェアボタンを足した | AABrain</a></p>
 
-<h4 id="gitのコミットログからlast-modifyを記事に反映">GitのコミットログからLast Modifyを記事に反映</h4>
+<h4 id="git-のコミットログから-last-modify-を記事に反映">Git のコミットログから Last Modify を記事に反映</h4>
 
 <ol>
-<li>configに<code>enableGitInfo = true</code>を追加</li>
-<li>templateのhtmlに以下の変数を追記</li>
+<li>config に <code>enableGitInfo = true</code> を追加</li>
+<li>template の html に以下の変数を追記</li>
 </ol>
-<div class="highlight"><pre class="chroma">{{.GitInfo.AuthorDate.Format &#34;Jan 02, 2006&#34;}}</pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{.GitInfo.AuthorDate.Format &#34;Jan 02, 2006&#34;}}</code></pre></div>
 <h3 id="shortcodes">Shortcodes</h3>
 
 <p><a href="https://gohugo.io/content-management/shortcodes/">https://gohugo.io/content-management/shortcodes/</a> <br>
-HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。</p>
+Hugo の shortcodes は Markdown だけでは表現できない表現を追加で記述するために用意されたもの。SNS や動画等の埋め込み用の shortcodes がデフォルトで用意されている。</p>
 
-<h4 id="twitter埋め込み-サンプル">Twitter埋め込み(サンプル)</h4>
+<h4 id="twitter-埋め込み-サンプル">Twitter 埋め込み(サンプル)</h4>
 
 <p>コード例:<br>
 {{&lt; tweet 1090855037201375232 &gt;}} <br></p>
@@ -396,25 +393,27 @@ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記�
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 
-<h2 id="github-pages">Github Pages</h2>
+<h2 id="github-pages">GitHub Pages</h2>
 
 <h3 id="hugo-hosting-on-github">Hugo | Hosting on GitHub</h3>
 
-<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a> <br>
-HugoのTheme等のソースはGitHubのプライベイトリポジトリで構築し、公開する静的コンテンツはGithubPagesのリポジトリ(<a href="https://github.com/t-tani/t-tani.github.io">t-tani/t-tani.github.io</a>)に作っている。</p>
+<ul>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
+</ul>
+
+<p>Hugo の Theme 等のソースは GitHub のプライベイトリポジトリで構築し、公開する静的コンテンツは GitHub Pages のリポジトリ(<a href="https://github.com/t-tani/t-tani.github.io">t-tani/t-tani.github.io</a>)に作っている。</p>
 
 <h2 id="エラー対応履歴">エラー対応履歴</h2>
 
-<h3 id="エンコードエラー-0x08">エンコードエラー: 0x08</h3>
+<h3 id="エンコードエラー-0x08">エンコードエラー: <code>0x08</code></h3>
 
 <h4 id="契機">契機</h4>
 
-<p>hugoでRSSフィード用のindex.xmlにアクセスすると、以下のようなエラーを出した。<br>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">Input is not proper UTF-8, indicate encoding ! Bytes: 0x08</code></pre></div></p>
-
+<p>hugo で RSS フィード用の index.xml にアクセスすると、以下のようなエラーを出した。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">Input is not proper UTF-8, indicate encoding ! Bytes: `0x08`</code></pre></div></code></pre></div>
 <h4 id="調査">調査</h4>
 
-<p>MacOSの日本語IMEのバグ。日本語入力時に特定の条件で不要なバックスペース(0x08)が入力される。かなり致命的なバグだと思うのだが、現時点（2019.03.17）で修正はまだされていない模様。</p>
+<p>macOS の日本語 IME のバグ。日本語入力で特定の条件で不要なバックスペース( <code>0x08</code> )が入力される。かなり致命的なバグだが、現時点（2019.03.17）で修正はまだされていない模様。</p>
 
 <ul>
 <li><a href="https://github.com/Microsoft/vscode/issues/37114">Using IME with markdown preview enabled, press ESC/BACKSPACE leads in control characters #37114</a></li>
@@ -423,30 +422,28 @@ HugoのTheme等のソースはGitHubのプライベイトリポジトリで構�
 <p>自身の環境は以下の通り。</p>
 
 <ul>
-<li>ProductName:    Mac OS X</li>
+<li>ProductName: macOS</li>
 <li>ProductVersion: 10.14.3</li>
-<li>BuildVersion:   18D109</li>
+<li>BuildVersion: 18D109</li>
 </ul>
 
 <h4 id="対処">対処</h4>
 
 <ol>
-<li><del>日本語入力をmacOS純正IMEからGoogle日本語入力に変更。</del> 効果なし。
+<li><del>日本語入力を macOS 純正 IME から Google 日本語入力に変更。</del> 効果なし。</li>
+</ol>
 
 <ul>
 <li>GoogleJapaneseInput-2.24.3250.1+24.2.9</li>
-</ul></li>
-<li>Atomプラグイン追加
+</ul>
 
-<ul>
-<li><a href="https://atom.io/packages/show-invisibles-plus">show-invisibles-plus</a></li>
-</ul></li>
-<li>正規表現で一括削除
+<ol>
+<li>正規表現で一括削除</li>
+</ol>
 
 <ul>
 <li><code>[\b]*</code>で検索、削除</li>
-</ul></li>
-</ol>
+</ul>
 
 </main>
 

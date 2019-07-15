@@ -59,13 +59,12 @@
     "name" : "0x01:ReverseEngineering Basic2",
     "headline" : "0x01:ReverseEngineering Basic2",
     "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
-C++の開発環境の準備 C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。
+C++の開発環境の準備 C++で書かれた PE ファイルの理解を深めるため、Windows での開発環境を整える。OS 情報は以下の通り。
  OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
-今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。
+今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。
 コンパイラ コンパイラを入れるため、以下をインストール。
-Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Codeの設定 TBU
-C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルしてthisポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017とGCCでコンパイルしたPEファイルを利用する。
-クラスを含むソース（sample） sampl_class.cpp #include &#34;windows.h&#34;#include &#34;tchar.h&#34;#include &lt;stdio.h&gt; classEmployee { public: int number; char name[128]; long pay; void ShowData(); void Test(); }; void Employee::ShowData() { printf(&#34;number: %d\n&#34;, number); printf(&#34;name: %s\n&#34;, name); printf(&#34;pay: %d\n&#34;, pay); Test(); } void Employee::Test() { printf(&#34;Test function\n&#34;); return; } //Employee t_tani; int main(int argc, char *argv[]) { Employee t_tani; printf(&#34;size: %X\n&#34;, sizeof(Employee)); t_tani.",
+Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Code の設定 TBU
+C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C++のコードをコンパイル/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -76,7 +75,7 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
     "datePublished": "2019-03-21 21:09:34 &#43;0900 JST",
     "dateModified" : "2019-03-21 21:09:34 &#43;0900 JST",
     "url" : "https://t-tani.github.io/0x01_reverseengineering_basic/",
-    "wordCount" : "1305",
+    "wordCount" : "1412",
     "keywords" : [ "ReverseEngineering","C","C&#43;&#43;","Assembly","Blog" ]
 }
 </script>
@@ -357,7 +356,7 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 
 <h2 id="c-の開発環境の準備">C++の開発環境の準備</h2>
 
-<p>C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。</p>
+<p>C++で書かれた PE ファイルの理解を深めるため、Windows での開発環境を整える。OS 情報は以下の通り。</p>
 
 <ul>
 <li>OS 名: Microsoft Windows 10 Pro</li>
@@ -366,8 +365,9 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 
 <h3 id="ide">IDE</h3>
 
-<p>Visual Studio Code : <a href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/">https://azure.microsoft.com/ja-jp/products/visual-studio-code/</a><br>
-今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。</p>
+<p>Visual Studio Code : <a href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/">https://azure.microsoft.com/ja-jp/products/visual-studio-code/</a></p>
+
+<p>今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。</p>
 
 <h3 id="コンパイラ">コンパイラ</h3>
 
@@ -389,13 +389,13 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 </ul></li>
 </ul>
 
-<h3 id="visual-studio-codeの設定">Visual Studio Codeの設定</h3>
+<h3 id="visual-studio-code-の設定">Visual Studio Code の設定</h3>
 
 <p>TBU</p>
 
 <h2 id="c-のクラスとリバースエンジニアリング">C++のクラスとリバースエンジニアリング</h2>
 
-<p>C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルしてthisポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017とGCCでコンパイルしたPEファイルを利用する。</p>
+<p>C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C++のコードをコンパイル/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。</p>
 
 <h3 id="クラスを含むソース-sample">クラスを含むソース（sample）</h3>
 
@@ -444,11 +444,13 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 </code></pre></div>
 <h3 id="disassemble">Disassemble</h3>
 
-<p>Disassemble には IDA Free 7.0.0.2を利用している。</p>
+<p>Disassemble には IDA Free 7.0.0.2 を利用している。</p>
 
 <h4 id="msvs2017-でコンパイル-ディスアセンブル">MSVS2017 でコンパイル -&gt; ディスアセンブル</h4>
 
-<h4 id="main">main()</h4>
+<ul>
+<li>main()</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-main.asm" data-lang="main.asm">     <span class="nf">sub_401510</span>      <span class="nv">proc</span> <span class="nv">near</span>               <span class="c1">; CODE XREF: sub_4011B3</span>
 
      <span class="nf">var_94</span>          <span class="err">=</span> <span class="kt">byte</span> <span class="nv">ptr</span> <span class="o">-</span><span class="mh">94h</span>
@@ -464,7 +466,7 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">8</span><span class="nf">D</span> <span class="nv">BD</span> <span class="mi">6</span><span class="nv">C</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span>         <span class="nv">lea</span>     <span class="nb">edi</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_94</span><span class="p">]</span>
 <span class="nf">B9</span> <span class="mi">25</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>            <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="mh">25h</span>
 <span class="nf">B8</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span>            <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mh">0CCCCCCCCh</span>
-<span class="nf">F3</span> <span class="nv">AB</span>                     <span class="nv">rep</span> <span class="nv">stosd</span>
+<span class="nf">F3</span> <span class="nv">AB</span>                     <span class="nv">rep</span>     <span class="nv">stosd</span>
 <span class="nf">A1</span> <span class="mi">04</span> <span class="mi">90</span> <span class="mi">40</span> <span class="mi">00</span>            <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="nv">___security_cookie</span>
 <span class="err">33</span> <span class="nf">C5</span>                     <span class="nv">xor</span>     <span class="nb">eax</span><span class="p">,</span> <span class="nb">ebp</span>
 <span class="err">89</span> <span class="err">45</span> <span class="nf">FC</span>                  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">eax</span>
@@ -500,7 +502,9 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">5</span><span class="nf">D</span>                        <span class="nv">pop</span>     <span class="nb">ebp</span>
 <span class="nf">C3</span>                        <span class="nv">retn</span>
           <span class="nf">sub_401510</span>      <span class="nv">endp</span></code></pre></div>
-<h5 id="employee-showdata-void">Employee::ShowData(void)</h5>
+<ul>
+<li>Employee::ShowData(void)</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-show.asm" data-lang="show.asm">     <span class="nf">sub_401470</span>      <span class="nv">proc</span> <span class="nv">near</span>               <span class="c1">; CODE XREF: sub_401145↑j</span>
 
      <span class="nf">var_4</span>           <span class="err">=</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="o">-</span><span class="mi">4</span>
@@ -537,7 +541,9 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">5</span><span class="nf">D</span>                    <span class="nv">pop</span>     <span class="nb">ebp</span>
 <span class="nf">C3</span>                    <span class="nv">retn</span>
       <span class="nf">sub_401470</span>      <span class="nv">endp</span></code></pre></div>
-<h4 id="employee-test-void">Employee::Test(void)</h4>
+<ul>
+<li>Employee::Test(void)</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-test.asm" data-lang="test.asm">     <span class="nf">sub_4014E0</span>      <span class="nv">proc</span> <span class="nv">near</span>               <span class="c1">; CODE XREF: sub_4011A9↑j</span>
 
      <span class="nf">var_4</span>           <span class="err">=</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="o">-</span><span class="mi">4</span>
@@ -557,40 +563,50 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">5</span><span class="nf">D</span>                    <span class="nv">pop</span>     <span class="nb">ebp</span>
 <span class="nf">C3</span>                    <span class="nv">retn</span>
       <span class="nf">sub_4014E0</span>      <span class="nv">endp</span></code></pre></div>
-<h3 id="thisポインターの分析">thisポインターの分析</h3>
+<h3 id="this-ポインターの分析">this ポインターの分析</h3>
 
-<p>リバースエンジニアリングする上で構造体とクラスが持つ共通として、メモリ上でスタックサイズを増やして変数を使用する共通点がある。<code>main()</code>の以下のコードで<code>0x94</code>を積んでいるので、この関数では<code>0x94</code>バイトのデータの塊を使用することが分かり、構造体かクラスで使われることが推測される。</p>
+<p>リバースエンジニアリングする上で構造体とクラスが持つ共通として、メモリ上でスタックサイズを増やして変数を使用する共通点がある。<code>main()</code> の以下のコードで <code>0x94</code> を積んでいるので、この関数では <code>0x94</code> バイトのデータの塊を使用することが分かり、構造体かクラスで使われることが推測される。</p>
 
-<h5 id="スタックを積むコード">スタックを積むコード</h5>
+<ul>
+<li>スタックを積むコード</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">55</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">EC</span>                     <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
 <span class="err">81</span> <span class="nf">EC</span> <span class="mi">94</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">94h</span></code></pre></div>
-<p>次に<code>var_90</code>に着目する。以下のコードを見ると、<code>var_90</code>に直接<code>0x1111</code>を代入している。これは、最初のメンバー変数<code>t_tani.number = 0x1111;</code>に該当する部分である。そして、その後に<code>var_94</code>のアドレスを<code>ECX</code>に入れて関数に呼び出し<code>call</code>を行っている。通常、クラスのメンバー関数を呼び出すときには、現在のメモリの塊のポインターを<code>ECX</code>にいれて呼び出す(呼び出し規約:__thiscall)。そのため、<code>ECX</code>に入った<code>var_90</code>がC++でのthisポインターになる。</p>
+<p>次に <code>var_90</code> に着目する。以下のコードを見ると、<code>var_90</code> に直接 <code>0x1111</code> を代入している。これは、最初のメンバー変数 <code>t_tani.number = 0x1111;</code> に該当する部分である。そして、その後に <code>var_94</code> のアドレスを <code>ECX</code> に入れて関数に呼び出し <code>call</code> を行っている。通常、クラスのメンバー関数を呼び出すときには、現在のメモリの塊のポインターを <code>ECX</code> にいれて呼び出す(呼び出し規約:__thiscall)。そのため、 <code>ECX</code> に入った <code>var_90</code> が C++での this ポインターになる。</p>
 
-<h5 id="main-でメンバー変数を使用する部分">main()でメンバー変数を使用する部分</h5>
+<ul>
+<li>main()でメンバー変数を使用する部分</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="nf">C7</span> <span class="mi">85</span> <span class="mi">70</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="mi">11</span> <span class="mi">11</span><span class="o">+</span>  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_90</span><span class="p">],</span> <span class="mh">1111h</span>
 <span class="err">(</span><span class="nf">snip</span><span class="p">)</span>
 <span class="err">8</span><span class="nf">D</span> <span class="mi">8</span><span class="nv">D</span> <span class="mi">70</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span>         <span class="nv">lea</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_90</span><span class="p">]</span>
 <span class="nf">E8</span> <span class="nv">CD</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">sub_401145</span></code></pre></div>
-<p>次にメンバー関数ShowData()を確認してみる。<code>ECX</code>にthisポインターが渡されたことを考慮して確認すると<code>ECX</code>に入ったポインターが<code>var_4</code>変数に入り、ここから、この変数のポインターを増加させながら、クラスの変数を使用することになる。</p>
+<p>次にメンバー関数 ShowData()を確認してみる。<code>ECX</code>に this ポインターが渡されたことを考慮して確認すると <code>ECX</code> に入ったポインターが <code>var_4</code> 変数に入り、この変数のポインターを増加させながら、クラスの変数を使用することになる。</p>
 
-<h5 id="クラスの1番目のメンバー変数を使用部分">クラスの1番目のメンバー変数を使用部分</h5>
+<ul>
+<li>クラスの 1 番目のメンバー変数を使用部分</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">89</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">ecx</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">08</span>                 <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="p">]</span>
 <span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
 <span class="err">68</span> <span class="err">30</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNumberD</span> <span class="c1">; &#34;number: %d\n&#34;</span>
 <span class="nf">E8</span> <span class="nv">A4</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span></code></pre></div>
-<p>はじめのメンバー変数はintだったため、<code>var_4</code>を<code>EDX</code>に入れて、4バイト加算し、次の変数を指すようにしている。</p>
+<p>はじめのメンバー変数は int だったため、<code>var_4</code> を <code>EDX</code> に入れて、4 バイト加算し、次の変数を指すようにしている。</p>
 
-<h5 id="クラスの2番目のメンバー変数を使用部分">クラスの2番目のメンバー変数を使用部分</h5>
+<ul>
+<li>クラスの 2 番目のメンバー変数を使用部分</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">8</span><span class="nf">B</span> <span class="mi">55</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">edx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="err">83</span> <span class="nf">C2</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">edx</span><span class="p">,</span> <span class="mi">4</span>
 <span class="err">52</span>                    <span class="nf">push</span>    <span class="nb">edx</span>
 <span class="err">68</span> <span class="err">3</span><span class="nf">C</span> <span class="mi">6</span><span class="nv">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNameS</span>   <span class="c1">; &#34;name: %s\n&#34;</span></code></pre></div>
-<p>次に84hバイト加算して、変数を指している。これは2番目の変数が<code>char name[128]</code>であり、1つ目のメンバー変数と2つ目のメンバー変数を加算(4h+80h)したものを足している。なお、80hは10進数で128である。さらに、<code>ECX</code>にthisポインターである<code>var_4</code>を渡して、関数を呼んでいる。この部分は<code>Employee::Test()</code>を呼び出す部分である。</p>
+<p>次に 84h バイト加算して、変数を指している。これは 2 番目の変数が <code>char name[128]</code> であり、1 つ目のメンバー変数と 2 つ目のメンバー変数を加算(4h+80h)したものを足している。なお、80h は 10 進数で 128 である。さらに、<code>ECX</code>に this ポインターである <code>var_4</code> を渡して、関数を呼んでいる。この部分は <code>Employee::Test()</code> を呼び出す部分である。</p>
 
-<h5 id="クラスの3番目のメンバー変数を使用部分">クラスの3番目のメンバー変数を使用部分</h5>
+<ul>
+<li>クラスの 3 番目のメンバー変数を使用部分</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">88</span> <span class="mi">84</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>     <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="o">+</span><span class="mh">84h</span><span class="p">]</span>
 <span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
@@ -599,11 +615,13 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">4</span><span class="nv">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="nf">E8</span> <span class="nv">E5</span> <span class="nv">FC</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_4011A9</span></code></pre></div>
-<p>参考までにgccでコンパイルしたものも掲載。IDAの自動命名で非常に読みやすくしてくれている。形が変われど、メンバー変数を呼び出す際には、thisポインターを<code>ECX</code>にいれて呼び出す部分には変わりなく、MSVS2017と同じように読み進められる。</p>
+<p>参考までに gcc でコンパイルしたものも掲載。IDA の自動命名で非常に読みやすくしてくれている。形が変われどメンバー変数を呼び出す際には、this ポインターを <code>ECX</code> にいれて呼び出す部分には変わりなく、MSVS2017 と同じように読み進められる。</p>
 
-<h4 id="gccでコンパイル-ディスアセンブル">gccでコンパイル -&gt; ディスアセンブル</h4>
+<h4 id="gcc-でコンパイル-ディスアセンブル">gcc でコンパイル -&gt; ディスアセンブル</h4>
 
-<h5 id="main-1">main()</h5>
+<ul>
+<li>main()</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-main.asm" data-lang="main.asm"><span class="err">55</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">89</span> <span class="nf">E5</span>                     <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
 <span class="err">83</span> <span class="nf">E4</span> <span class="nv">F0</span>                  <span class="nv">and</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">0FFFFFFF0h</span>
@@ -624,7 +642,9 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="nf">B8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>            <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mi">0</span>
 <span class="nf">C9</span>                        <span class="nv">leave</span>
 <span class="nf">C3</span>                        <span class="nv">retn</span></code></pre></div>
-<h5 id="employee-showdata-void-1">Employee::Showdata(void)</h5>
+<ul>
+<li>Employee::Showdata(void)</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-show.asm" data-lang="show.asm"><span class="err">55</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">89</span> <span class="nf">E5</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
 <span class="err">83</span> <span class="nf">EC</span> <span class="mi">28</span>              <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">28h</span>
@@ -650,7 +670,9 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">90</span>                    <span class="nf">nop</span>
 <span class="nf">C9</span>                    <span class="nv">leave</span>
 <span class="nf">C3</span>                    <span class="nv">retn</span></code></pre></div>
-<h5 id="employee-test-void-1">Employee::Test(void)</h5>
+<ul>
+<li>Employee::Test(void)</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-test.asm" data-lang="test.asm"><span class="err">55</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">89</span> <span class="nf">E5</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
 <span class="err">83</span> <span class="nf">EC</span> <span class="mi">28</span>              <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">28h</span>
@@ -660,14 +682,38 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 <span class="err">90</span>                    <span class="nf">nop</span>
 <span class="nf">C9</span>                    <span class="nv">leave</span>
 <span class="nf">C3</span>                    <span class="nv">retn</span></code></pre></div>
+<h3 id="コンストラクターとデストラクター">コンストラクターとデストラクター</h3>
+
+<p>コンストラクターを探すときのコツとして、コンストラクターの使われ方をもとに探すと良い。コンスタクターは主に、クラスで用いる変数の初期化で使われることが多く、複数の変数をまとめて初期化するような処理があるものもあり、その周辺に <code>memset()</code> や <code>malloc()</code> などが見えた場合にはコンストラクターである可能性が非常に高い。<br />
+デストラクターは通常コードの最後に位置するものであり、呼び出し前に <code>ECX</code> をクラスのオブジェクトポインターへ入れる。関数の中では、Close 関連の呼び出されることが多いため、そのように判断すると良い。</p>
+
+<h3 id="カプセル化">カプセル化</h3>
+
+<p>カプセル化された関数を呼ぶ際に、<code>ECX</code>にオブジェクトポインターを入れてから関数を呼ぶ点は他のメンバー関数の呼び出しと同じだが、一般のメンバー関数であるか、private 関数であるかの判別する方法はないため、区別することはほとんど不可能。</p>
+
+<h3 id="ポリモフィズム">ポリモフィズム</h3>
+
+<p>ポリモフィズムのバイナリには特徴がある。仮想関数は一般的な関数が作成される方法とは異なり、別途テーブルが作成される。このテーブルの情報はコンストラクターとデストラクターでも管理される。このテーブルは <code>.rdata</code> セクションに保存される。</p>
+
 <h2 id="参考">参考</h2>
 
-<p>リバースエンジニアリングバイブル コード再創造の美学<br>
-<a href="https://book.impress.co.jp/books/1113101030">https://book.impress.co.jp/books/1113101030</a><br>
-Visual Studio のインストール | Microsoft Docs<br>
-<a href="https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017">https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017</a><br>
-MSYS2/MinGW-w64 (64bit/32bit) インストール手順 メモ<br>
-<a href="https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d">https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d</a><br></p>
+<ul>
+<li>リバースエンジニアリングバイブル コード再創造の美学
+
+<ul>
+<li><a href="https://book.impress.co.jp/books/1113101030">https://book.impress.co.jp/books/1113101030</a></li>
+</ul></li>
+<li>Visual Studio のインストール | Microsoft Docs
+
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017">https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017</a></li>
+</ul></li>
+<li>MSYS2/MinGW-w64 (64bit/32bit) インストール手順メモ
+
+<ul>
+<li><a href="https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d">https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d</a></li>
+</ul></li>
+</ul>
 
 </main>
 

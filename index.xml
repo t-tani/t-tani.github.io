@@ -18,13 +18,12 @@
       
       <guid>https://t-tani.github.io/0x01_reverseengineering_basic/</guid>
       <description>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
-C++の開発環境の準備 C++で書かれたPEファイルの理解を深めるため、Windowsでの開発環境を整える。OS情報は以下の通り。
+C++の開発環境の準備 C++で書かれた PE ファイルの理解を深めるため、Windows での開発環境を整える。OS 情報は以下の通り。
  OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
-今までAtomを使っていたが、日本語入力でのバグに耐えきれなくなり試しに使ってみたところ、使いやすかったため、乗り換え。
+今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。
 コンパイラ コンパイラを入れるため、以下をインストール。
-Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Codeの設定 TBU
-C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単なC++のコードをコンパイル/逆アセンブルしてthisポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017とGCCでコンパイルしたPEファイルを利用する。
-クラスを含むソース（sample） sampl_class.cpp #include &amp;#34;windows.h&amp;#34;#include &amp;#34;tchar.h&amp;#34;#include &amp;lt;stdio.h&amp;gt; classEmployee { public: int number; char name[128]; long pay; void ShowData(); void Test(); }; void Employee::ShowData() { printf(&amp;#34;number: %d\n&amp;#34;, number); printf(&amp;#34;name: %s\n&amp;#34;, name); printf(&amp;#34;pay: %d\n&amp;#34;, pay); Test(); } void Employee::Test() { printf(&amp;#34;Test function\n&amp;#34;); return; } //Employee t_tani; int main(int argc, char *argv[]) { Employee t_tani; printf(&amp;#34;size: %X\n&amp;#34;, sizeof(Employee)); t_tani.</description>
+Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Code の設定 TBU
+C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C++のコードをコンパイル/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。</description>
     </item>
     
     <item>
@@ -49,19 +48,16 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
       <pubDate>Sun, 17 Mar 2019 15:15:20 +0900</pubDate>
       
       <guid>https://t-tani.github.io/hugo_tips/</guid>
-      <description>TL;DR Hugo構築memo
-Hugo + Github Pages でブログを構築したときにのTipsをまとめ
+      <description>TL;DR Hugo 構築 memo
+Hugo + GitHub Pages でブログを構築したときにの Tips をまとめる。
 Hugo Tips 公式ドキュメント 困ったときには公式ドキュメントを読めばおおよそのことは解決する。
-https://gohugo.io/documentation/ Hugo themeについて 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法ではgit submoduleコマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
-git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマのCSSを直接編集することになっているため、予期しないところで不都合は出てくるかも&amp;hellip;? [repo_base]/themes/cupper-theme/assets/css/template-styles.css
-Syntax Highlighting Cupperで採用されているものがモノトーンであまり好みでなかったため、Hugoのデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScriptを減らしたかったため削除。
-SNS関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
-Hugoで作ったサイトにシェアボタンを足した | AABrain
-GitのコミットログからLast Modifyを記事に反映  configにenableGitInfo = trueを追加 templateのhtmlに以下の変数を追記  {{.GitInfo.AuthorDate.Format &amp;#34;Jan 02, 2006&amp;#34;}} Shortcodes https://gohugo.io/content-management/shortcodes/ HugoのshortcodeはMarkdownだけでは表現できない表現を追加で記述するために用意されたもの。SNSや動画等の埋め込み用のshortcodeがデフォルトで用意されている。
-Twitter埋め込み(サンプル) コード例:
-{{&amp;lt; tweet 1090855037201375232 &amp;gt;}} 出力例:
-#JSAC2019 Japan Security Analyst Conference 2019 へのご来場ありがとうございました。 第一弾の開催レポートを公開しました。 ^WT https://t.co/VYFUnZUQUX
-&amp;mdash; Analysis Center (@jpcert_ac) January 31, 2019  Github Pages Hugo | Hosting on GitHub https://gohugo.</description>
+https://gohugo.io/documentation/
+Hugo theme について 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法では git submodule コマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
+git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS 編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマの CSS を直接編集することになっているため、予期しないところで不都合は出てくるかも&amp;hellip;? [repository_base]/themes/cupper-theme/assets/css/template-styles.css
+Syntax Highlighting Cupper で採用されているものがモノトーンであまり好みでなかったため、Hugo のデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScript を減らしたかったため削除。
+SNS 関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
+Hugo で作ったサイトにシェアボタンを足した | AABrain
+Git のコミットログから Last Modify を記事に反映  config に enableGitInfo = true を追加 template の html に以下の変数を追記  {{.GitInfo.AuthorDate.Format &amp;#34;Jan 02, 2006&amp;#34;}} Shortcodes https://gohugo.</description>
     </item>
     
     <item>
@@ -72,10 +68,11 @@ Twitter埋め込み(サンプル) コード例:
       <guid>https://t-tani.github.io/first-post/</guid>
       <description>    This blog will mainly written in Japanese.
 日本語で書くことが多くなる予定です。
-  このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえずHugoを使ってみたかったので、Hugoでブログを作成。備忘録として残したい。
-Hugoについて 以下の構成。  Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS用Icon)   なお、テーマについては、一部編集を加えている
-なぜHugoか Hugoイケてるよね、の一言が心に響いたため。
-今後の書いてみたいテーマ  reverse engineering tips Python coding tips secuiry tips Hugo etc.  </description>
+  このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえず Hugo を使ってみたかったので、Hugo でブログを作成。備忘録として残したい。
+Hugo について 以下の構成。
+ Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS 用 Icon)   なお、テーマについては、一部編集を加えている。
+なぜ Hugo か Hugo イケてるよね、の一言が心に響いたため。
+今後の書いてみたいテーマ  reverse engineering tips Python coding tips security tips Hugo etc.  </description>
     </item>
     
   </channel>

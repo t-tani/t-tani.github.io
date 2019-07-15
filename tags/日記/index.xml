@@ -19,10 +19,11 @@
       <guid>https://t-tani.github.io/first-post/</guid>
       <description>    This blog will mainly written in Japanese.
 日本語で書くことが多くなる予定です。
-  このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえずHugoを使ってみたかったので、Hugoでブログを作成。備忘録として残したい。
-Hugoについて 以下の構成。  Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS用Icon)   なお、テーマについては、一部編集を加えている
-なぜHugoか Hugoイケてるよね、の一言が心に響いたため。
-今後の書いてみたいテーマ  reverse engineering tips Python coding tips secuiry tips Hugo etc.  </description>
+  このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえず Hugo を使ってみたかったので、Hugo でブログを作成。備忘録として残したい。
+Hugo について 以下の構成。
+ Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS 用 Icon)   なお、テーマについては、一部編集を加えている。
+なぜ Hugo か Hugo イケてるよね、の一言が心に響いたため。
+今後の書いてみたいテーマ  reverse engineering tips Python coding tips security tips Hugo etc.  </description>
     </item>
     
   </channel>
