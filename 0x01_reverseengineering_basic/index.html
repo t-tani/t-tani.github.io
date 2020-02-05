@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.60.1" />
   <link rel="canonical" href="https://t-tani.github.io/0x01_reverseengineering_basic/">
 
   
@@ -53,18 +53,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://t-tani.github.io"
+         "@id": "https:\/\/t-tani.github.io"
     },
     "articleSection" : "post",
     "name" : "0x01:ReverseEngineering Basic2",
     "headline" : "0x01:ReverseEngineering Basic2",
-    "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
-C++の開発環境の準備 C++で書かれた PE ファイルの理解を深めるため、Windows での開発環境を整える。OS 情報は以下の通り。
- OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
-今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。
-コンパイラ コンパイラを入れるため、以下をインストール。
-Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Code の設定 TBU
-C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C++のコードをコンパイル/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。",
+    "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。\nC\x2b\x2bの開発環境の準備 C\x2b\x2bで書かれた PE ファイルの理解を深めるため、Windows での開発環境を整える。OS 情報は以下の通り。\n OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N\/A ビルド 17134  IDE Visual Studio Code : https:\/\/azure.microsoft.com\/ja-jp\/products\/visual-studio-code\/\n今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。\nコンパイラ コンパイラを入れるため、以下をインストール。\n Visual Studio Community 2017 : https:\/\/visualstudio.microsoft.com\/ja\/downloads\/  C\x2b\x2bによるデスクトップ開発   Msys2 : http:\/\/www.msys2.org\/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain    Visual Studio Code の設定 TBU\nC\x2b\x2bのクラスとリバースエンジニアリング C\x2b\x2bを逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C\x2b\x2bのコードをコンパイル\/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -72,11 +66,11 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-21 21:09:34 &#43;0900 JST",
-    "dateModified" : "2019-03-21 21:09:34 &#43;0900 JST",
-    "url" : "https://t-tani.github.io/0x01_reverseengineering_basic/",
-    "wordCount" : "1412",
-    "keywords" : [ "ReverseEngineering","C","C&#43;&#43;","Assembly","Blog" ]
+    "datePublished": "2019-03-21 21:09:34 \x2b0900 JST",
+    "dateModified" : "2019-03-21 21:09:34 \x2b0900 JST",
+    "url" : "https:\/\/t-tani.github.io\/0x01_reverseengineering_basic\/",
+    "wordCount" : "1413",
+    "keywords" : [ "ReverseEngineering","C","C\x2b\x2b","Assembly","Blog" ]
 }
 </script>
 
@@ -320,7 +314,7 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
           
           
           
-          <a href="#c-%e3%81%ae%e9%96%8b%e7%99%ba%e7%92%b0%e5%a2%83%e3%81%ae%e6%ba%96%e5%82%99">
+          <a href="#c">
             C&#43;&#43;の開発環境の準備
           </a>
         </li>
@@ -330,7 +324,7 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
           
           
           
-          <a href="#c-%e3%81%ae%e3%82%af%e3%83%a9%e3%82%b9%e3%81%a8%e3%83%aa%e3%83%90%e3%83%bc%e3%82%b9%e3%82%a8%e3%83%b3%e3%82%b8%e3%83%8b%e3%82%a2%e3%83%aa%e3%83%b3%e3%82%b0">
+          <a href="#c1">
             C&#43;&#43;のクラスとリバースエンジニアリング
           </a>
         </li>
@@ -340,7 +334,7 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
           
           
           
-          <a href="#%e5%8f%82%e8%80%83">
+          <a href="#heading4">
             参考
           </a>
         </li>
@@ -350,106 +344,85 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
 
 
   
-  
-
-<p>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。</p>
-
-<h2 id="c-の開発環境の準備">C++の開発環境の準備</h2>
-
+  <p>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。</p>
+<h2 id="c">C++の開発環境の準備</h2>
 <p>C++で書かれた PE ファイルの理解を深めるため、Windows での開発環境を整える。OS 情報は以下の通り。</p>
-
 <ul>
 <li>OS 名: Microsoft Windows 10 Pro</li>
 <li>OS バージョン: 10.0.17134 N/A ビルド 17134</li>
 </ul>
-
 <h3 id="ide">IDE</h3>
-
 <p>Visual Studio Code : <a href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/">https://azure.microsoft.com/ja-jp/products/visual-studio-code/</a></p>
-
 <p>今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。</p>
-
-<h3 id="コンパイラ">コンパイラ</h3>
-
+<h3 id="heading">コンパイラ</h3>
 <p>コンパイラを入れるため、以下をインストール。</p>
-
-<ul class="task-list">
+<ul>
 <li>Visual Studio Community 2017 : <a href="https://visualstudio.microsoft.com/ja/downloads/">https://visualstudio.microsoft.com/ja/downloads/</a>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> C++によるデスクトップ開発</label></li>
-</ul></li>
+<ul>
+<li><input checked="" disabled="" type="checkbox">C++によるデスクトップ開発</li>
+</ul>
+</li>
 <li>Msys2 : <a href="http://www.msys2.org/">http://www.msys2.org/</a>
-
 <ul>
 <li>インストールファイル : msys2-x86_64-20180531.exe</li>
 <li><code>pacman -S base-devel</code></li>
 <li><code>pacman -S mingw-w64-x86_64-toolchain</code></li>
 <li><code>pacman -S mingw-w64-i686-toolchain</code></li>
-</ul></li>
 </ul>
-
-<h3 id="visual-studio-code-の設定">Visual Studio Code の設定</h3>
-
+</li>
+</ul>
+<h3 id="visual-studio-code-">Visual Studio Code の設定</h3>
 <p>TBU</p>
-
-<h2 id="c-のクラスとリバースエンジニアリング">C++のクラスとリバースエンジニアリング</h2>
-
+<h2 id="c1">C++のクラスとリバースエンジニアリング</h2>
 <p>C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C++のコードをコンパイル/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。</p>
-
-<h3 id="クラスを含むソース-sample">クラスを含むソース（sample）</h3>
-
+<h3 id="sample">クラスを含むソース（sample）</h3>
 <ul>
 <li>sample_class.cpp</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sample_class.cpp" data-lang="sample_class.cpp"><span class="cp">#include</span> <span class="cpf">&#34;windows.h&#34;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&#34;tchar.h&#34;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+<div class="highlight"><pre class="chroma"><code class="language-sample_class.cpp" data-lang="sample_class.cpp"><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&#34;windows.h&#34;</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&#34;tchar.h&#34;</span><span class="cp">
+</span><span class="cp"></span><span class="cp">#</span><span class="cp">include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
-<span class="k">class</span><span class="err"> </span><span class="nc">Employee</span>
+<span class="k">class</span> <span class="nc">Employee</span>
 <span class="p">{</span>
   <span class="k">public</span><span class="o">:</span>
     <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">128</span><span class="p">]</span><span class="p">;</span>
     <span class="kt">long</span> <span class="n">pay</span><span class="p">;</span>
-    <span class="kt">void</span> <span class="nf">ShowData</span><span class="p">();</span>
-    <span class="kt">void</span> <span class="nf">Test</span><span class="p">();</span>
-<span class="p">};</span>
+    <span class="kt">void</span> <span class="nf">ShowData</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">Test</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
 
-<span class="kt">void</span> <span class="n">Employee</span><span class="o">::</span><span class="n">ShowData</span><span class="p">()</span>
+<span class="kt">void</span> <span class="n">Employee</span><span class="o">:</span><span class="o">:</span><span class="n">ShowData</span><span class="p">(</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;number: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;name: %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;pay: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">pay</span><span class="p">);</span>
-    <span class="n">Test</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">number: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">name: %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">pay: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">Test</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">Employee</span><span class="o">::</span><span class="n">Test</span><span class="p">()</span>
+<span class="kt">void</span> <span class="n">Employee</span><span class="o">:</span><span class="o">:</span><span class="n">Test</span><span class="p">(</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Test function</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">Test function</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
     <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">//Employee t_tani;
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[</span><span class="p">]</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">Employee</span> <span class="n">t_tani</span><span class="p">;</span>
 
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;size: %X</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Employee</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">size: %X</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Employee</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
     <span class="n">t_tani</span><span class="p">.</span><span class="n">number</span> <span class="o">=</span> <span class="mh">0x1111</span><span class="p">;</span>
-    <span class="n">_tcscpy</span><span class="p">(</span><span class="n">t_tani</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">_T</span><span class="p">(</span><span class="s">&#34;t_tani&#34;</span><span class="p">));</span>
+    <span class="n">_tcscpy</span><span class="p">(</span><span class="n">t_tani</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">_T</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">t_tani</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
     <span class="n">t_tani</span><span class="p">.</span><span class="n">pay</span> <span class="o">=</span> <span class="mh">0x100</span><span class="p">;</span>
-    <span class="n">t_tani</span><span class="p">.</span><span class="n">ShowData</span><span class="p">();</span>
+    <span class="n">t_tani</span><span class="p">.</span><span class="n">ShowData</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<h3 id="disassemble">Disassemble</h3>
-
+</code></pre></div><h3 id="disassemble">Disassemble</h3>
 <p>Disassemble には IDA Free 7.0.0.2 を利用している。</p>
-
-<h4 id="msvs2017-でコンパイル-ディスアセンブル">MSVS2017 でコンパイル -&gt; ディスアセンブル</h4>
-
+<h4 id="msvs2017---">MSVS2017 でコンパイル -&gt; ディスアセンブル</h4>
 <ul>
 <li>main()</li>
 </ul>
@@ -461,260 +434,245 @@ C++のクラスとリバースエンジニアリング C++を逆アセンブル�
      <span class="nf">var_C</span>           <span class="err">=</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="o">-</span><span class="mh">0Ch</span>
      <span class="nf">var_4</span>           <span class="err">=</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="o">-</span><span class="mi">4</span>
 
-<span class="err">55</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
+<span class="err">5</span><span class="err">5</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">EC</span>                     <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
-<span class="err">81</span> <span class="nf">EC</span> <span class="mi">94</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">94h</span>
-<span class="err">57</span>                        <span class="nf">push</span>    <span class="nb">edi</span>
+<span class="err">8</span><span class="err">1</span> <span class="nf">EC</span> <span class="mi">94</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">94h</span>
+<span class="err">5</span><span class="err">7</span>                        <span class="nf">push</span>    <span class="nb">edi</span>
 <span class="err">8</span><span class="nf">D</span> <span class="nv">BD</span> <span class="mi">6</span><span class="nv">C</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span>         <span class="nv">lea</span>     <span class="nb">edi</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_94</span><span class="p">]</span>
 <span class="nf">B9</span> <span class="mi">25</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>            <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="mh">25h</span>
 <span class="nf">B8</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span>            <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mh">0CCCCCCCCh</span>
 <span class="nf">F3</span> <span class="nv">AB</span>                     <span class="nv">rep</span>     <span class="nv">stosd</span>
 <span class="nf">A1</span> <span class="mi">04</span> <span class="mi">90</span> <span class="mi">40</span> <span class="mi">00</span>            <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="nv">___security_cookie</span>
-<span class="err">33</span> <span class="nf">C5</span>                     <span class="nv">xor</span>     <span class="nb">eax</span><span class="p">,</span> <span class="nb">ebp</span>
-<span class="err">89</span> <span class="err">45</span> <span class="nf">FC</span>                  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">eax</span>
-<span class="err">68</span> <span class="err">88</span> <span class="err">00</span> <span class="err">00</span> <span class="err">00</span>            <span class="nf">push</span>    <span class="mh">88h</span>
-<span class="err">68</span> <span class="err">64</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>            <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aSizeX</span>   <span class="c1">; &#34;size: %X\n&#34;</span>
+<span class="err">3</span><span class="err">3</span> <span class="nf">C5</span>                     <span class="nv">xor</span>     <span class="nb">eax</span><span class="p">,</span> <span class="nb">ebp</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="err">5</span> <span class="nf">FC</span>                  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">eax</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">8</span><span class="err">8</span> <span class="err">0</span><span class="err">0</span> <span class="err">0</span><span class="err">0</span> <span class="err">0</span><span class="err">0</span>            <span class="nf">push</span>    <span class="mh">88h</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">6</span><span class="err">4</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>            <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aSizeX</span>   <span class="c1">; &#34;size: %X\n&#34;</span>
 <span class="nf">E8</span> <span class="nv">ED</span> <span class="nv">FA</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">sub_401032</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>                  <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">08</span>                  <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="nf">C7</span> <span class="mi">85</span> <span class="mi">70</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="mi">11</span> <span class="mi">11</span><span class="o">+</span>  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_90</span><span class="p">],</span> <span class="mh">1111h</span>
-<span class="err">68</span> <span class="err">70</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>            <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">Source</span>   <span class="c1">; &#34;tani&#34;</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">7</span><span class="err">0</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>            <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">Source</span>   <span class="c1">; &#34;tani&#34;</span>
 <span class="err">8</span><span class="nf">D</span> <span class="mi">85</span> <span class="mi">74</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span>         <span class="nv">lea</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">Dest</span><span class="p">]</span>
-<span class="err">50</span>                        <span class="nf">push</span>    <span class="nb">eax</span>             <span class="c1">; Dest</span>
+<span class="err">5</span><span class="err">0</span>                        <span class="nf">push</span>    <span class="nb">eax</span>             <span class="c1">; Dest</span>
 <span class="nf">E8</span> <span class="mi">8</span><span class="nv">E</span> <span class="mi">34</span> <span class="mi">00</span> <span class="mi">00</span>            <span class="nv">call</span>    <span class="nv">strcpy</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>                  <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">08</span>                  <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="nf">C7</span> <span class="mi">45</span> <span class="nv">F4</span> <span class="mi">00</span> <span class="mi">01</span> <span class="mi">00</span> <span class="mi">00</span>      <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_C</span><span class="p">],</span> <span class="mh">100h</span>
 <span class="err">8</span><span class="nf">D</span> <span class="mi">8</span><span class="nv">D</span> <span class="mi">70</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span>         <span class="nv">lea</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_90</span><span class="p">]</span>
 <span class="nf">E8</span> <span class="nv">CD</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">sub_401145</span>
-<span class="err">33</span> <span class="nf">C0</span>                     <span class="nv">xor</span>     <span class="nb">eax</span><span class="p">,</span> <span class="nb">eax</span>
-<span class="err">52</span>                        <span class="nf">push</span>    <span class="nb">edx</span>
+<span class="err">3</span><span class="err">3</span> <span class="nf">C0</span>                     <span class="nv">xor</span>     <span class="nb">eax</span><span class="p">,</span> <span class="nb">eax</span>
+<span class="err">5</span><span class="err">2</span>                        <span class="nf">push</span>    <span class="nb">edx</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">CD</span>                     <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="nb">ebp</span>
-<span class="err">50</span>                        <span class="nf">push</span>    <span class="nb">eax</span>
+<span class="err">5</span><span class="err">0</span>                        <span class="nf">push</span>    <span class="nb">eax</span>
 <span class="err">8</span><span class="nf">D</span> <span class="mi">15</span> <span class="nv">A8</span> <span class="mi">15</span> <span class="mi">40</span> <span class="mi">00</span>         <span class="nv">lea</span>     <span class="nb">edx</span><span class="p">,</span> <span class="kt">dword</span><span class="nv">_4015A8</span>
 <span class="nf">E8</span> <span class="nv">E4</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">sub_40116D</span>
-<span class="err">58</span>                        <span class="nf">pop</span>     <span class="nb">eax</span>
+<span class="err">5</span><span class="err">8</span>                        <span class="nf">pop</span>     <span class="nb">eax</span>
 <span class="err">5</span><span class="nf">A</span>                        <span class="nv">pop</span>     <span class="nb">edx</span>
 <span class="err">5</span><span class="nf">F</span>                        <span class="nv">pop</span>     <span class="nb">edi</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">4</span><span class="nv">D</span> <span class="nv">FC</span>                  <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
-<span class="err">33</span> <span class="nf">CD</span>                     <span class="nv">xor</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="nb">ebp</span>
+<span class="err">3</span><span class="err">3</span> <span class="nf">CD</span>                     <span class="nv">xor</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="nb">ebp</span>
 <span class="nf">E8</span> <span class="mi">91</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">j_@__security_check_cookie@4</span> <span class="c1">; __security_check_cookie(x)</span>
-<span class="err">81</span> <span class="nf">C4</span> <span class="mi">94</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">94h</span>
+<span class="err">8</span><span class="err">1</span> <span class="nf">C4</span> <span class="mi">94</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">94h</span>
 <span class="err">3</span><span class="nf">B</span> <span class="nv">EC</span>                     <span class="nv">cmp</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
 <span class="nf">E8</span> <span class="nv">AC</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">sub_40114F</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">E5</span>                     <span class="nv">mov</span>     <span class="nb">esp</span><span class="p">,</span> <span class="nb">ebp</span>
 <span class="err">5</span><span class="nf">D</span>                        <span class="nv">pop</span>     <span class="nb">ebp</span>
 <span class="nf">C3</span>                        <span class="nv">retn</span>
-          <span class="nf">sub_401510</span>      <span class="nv">endp</span></code></pre></div>
-<ul>
+          <span class="nf">sub_401510</span>      <span class="nv">endp</span>
+</code></pre></div><ul>
 <li>Employee::ShowData(void)</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-show.asm" data-lang="show.asm">     <span class="nf">sub_401470</span>      <span class="nv">proc</span> <span class="nv">near</span>               <span class="c1">; CODE XREF: sub_401145↑j</span>
 
      <span class="nf">var_4</span>           <span class="err">=</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="o">-</span><span class="mi">4</span>
 
-<span class="err">55</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
+<span class="err">5</span><span class="err">5</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">EC</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
-<span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
+<span class="err">5</span><span class="err">1</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
 <span class="nf">C7</span> <span class="mi">45</span> <span class="nv">FC</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span>  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="mh">0CCCCCCCCh</span>
-<span class="err">89</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">ecx</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">ecx</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">08</span>                 <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="p">]</span>
-<span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
-<span class="err">68</span> <span class="err">30</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNumberD</span> <span class="c1">; &#34;number: %d\n&#34;</span>
+<span class="err">5</span><span class="err">1</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">3</span><span class="err">0</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNumberD</span> <span class="c1">; &#34;number: %d\n&#34;</span>
 <span class="nf">E8</span> <span class="nv">A4</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">55</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">edx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
-<span class="err">83</span> <span class="nf">C2</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">edx</span><span class="p">,</span> <span class="mi">4</span>
-<span class="err">52</span>                    <span class="nf">push</span>    <span class="nb">edx</span>
-<span class="err">68</span> <span class="err">3</span><span class="nf">C</span> <span class="mi">6</span><span class="nv">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNameS</span>   <span class="c1">; &#34;name: %s\n&#34;</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C2</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">edx</span><span class="p">,</span> <span class="mi">4</span>
+<span class="err">5</span><span class="err">2</span>                    <span class="nf">push</span>    <span class="nb">edx</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">3</span><span class="nf">C</span> <span class="mi">6</span><span class="nv">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNameS</span>   <span class="c1">; &#34;name: %s\n&#34;</span>
 <span class="nf">E8</span> <span class="mi">90</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">88</span> <span class="mi">84</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>     <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="o">+</span><span class="mh">84h</span><span class="p">]</span>
-<span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
-<span class="err">68</span> <span class="err">48</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aPayD</span>    <span class="c1">; &#34;pay: %d\n&#34;</span>
+<span class="err">5</span><span class="err">1</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">4</span><span class="err">8</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aPayD</span>    <span class="c1">; &#34;pay: %d\n&#34;</span>
 <span class="nf">E8</span> <span class="mi">79</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">4</span><span class="nv">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="nf">E8</span> <span class="nv">E5</span> <span class="nv">FC</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_4011A9</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">4</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">4</span>
 <span class="err">3</span><span class="nf">B</span> <span class="nv">EC</span>                 <span class="nv">cmp</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
 <span class="nf">E8</span> <span class="mi">81</span> <span class="nv">FC</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_40114F</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">E5</span>                 <span class="nv">mov</span>     <span class="nb">esp</span><span class="p">,</span> <span class="nb">ebp</span>
 <span class="err">5</span><span class="nf">D</span>                    <span class="nv">pop</span>     <span class="nb">ebp</span>
 <span class="nf">C3</span>                    <span class="nv">retn</span>
-      <span class="nf">sub_401470</span>      <span class="nv">endp</span></code></pre></div>
-<ul>
+      <span class="nf">sub_401470</span>      <span class="nv">endp</span>
+</code></pre></div><ul>
 <li>Employee::Test(void)</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-test.asm" data-lang="test.asm">     <span class="nf">sub_4014E0</span>      <span class="nv">proc</span> <span class="nv">near</span>               <span class="c1">; CODE XREF: sub_4011A9↑j</span>
 
      <span class="nf">var_4</span>           <span class="err">=</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="o">-</span><span class="mi">4</span>
 
-<span class="err">55</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
+<span class="err">5</span><span class="err">5</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">EC</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
-<span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
+<span class="err">5</span><span class="err">1</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
 <span class="nf">C7</span> <span class="mi">45</span> <span class="nv">FC</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span> <span class="nv">CC</span>  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="mh">0CCCCCCCCh</span>
-<span class="err">89</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">ecx</span>
-<span class="err">68</span> <span class="err">54</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aTestFunction</span> <span class="c1">; &#34;Test function\n&#34;</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">ecx</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">5</span><span class="err">4</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aTestFunction</span> <span class="c1">; &#34;Test function\n&#34;</span>
 <span class="nf">E8</span> <span class="mi">3</span><span class="nv">A</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">4</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">4</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">4</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">4</span>
 <span class="err">3</span><span class="nf">B</span> <span class="nv">EC</span>                 <span class="nv">cmp</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
 <span class="nf">E8</span> <span class="mi">4</span><span class="nv">A</span> <span class="nv">FC</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_40114F</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">E5</span>                 <span class="nv">mov</span>     <span class="nb">esp</span><span class="p">,</span> <span class="nb">ebp</span>
 <span class="err">5</span><span class="nf">D</span>                    <span class="nv">pop</span>     <span class="nb">ebp</span>
 <span class="nf">C3</span>                    <span class="nv">retn</span>
-      <span class="nf">sub_4014E0</span>      <span class="nv">endp</span></code></pre></div>
-<h3 id="this-ポインターの分析">this ポインターの分析</h3>
-
+      <span class="nf">sub_4014E0</span>      <span class="nv">endp</span>
+</code></pre></div><h3 id="this-">this ポインターの分析</h3>
 <p>リバースエンジニアリングする上で構造体とクラスが持つ共通として、メモリ上でスタックサイズを増やして変数を使用する共通点がある。<code>main()</code> の以下のコードで <code>0x94</code> を積んでいるので、この関数では <code>0x94</code> バイトのデータの塊を使用することが分かり、構造体かクラスで使われることが推測される。</p>
-
 <ul>
 <li>スタックを積むコード</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">55</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
+<div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">5</span><span class="err">5</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
 <span class="err">8</span><span class="nf">B</span> <span class="nv">EC</span>                     <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
-<span class="err">81</span> <span class="nf">EC</span> <span class="mi">94</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">94h</span></code></pre></div>
-<p>次に <code>var_90</code> に着目する。以下のコードを見ると、<code>var_90</code> に直接 <code>0x1111</code> を代入している。これは、最初のメンバー変数 <code>t_tani.number = 0x1111;</code> に該当する部分である。そして、その後に <code>var_94</code> のアドレスを <code>ECX</code> に入れて関数に呼び出し <code>call</code> を行っている。通常、クラスのメンバー関数を呼び出すときには、現在のメモリの塊のポインターを <code>ECX</code> にいれて呼び出す(呼び出し規約:__thiscall)。そのため、 <code>ECX</code> に入った <code>var_90</code> が C++での this ポインターになる。</p>
-
+<span class="err">8</span><span class="err">1</span> <span class="nf">EC</span> <span class="mi">94</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">94h</span>
+</code></pre></div><p>次に <code>var_90</code> に着目する。以下のコードを見ると、<code>var_90</code> に直接 <code>0x1111</code> を代入している。これは、最初のメンバー変数 <code>t_tani.number = 0x1111;</code> に該当する部分である。そして、その後に <code>var_94</code> のアドレスを <code>ECX</code> に入れて関数に呼び出し <code>call</code> を行っている。通常、クラスのメンバー関数を呼び出すときには、現在のメモリの塊のポインターを <code>ECX</code> にいれて呼び出す(呼び出し規約:__thiscall)。そのため、 <code>ECX</code> に入った <code>var_90</code> が C++での this ポインターになる。</p>
 <ul>
 <li>main()でメンバー変数を使用する部分</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="nf">C7</span> <span class="mi">85</span> <span class="mi">70</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="mi">11</span> <span class="mi">11</span><span class="o">+</span>  <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_90</span><span class="p">],</span> <span class="mh">1111h</span>
 <span class="err">(</span><span class="nf">snip</span><span class="p">)</span>
 <span class="err">8</span><span class="nf">D</span> <span class="mi">8</span><span class="nv">D</span> <span class="mi">70</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span>         <span class="nv">lea</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_90</span><span class="p">]</span>
-<span class="nf">E8</span> <span class="nv">CD</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">sub_401145</span></code></pre></div>
-<p>次にメンバー関数 ShowData()を確認してみる。<code>ECX</code>に this ポインターが渡されたことを考慮して確認すると <code>ECX</code> に入ったポインターが <code>var_4</code> 変数に入り、この変数のポインターを増加させながら、クラスの変数を使用することになる。</p>
-
+<span class="nf">E8</span> <span class="nv">CD</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">sub_401145</span>
+</code></pre></div><p>次にメンバー関数 ShowData()を確認してみる。<code>ECX</code>に this ポインターが渡されたことを考慮して確認すると <code>ECX</code> に入ったポインターが <code>var_4</code> 変数に入り、この変数のポインターを増加させながら、クラスの変数を使用することになる。</p>
 <ul>
 <li>クラスの 1 番目のメンバー変数を使用部分</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">89</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">ecx</span>
+<div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">],</span> <span class="nb">ecx</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">08</span>                 <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="p">]</span>
-<span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
-<span class="err">68</span> <span class="err">30</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNumberD</span> <span class="c1">; &#34;number: %d\n&#34;</span>
-<span class="nf">E8</span> <span class="nv">A4</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span></code></pre></div>
-<p>はじめのメンバー変数は int だったため、<code>var_4</code> を <code>EDX</code> に入れて、4 バイト加算し、次の変数を指すようにしている。</p>
-
+<span class="err">5</span><span class="err">1</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">3</span><span class="err">0</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNumberD</span> <span class="c1">; &#34;number: %d\n&#34;</span>
+<span class="nf">E8</span> <span class="nv">A4</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span>
+</code></pre></div><p>はじめのメンバー変数は int だったため、<code>var_4</code> を <code>EDX</code> に入れて、4 バイト加算し、次の変数を指すようにしている。</p>
 <ul>
 <li>クラスの 2 番目のメンバー変数を使用部分</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">8</span><span class="nf">B</span> <span class="mi">55</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">edx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
-<span class="err">83</span> <span class="nf">C2</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">edx</span><span class="p">,</span> <span class="mi">4</span>
-<span class="err">52</span>                    <span class="nf">push</span>    <span class="nb">edx</span>
-<span class="err">68</span> <span class="err">3</span><span class="nf">C</span> <span class="mi">6</span><span class="nv">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNameS</span>   <span class="c1">; &#34;name: %s\n&#34;</span></code></pre></div>
-<p>次に 84h バイト加算して、変数を指している。これは 2 番目の変数が <code>char name[128]</code> であり、1 つ目のメンバー変数と 2 つ目のメンバー変数を加算(4h+80h)したものを足している。なお、80h は 10 進数で 128 である。さらに、<code>ECX</code>に this ポインターである <code>var_4</code> を渡して、関数を呼んでいる。この部分は <code>Employee::Test()</code> を呼び出す部分である。</p>
-
+<span class="err">8</span><span class="err">3</span> <span class="nf">C2</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">edx</span><span class="p">,</span> <span class="mi">4</span>
+<span class="err">5</span><span class="err">2</span>                    <span class="nf">push</span>    <span class="nb">edx</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">3</span><span class="nf">C</span> <span class="mi">6</span><span class="nv">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aNameS</span>   <span class="c1">; &#34;name: %s\n&#34;</span>
+</code></pre></div><p>次に 84h バイト加算して、変数を指している。これは 2 番目の変数が <code>char name[128]</code> であり、1 つ目のメンバー変数と 2 つ目のメンバー変数を加算(4h+80h)したものを足している。なお、80h は 10 進数で 128 である。さらに、<code>ECX</code>に this ポインターである <code>var_4</code> を渡して、関数を呼んでいる。この部分は <code>Employee::Test()</code> を呼び出す部分である。</p>
 <ul>
 <li>クラスの 3 番目のメンバー変数を使用部分</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-part.asm" data-lang="part.asm"><span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">88</span> <span class="mi">84</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>     <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="o">+</span><span class="mh">84h</span><span class="p">]</span>
-<span class="err">51</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
-<span class="err">68</span> <span class="err">48</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aPayD</span>    <span class="c1">; &#34;pay: %d\n&#34;</span>
+<span class="err">5</span><span class="err">1</span>                    <span class="nf">push</span>    <span class="nb">ecx</span>
+<span class="err">6</span><span class="err">8</span> <span class="err">4</span><span class="err">8</span> <span class="err">6</span><span class="nf">B</span> <span class="mi">40</span> <span class="mi">00</span>        <span class="nv">push</span>    <span class="nv">offset</span> <span class="nv">aPayD</span>    <span class="c1">; &#34;pay: %d\n&#34;</span>
 <span class="nf">E8</span> <span class="mi">79</span> <span class="nv">FB</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_401032</span>
-<span class="err">83</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C4</span> <span class="mi">08</span>              <span class="nv">add</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mi">8</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">4</span><span class="nv">D</span> <span class="nv">FC</span>              <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">var_4</span><span class="p">]</span>
-<span class="nf">E8</span> <span class="nv">E5</span> <span class="nv">FC</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_4011A9</span></code></pre></div>
-<p>参考までに gcc でコンパイルしたものも掲載。IDA の自動命名で非常に読みやすくしてくれている。形が変われどメンバー変数を呼び出す際には、this ポインターを <code>ECX</code> にいれて呼び出す部分には変わりなく、MSVS2017 と同じように読み進められる。</p>
-
-<h4 id="gcc-でコンパイル-ディスアセンブル">gcc でコンパイル -&gt; ディスアセンブル</h4>
-
+<span class="nf">E8</span> <span class="nv">E5</span> <span class="nv">FC</span> <span class="nv">FF</span> <span class="nv">FF</span>        <span class="nv">call</span>    <span class="nv">sub_4011A9</span>
+</code></pre></div><p>参考までに gcc でコンパイルしたものも掲載。IDA の自動命名で非常に読みやすくしてくれている。形が変われどメンバー変数を呼び出す際には、this ポインターを <code>ECX</code> にいれて呼び出す部分には変わりなく、MSVS2017 と同じように読み進められる。</p>
+<h4 id="gcc---">gcc でコンパイル -&gt; ディスアセンブル</h4>
 <ul>
 <li>main()</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-main.asm" data-lang="main.asm"><span class="err">55</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
-<span class="err">89</span> <span class="nf">E5</span>                     <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
-<span class="err">83</span> <span class="nf">E4</span> <span class="nv">F0</span>                  <span class="nv">and</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">0FFFFFFF0h</span>
-<span class="err">81</span> <span class="nf">EC</span> <span class="nv">A0</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">0A0h</span>
+<div class="highlight"><pre class="chroma"><code class="language-main.asm" data-lang="main.asm"><span class="err">5</span><span class="err">5</span>                        <span class="nf">push</span>    <span class="nb">ebp</span>
+<span class="err">8</span><span class="err">9</span> <span class="nf">E5</span>                     <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">E4</span> <span class="nv">F0</span>                  <span class="nv">and</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">0FFFFFFF0h</span>
+<span class="err">8</span><span class="err">1</span> <span class="nf">EC</span> <span class="nv">A0</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>         <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">0A0h</span>
 <span class="nf">E8</span> <span class="nv">DD</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>            <span class="nv">call</span>    <span class="nv">___main</span>
 <span class="nf">C7</span> <span class="mi">44</span> <span class="mi">24</span> <span class="mi">04</span> <span class="mi">88</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>   <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="mh">88h</span>
 <span class="nf">C7</span> <span class="mi">04</span> <span class="mi">24</span> <span class="mi">72</span> <span class="mi">90</span> <span class="mi">40</span> <span class="mi">00</span>      <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="p">],</span> <span class="nv">offset</span> <span class="nv">aSizeX</span> <span class="c1">; this</span>
 <span class="nf">E8</span> <span class="nv">C9</span> <span class="mi">62</span> <span class="mi">00</span> <span class="mi">00</span>            <span class="nv">call</span>    <span class="nv">printf</span><span class="p">(</span><span class="nb">ch</span><span class="nv">ar</span> <span class="nv">const</span><span class="o">*</span><span class="p">,</span><span class="nv">...</span><span class="p">)</span>
 <span class="nf">C7</span> <span class="mi">44</span> <span class="mi">24</span> <span class="mi">18</span> <span class="mi">11</span> <span class="mi">11</span> <span class="mi">00</span> <span class="mi">00</span>   <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mh">18h</span><span class="p">],</span> <span class="mh">1111h</span>
 <span class="err">8</span><span class="nf">D</span> <span class="mi">44</span> <span class="mi">24</span> <span class="mi">18</span>               <span class="nv">lea</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mh">18h</span><span class="p">]</span>
-<span class="err">83</span> <span class="nf">C0</span> <span class="mi">04</span>                  <span class="nv">add</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mi">4</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C0</span> <span class="mi">04</span>                  <span class="nv">add</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mi">4</span>
 <span class="nf">C7</span> <span class="mi">00</span> <span class="mi">74</span> <span class="mi">61</span> <span class="mi">6</span><span class="nv">E</span> <span class="mi">69</span>         <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">eax</span><span class="p">],</span> <span class="s">&#39;inat&#39;</span>
 <span class="nf">C6</span> <span class="mi">40</span> <span class="mi">04</span> <span class="mi">00</span>               <span class="nv">mov</span>     <span class="kt">byte</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">eax</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="mi">0</span>
 <span class="nf">C7</span> <span class="mi">84</span> <span class="mi">24</span> <span class="mi">9</span><span class="nv">C</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span><span class="o">+</span>  <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mh">9Ch</span><span class="p">],</span> <span class="mh">100h</span>
 <span class="err">8</span><span class="nf">D</span> <span class="mi">44</span> <span class="mi">24</span> <span class="mi">18</span>               <span class="nv">lea</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mh">18h</span><span class="p">]</span>
-<span class="err">89</span> <span class="nf">C1</span>                     <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="nb">eax</span>
+<span class="err">8</span><span class="err">9</span> <span class="nf">C1</span>                     <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="nb">eax</span>
 <span class="nf">E8</span> <span class="mi">3</span><span class="nv">A</span> <span class="nv">FF</span> <span class="nv">FF</span> <span class="nv">FF</span>            <span class="nv">call</span>    <span class="nv">Employee</span><span class="p">::</span><span class="nv">ShowData</span><span class="p">(</span><span class="nv">void</span><span class="p">)</span>
 <span class="nf">B8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>            <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mi">0</span>
 <span class="nf">C9</span>                        <span class="nv">leave</span>
-<span class="nf">C3</span>                        <span class="nv">retn</span></code></pre></div>
-<ul>
+<span class="nf">C3</span>                        <span class="nv">retn</span>
+</code></pre></div><ul>
 <li>Employee::Showdata(void)</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-show.asm" data-lang="show.asm"><span class="err">55</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
-<span class="err">89</span> <span class="nf">E5</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
-<span class="err">83</span> <span class="nf">EC</span> <span class="mi">28</span>              <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">28h</span>
-<span class="err">89</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">],</span> <span class="nb">ecx</span>
+<div class="highlight"><pre class="chroma"><code class="language-show.asm" data-lang="show.asm"><span class="err">5</span><span class="err">5</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
+<span class="err">8</span><span class="err">9</span> <span class="nf">E5</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">EC</span> <span class="mi">28</span>              <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">28h</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">],</span> <span class="nb">ecx</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">00</span>                 <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="p">]</span>
-<span class="err">89</span> <span class="err">44</span> <span class="err">24</span> <span class="err">04</span>           <span class="nf">mov</span>     <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="nb">eax</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="err">4</span> <span class="err">2</span><span class="err">4</span> <span class="err">0</span><span class="err">4</span>           <span class="nf">mov</span>     <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="nb">eax</span>
 <span class="nf">C7</span> <span class="mi">04</span> <span class="mi">24</span> <span class="mi">44</span> <span class="mi">90</span> <span class="mi">40</span> <span class="mi">00</span>  <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="p">],</span> <span class="nv">offset</span> <span class="nv">__format</span> <span class="c1">; &#34;number: %d\n&#34;</span>
 <span class="nf">E8</span> <span class="mi">42</span> <span class="mi">63</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="nv">call</span>    <span class="nv">printf</span><span class="p">(</span><span class="nb">ch</span><span class="nv">ar</span> <span class="nv">const</span><span class="o">*</span><span class="p">,</span><span class="nv">...</span><span class="p">)</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">]</span>
-<span class="err">83</span> <span class="nf">C0</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mi">4</span>
-<span class="err">89</span> <span class="err">44</span> <span class="err">24</span> <span class="err">04</span>           <span class="nf">mov</span>     <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="nb">eax</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">C0</span> <span class="mi">04</span>              <span class="nv">add</span>     <span class="nb">eax</span><span class="p">,</span> <span class="mi">4</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="err">4</span> <span class="err">2</span><span class="err">4</span> <span class="err">0</span><span class="err">4</span>           <span class="nf">mov</span>     <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="nb">eax</span>
 <span class="nf">C7</span> <span class="mi">04</span> <span class="mi">24</span> <span class="mi">50</span> <span class="mi">90</span> <span class="mi">40</span> <span class="mi">00</span>  <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="p">],</span> <span class="nv">offset</span> <span class="nv">aNameS</span> <span class="c1">; &#34;name: %s\n&#34;</span>
 <span class="nf">E8</span> <span class="mi">2</span><span class="nv">C</span> <span class="mi">63</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="nv">call</span>    <span class="nv">printf</span><span class="p">(</span><span class="nb">ch</span><span class="nv">ar</span> <span class="nv">const</span><span class="o">*</span><span class="p">,</span><span class="nv">...</span><span class="p">)</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">]</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">80</span> <span class="mi">84</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>     <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">eax</span><span class="o">+</span><span class="mh">84h</span><span class="p">]</span>
-<span class="err">89</span> <span class="err">44</span> <span class="err">24</span> <span class="err">04</span>           <span class="nf">mov</span>     <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="nb">eax</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="err">4</span> <span class="err">2</span><span class="err">4</span> <span class="err">0</span><span class="err">4</span>           <span class="nf">mov</span>     <span class="p">[</span><span class="nb">esp</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="nb">eax</span>
 <span class="nf">C7</span> <span class="mi">04</span> <span class="mi">24</span> <span class="mi">5</span><span class="nv">A</span> <span class="mi">90</span> <span class="mi">40</span> <span class="mi">00</span>  <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="p">],</span> <span class="nv">offset</span> <span class="nv">aPayD</span> <span class="c1">; this</span>
 <span class="nf">E8</span> <span class="mi">13</span> <span class="mi">63</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="nv">call</span>    <span class="nv">printf</span><span class="p">(</span><span class="nb">ch</span><span class="nv">ar</span> <span class="nv">const</span><span class="o">*</span><span class="p">,</span><span class="nv">...</span><span class="p">)</span>
 <span class="err">8</span><span class="nf">B</span> <span class="mi">45</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="nb">eax</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">]</span>
-<span class="err">89</span> <span class="nf">C1</span>                 <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="nb">eax</span>
+<span class="err">8</span><span class="err">9</span> <span class="nf">C1</span>                 <span class="nv">mov</span>     <span class="nb">ecx</span><span class="p">,</span> <span class="nb">eax</span>
 <span class="nf">E8</span> <span class="mi">03</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="nv">call</span>    <span class="nv">Employee</span><span class="p">::</span><span class="nv">Test</span><span class="p">(</span><span class="nv">void</span><span class="p">)</span>
-<span class="err">90</span>                    <span class="nf">nop</span>
+<span class="err">9</span><span class="err">0</span>                    <span class="nf">nop</span>
 <span class="nf">C9</span>                    <span class="nv">leave</span>
-<span class="nf">C3</span>                    <span class="nv">retn</span></code></pre></div>
-<ul>
+<span class="nf">C3</span>                    <span class="nv">retn</span>
+</code></pre></div><ul>
 <li>Employee::Test(void)</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-test.asm" data-lang="test.asm"><span class="err">55</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
-<span class="err">89</span> <span class="nf">E5</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
-<span class="err">83</span> <span class="nf">EC</span> <span class="mi">28</span>              <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">28h</span>
-<span class="err">89</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">],</span> <span class="nb">ecx</span>
+<div class="highlight"><pre class="chroma"><code class="language-test.asm" data-lang="test.asm"><span class="err">5</span><span class="err">5</span>                    <span class="nf">push</span>    <span class="nb">ebp</span>
+<span class="err">8</span><span class="err">9</span> <span class="nf">E5</span>                 <span class="nv">mov</span>     <span class="nb">ebp</span><span class="p">,</span> <span class="nb">esp</span>
+<span class="err">8</span><span class="err">3</span> <span class="nf">EC</span> <span class="mi">28</span>              <span class="nv">sub</span>     <span class="nb">esp</span><span class="p">,</span> <span class="mh">28h</span>
+<span class="err">8</span><span class="err">9</span> <span class="err">4</span><span class="nf">D</span> <span class="nv">F4</span>              <span class="nv">mov</span>     <span class="p">[</span><span class="nb">ebp</span><span class="o">+</span><span class="nv">this</span><span class="p">],</span> <span class="nb">ecx</span>
 <span class="nf">C7</span> <span class="mi">04</span> <span class="mi">24</span> <span class="mi">63</span> <span class="mi">90</span> <span class="mi">40</span> <span class="mi">00</span>  <span class="nv">mov</span>     <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">esp</span><span class="p">],</span> <span class="nv">offset</span> <span class="nv">aTestFunction</span> <span class="c1">; &#34;Test function\n&#34;</span>
 <span class="nf">E8</span> <span class="nv">F1</span> <span class="mi">62</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="nv">call</span>    <span class="nv">printf</span><span class="p">(</span><span class="nb">ch</span><span class="nv">ar</span> <span class="nv">const</span><span class="o">*</span><span class="p">,</span><span class="nv">...</span><span class="p">)</span>
-<span class="err">90</span>                    <span class="nf">nop</span>
+<span class="err">9</span><span class="err">0</span>                    <span class="nf">nop</span>
 <span class="nf">C9</span>                    <span class="nv">leave</span>
-<span class="nf">C3</span>                    <span class="nv">retn</span></code></pre></div>
-<h3 id="コンストラクターとデストラクター">コンストラクターとデストラクター</h3>
-
-<p>コンストラクターを探すときのコツとして、コンストラクターの使われ方をもとに探すと良い。コンスタクターは主に、クラスで用いる変数の初期化で使われることが多く、複数の変数をまとめて初期化するような処理があるものもあり、その周辺に <code>memset()</code> や <code>malloc()</code> などが見えた場合にはコンストラクターである可能性が非常に高い。<br />
+<span class="nf">C3</span>                    <span class="nv">retn</span>
+</code></pre></div><h3 id="heading1">コンストラクターとデストラクター</h3>
+<p>コンストラクターを探すときのコツとして、コンストラクターの使われ方をもとに探すと良い。コンスタクターは主に、クラスで用いる変数の初期化で使われることが多く、複数の変数をまとめて初期化するような処理があるものもあり、その周辺に <code>memset()</code> や <code>malloc()</code> などが見えた場合にはコンストラクターである可能性が非常に高い。<br>
 デストラクターは通常コードの最後に位置するものであり、呼び出し前に <code>ECX</code> をクラスのオブジェクトポインターへ入れる。関数の中では、Close 関連の呼び出されることが多いため、そのように判断すると良い。</p>
-
-<h3 id="カプセル化">カプセル化</h3>
-
+<h3 id="heading2">カプセル化</h3>
 <p>カプセル化された関数を呼ぶ際に、<code>ECX</code>にオブジェクトポインターを入れてから関数を呼ぶ点は他のメンバー関数の呼び出しと同じだが、一般のメンバー関数であるか、private 関数であるかの判別する方法はないため、区別することはほとんど不可能。</p>
-
-<h3 id="ポリモフィズム">ポリモフィズム</h3>
-
+<h3 id="heading3">ポリモフィズム</h3>
 <p>ポリモフィズムのバイナリには特徴がある。仮想関数は一般的な関数が作成される方法とは異なり、別途テーブルが作成される。このテーブルの情報はコンストラクターとデストラクターでも管理される。このテーブルは <code>.rdata</code> セクションに保存される。</p>
-
-<h2 id="参考">参考</h2>
-
+<h2 id="heading4">参考</h2>
 <ul>
 <li>リバースエンジニアリングバイブル コード再創造の美学
-
 <ul>
 <li><a href="https://book.impress.co.jp/books/1113101030">https://book.impress.co.jp/books/1113101030</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Visual Studio のインストール | Microsoft Docs
-
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017">https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017</a></li>
-</ul></li>
+</ul>
+</li>
 <li>MSYS2/MinGW-w64 (64bit/32bit) インストール手順メモ
-
 <ul>
 <li><a href="https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d">https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 </main>
@@ -770,7 +728,7 @@ disqusComments.style.display = 'block';
 
           <footer role="contentinfo">
   
-    Twitter: <a href="https://twitter.com/t0nny_t">t-tani</a>. Github: <a href="https://github.com/t-tani">t-tani</a>
+    Twitter: <a href="https://twitter.com/_t_tani">t-tani</a>. Github: <a href="https://github.com/t-tani">t-tani</a>
   
 </footer>
 

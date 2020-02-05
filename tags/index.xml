@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on t-tani blog</title>
@@ -39,20 +39,20 @@
     </item>
     
     <item>
+      <title>ReverseEngineering</title>
+      <link>https://t-tani.github.io/tags/reverseengineering/</link>
+      <pubDate>Thu, 21 Mar 2019 21:09:34 +0900</pubDate>
+      
+      <guid>https://t-tani.github.io/tags/reverseengineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo</title>
       <link>https://t-tani.github.io/tags/hugo/</link>
       <pubDate>Sun, 17 Mar 2019 15:15:20 +0900</pubDate>
       
       <guid>https://t-tani.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reverseengineering</title>
-      <link>https://t-tani.github.io/tags/reverseengineering/</link>
-      <pubDate>Thu, 21 Mar 2019 21:09:34 +0900</pubDate>
-      
-      <guid>https://t-tani.github.io/tags/reverseengineering/</guid>
       <description></description>
     </item>
     

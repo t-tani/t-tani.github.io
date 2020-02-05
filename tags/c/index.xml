@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on t-tani blog</title>
@@ -22,7 +22,7 @@ C++の開発環境の準備 C++で書かれた PE ファイルの理解を深め
  OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
 今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。
 コンパイラ コンパイラを入れるため、以下をインストール。
-Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Code の設定 TBU
+ Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/  C++によるデスクトップ開発   Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain    Visual Studio Code の設定 TBU
 C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C++のコードをコンパイル/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。</description>
     </item>
     
@@ -39,7 +39,7 @@ ECX (Count register) ループを実行するときのカウントに利用す�
 EBX (Base register) 特定の目的を持って作られたレジスタではない。ECX,EDX,ECX が足りない場合に利用される。データのポインターとして使われることが多い。
 インデックスレジスタ ESI(Source Index register),EDI(Destination Index register) 主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレやディスティネーションアドレスを入れることが多い。
 セグメントレジスタ メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。
-CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラー命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -&amp;gt; DebugBreak()  CMP,JMP: 比較してジャンプする命令  C 言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</description>
+CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラー命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -&amp;gt; DebugBreak()   CMP,JMP: 比較してジャンプする命令  C 言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</description>
     </item>
     
   </channel>

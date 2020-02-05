@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on t-tani blog</title>
@@ -22,7 +22,7 @@ C++の開発環境の準備 C++で書かれた PE ファイルの理解を深め
  OS 名: Microsoft Windows 10 Pro OS バージョン: 10.0.17134 N/A ビルド 17134  IDE Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/
 今まで Atom を使っていたが、日本語入力のバグに耐えきれなく乗り換え。試しに使ってみたところ、使いやすかった。
 コンパイラ コンパイラを入れるため、以下をインストール。
-Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/ C++によるデスクトップ開発  Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain   Visual Studio Code の設定 TBU
+ Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/  C++によるデスクトップ開発   Msys2 : http://www.msys2.org/  インストールファイル : msys2-x86_64-20180531.exe pacman -S base-devel pacman -S mingw-w64-x86_64-toolchain pacman -S mingw-w64-i686-toolchain    Visual Studio Code の設定 TBU
 C++のクラスとリバースエンジニアリング C++を逆アセンブルした際には、アセンブラコードにはメンバー関数であることやクラスの宣言部であることは明示されていない。メモリの使用量や関数の構造から、クラスであることを判断する必要がある。簡単な C++のコードをコンパイル/逆アセンブルして this ポインターやクラスのメンバー関数の呼び出し、メンバー変数の呼ばれ方を確認してみる。なお、MSVS2017 と GCC でコンパイルした PE ファイルを利用する。</description>
     </item>
     
@@ -39,7 +39,7 @@ ECX (Count register) ループを実行するときのカウントに利用す�
 EBX (Base register) 特定の目的を持って作られたレジスタではない。ECX,EDX,ECX が足りない場合に利用される。データのポインターとして使われることが多い。
 インデックスレジスタ ESI(Source Index register),EDI(Destination Index register) 主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレやディスティネーションアドレスを入れることが多い。
 セグメントレジスタ メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。
-CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラー命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -&amp;gt; DebugBreak()  CMP,JMP: 比較してジャンプする命令  C 言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</description>
+CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラー命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -&amp;gt; DebugBreak()   CMP,JMP: 比較してジャンプする命令  C 言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</description>
     </item>
     
     <item>
@@ -55,9 +55,8 @@ https://gohugo.io/documentation/
 Hugo theme について 今回はCupperを採用した。比較的シンプルでレスポンシブデザインであったことが決め手。公式ドキュメント上のインストール方法では git submodule コマンドでインストールとなっていたが、自分で使うときは他のリソースと一括で管理したかったため、git cloneで行った。
 git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme CSS 編集 テーマの細かいところを編集するために以下のファイルを書き換えている。テーマの CSS を直接編集することになっているため、予期しないところで不都合は出てくるかも&amp;hellip;? [repository_base]/themes/cupper-theme/assets/css/template-styles.css
 Syntax Highlighting Cupper で採用されているものがモノトーンであまり好みでなかったため、Hugo のデフォルトのものに変更した。もともとはprism.jsが使われていたが、JavaScript を減らしたかったため削除。
-SNS 関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。
-Hugo で作ったサイトにシェアボタンを足した | AABrain
-Git のコミットログから Last Modify を記事に反映  config に enableGitInfo = true を追加 template の html に以下の変数を追記  {{.GitInfo.AuthorDate.Format &amp;#34;Jan 02, 2006&amp;#34;}} Shortcodes https://gohugo.</description>
+SNS 関連ボタンの追加 以下のサイトを参考に作成。非常に参考になった。Hugo で作ったサイトにシェアボタンを足した | AABrain
+Git のコミットログから Last Modify を記事に反映  config に enableGitInfo = true を追加 template の html に以下の変数を追記  {{.GitInfo.AuthorDate.Format &amp;#34;Jan 02, 2006&amp;#34;}} Shortcodes https://gohugo.io/content-management/shortcodes/ Hugo の shortcodes は Markdown だけでは表現できない表現を追加で記述するために用意されたもの。SNS や動画等の埋め込み用の shortcodes がデフォルトで用意されている。</description>
     </item>
     
     <item>
@@ -66,11 +65,10 @@ Git のコミットログから Last Modify を記事に反映  config に enabl
       <pubDate>Sun, 10 Mar 2019 14:07:30 +0900</pubDate>
       
       <guid>https://t-tani.github.io/first-post/</guid>
-      <description>    This blog will mainly written in Japanese.
-日本語で書くことが多くなる予定です。
-  このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえず Hugo を使ってみたかったので、Hugo でブログを作成。備忘録として残したい。
+      <description>This blog will mainly written in Japanese.日本語で書くことが多くなる予定です。
+このブログについて 日々の勉強のログや、感じたことをここに書いていく。とりあえず Hugo を使ってみたかったので、Hugo でブログを作成。備忘録として残したい。
 Hugo について 以下の構成。
- Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS 用 Icon)   なお、テーマについては、一部編集を加えている。
+ Hugo Static Site Generator v0.54.0 cupper-hugo-theme Google Fonts (Noto Sans JP, Orbitron) Font Awesome (SNS 用 Icon)  なお、テーマについては、一部編集を加えている。
 なぜ Hugo か Hugo イケてるよね、の一言が心に響いたため。
 今後の書いてみたいテーマ  reverse engineering tips Python coding tips security tips Hugo etc.  </description>
     </item>

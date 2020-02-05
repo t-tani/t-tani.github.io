@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.60.1" />
   <link rel="canonical" href="https://t-tani.github.io/0x00_reverseengineering_basic/">
 
   
@@ -53,19 +53,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https://t-tani.github.io"
+         "@id": "https:\/\/t-tani.github.io"
     },
     "articleSection" : "post",
     "name" : "0x00:ReverseEngineering Basic1",
     "headline" : "0x00:ReverseEngineering Basic1",
-    "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。
-主要なレジスタ(X86) GPR (general-purpose register) EAX (Accumulator register) 一番よく使われる変数。算術演算、戻り値で利用される。
-EDX (Data register) 一種の変数。さまざま演算の用途で利用される。基本的な役割は EAX と同じだが、戻り値に 利用できない 。
-ECX (Count register) ループを実行するときのカウントに利用する。for 文の int i みたいなもの。ただし、通常 i++ ではなく、事前にループ回数を ECX に格納し i-- のような減算処理し ECX が 0 になるまでカウントする形で使われる。変数と使用しても問題ない。
-EBX (Base register) 特定の目的を持って作られたレジスタではない。ECX,EDX,ECX が足りない場合に利用される。データのポインターとして使われることが多い。
-インデックスレジスタ ESI(Source Index register),EDI(Destination Index register) 主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレやディスティネーションアドレスを入れることが多い。
-セグメントレジスタ メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。
-CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラー命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i++と同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -&gt; DebugBreak()  CMP,JMP: 比較してジャンプする命令  C 言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。",
+    "description" : "自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。\n主要なレジスタ(X86) GPR (general-purpose register) EAX (Accumulator register) 一番よく使われる変数。算術演算、戻り値で利用される。\nEDX (Data register) 一種の変数。さまざま演算の用途で利用される。基本的な役割は EAX と同じだが、戻り値に 利用できない 。\nECX (Count register) ループを実行するときのカウントに利用する。for 文の int i みたいなもの。ただし、通常 i\x2b\x2b ではなく、事前にループ回数を ECX に格納し i-- のような減算処理し ECX が 0 になるまでカウントする形で使われる。変数と使用しても問題ない。\nEBX (Base register) 特定の目的を持って作られたレジスタではない。ECX,EDX,ECX が足りない場合に利用される。データのポインターとして使われることが多い。\nインデックスレジスタ ESI(Source Index register),EDI(Destination Index register) 主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレやディスティネーションアドレスを入れることが多い。\nセグメントレジスタ メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。\nCS\/DS\/SS\/ES  CS (code segment):命令フェッチ DS (data segment): データの読み書き SS (stack segment): スタックへのアクセス ES (extra segment): データの読み書き  主要なアセンブラー命令 データ移送  PUSH: スタックに値を入れる命令 POP: スタックの値を取得する命令 MOV: 値を入れる命令 LEA: アドレスを入れる命令  算術論理演算  ADD: ソースからディスティネーションに値を加算する命令 SUB: ソースからディスティネーションに値を減算する命令 INC: i\x2b\x2bと同じ DEC: i--と同じ AND,OR,XOR: そのまま  制御  CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令 NOP: 何もしない命令 INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う  例) 0xCC INT 3 -\x26gt; DebugBreak()   CMP,JMP: 比較してジャンプする命令  C 言語の逆アセンブル リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には CALL される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。",
     "inLanguage" : "en-US",
     "author" : "",
     "creator" : "",
@@ -73,9 +66,9 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-17 15:38:57 &#43;0900 JST",
-    "dateModified" : "2019-03-17 15:38:57 &#43;0900 JST",
-    "url" : "https://t-tani.github.io/0x00_reverseengineering_basic/",
+    "datePublished": "2019-03-17 15:38:57 \x2b0900 JST",
+    "dateModified" : "2019-03-17 15:38:57 \x2b0900 JST",
+    "url" : "https:\/\/t-tani.github.io\/0x00_reverseengineering_basic\/",
     "wordCount" : "492",
     "keywords" : [ "ReverseEngineering","C","Assembly","Blog" ]
 }
@@ -313,7 +306,7 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
           
           
           
-          <a href="#%e4%b8%bb%e8%a6%81%e3%81%aa%e3%83%ac%e3%82%b8%e3%82%b9%e3%82%bf-x86">
+          <a href="#x86">
             主要なレジスタ(X86)
           </a>
         </li>
@@ -323,7 +316,7 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
           
           
           
-          <a href="#%e4%b8%bb%e8%a6%81%e3%81%aa%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9%e3%83%bc%e5%91%bd%e4%bb%a4">
+          <a href="#heading2">
             主要なアセンブラー命令
           </a>
         </li>
@@ -333,7 +326,7 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
           
           
           
-          <a href="#c-%e8%a8%80%e8%aa%9e%e3%81%ae%e9%80%86%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%ab">
+          <a href="#c-">
             C 言語の逆アセンブル
           </a>
         </li>
@@ -343,7 +336,7 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
           
           
           
-          <a href="#%e5%8f%82%e8%80%83">
+          <a href="#heading12">
             参考
           </a>
         </li>
@@ -353,62 +346,38 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 
 
   
-  
-
-<p>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。</p>
-
-<h2 id="主要なレジスタ-x86">主要なレジスタ(X86)</h2>
-
-<h3 id="gpr-general-purpose-register">GPR (general-purpose register)</h3>
-
+  <p>自分の備忘のためリバースエンジニアリングでバイナリを分析するときに基礎をまとめる。基本的にはリバースエンジニアリング上で必要な理解に留める。</p>
+<h2 id="x86">主要なレジスタ(X86)</h2>
+<h3 id="gpr-generalpurpose-register">GPR (general-purpose register)</h3>
 <h4 id="eax-accumulator-register">EAX (Accumulator register)</h4>
-
 <p>一番よく使われる変数。算術演算、戻り値で利用される。</p>
-
 <h4 id="edx-data-register">EDX (Data register)</h4>
-
 <p>一種の変数。さまざま演算の用途で利用される。基本的な役割は EAX と同じだが、戻り値に <strong>利用できない</strong> 。</p>
-
 <h4 id="ecx-count-register">ECX (Count register)</h4>
-
 <p>ループを実行するときのカウントに利用する。for 文の <code>int i</code> みたいなもの。ただし、通常 <code>i++</code> ではなく、事前にループ回数を <code>ECX</code> に格納し <code>i--</code> のような減算処理し <code>ECX</code> が 0 になるまでカウントする形で使われる。変数と使用しても問題ない。</p>
-
 <h4 id="ebx-base-register">EBX (Base register)</h4>
-
 <p>特定の目的を持って作られたレジスタではない。ECX,EDX,ECX が足りない場合に利用される。データのポインターとして使われることが多い。</p>
-
-<h3 id="インデックスレジスタ">インデックスレジスタ</h3>
-
-<h4 id="esi-source-index-register-edi-destination-index-register">ESI(Source Index register),EDI(Destination Index register)</h4>
-
+<h3 id="heading">インデックスレジスタ</h3>
+<h4 id="esisource-index-registeredidestination-index-register">ESI(Source Index register),EDI(Destination Index register)</h4>
 <p>主に文字列やデータ処理、繰り返しの処理、メモリの内容の移動に使われる。ソースアドレやディスティネーションアドレスを入れることが多い。</p>
-
-<h3 id="セグメントレジスタ">セグメントレジスタ</h3>
-
+<h3 id="heading1">セグメントレジスタ</h3>
 <p>メモリアクセスの種類に応じて暗黙のうちにセグメントレジスタが選択される。</p>
-
-<h4 id="cs-ds-ss-es">CS/DS/SS/ES</h4>
-
+<h4 id="csdssses">CS/DS/SS/ES</h4>
 <ul>
 <li>CS (code segment):命令フェッチ</li>
 <li>DS (data segment): データの読み書き</li>
 <li>SS (stack segment): スタックへのアクセス</li>
 <li>ES (extra segment): データの読み書き</li>
 </ul>
-
-<h2 id="主要なアセンブラー命令">主要なアセンブラー命令</h2>
-
-<h3 id="データ移送">データ移送</h3>
-
+<h2 id="heading2">主要なアセンブラー命令</h2>
+<h3 id="heading3">データ移送</h3>
 <ul>
 <li>PUSH: スタックに値を入れる命令</li>
 <li>POP: スタックの値を取得する命令</li>
 <li>MOV: 値を入れる命令</li>
 <li>LEA: アドレスを入れる命令</li>
 </ul>
-
-<h3 id="算術論理演算">算術論理演算</h3>
-
+<h3 id="heading4">算術論理演算</h3>
 <ul>
 <li>ADD: ソースからディスティネーションに値を加算する命令</li>
 <li>SUB: ソースからディスティネーションに値を減算する命令</li>
@@ -416,28 +385,21 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 <li>DEC: <code>i--</code>と同じ</li>
 <li>AND,OR,XOR: そのまま</li>
 </ul>
-
-<h3 id="制御">制御</h3>
-
+<h3 id="heading5">制御</h3>
 <ul>
 <li>CALL: 関数(サブルーチン)を呼び出し、戻りアドレスをスタック上にプッシュする命令</li>
 <li>NOP: 何もしない命令</li>
 <li>INT: 割り込みを発生させる命令、後ろに付くオペランドの数字によって異なる処理を行う
-
 <ul>
 <li>例) 0xCC INT 3 -&gt; DebugBreak()</li>
-</ul></li>
+</ul>
+</li>
 <li>CMP,JMP: 比較してジャンプする命令</li>
 </ul>
-
-<h2 id="c-言語の逆アセンブル">C 言語の逆アセンブル</h2>
-
+<h2 id="c-">C 言語の逆アセンブル</h2>
 <p>リバースエンジニアリングにおいて、各関数がどのような役割を持っているか把握することが重要である。最終的には <code>CALL</code> される関数がどのような引数を取り、どのような処理をするかを解明して行けるようにする。</p>
-
-<h3 id="関数の基本的な構造">関数の基本的な構造</h3>
-
-<h4 id="始まり方">始まり方</h4>
-
+<h3 id="heading6">関数の基本的な構造</h3>
+<h4 id="heading7">始まり方</h4>
 
 
 
@@ -447,14 +409,11 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 8B EC<span class='highlight'>mov ebp, esp</span>
 </code></div>
 
-
 <ol>
 <li>これまでのベースアドレスをスタックに保存</li>
 <li>現在のスタックポインタアドレスを EBP に入れ、新たなスタックのベースアドレスにする</li>
 </ol>
-
-<h4 id="終わり方">終わり方</h4>
-
+<h4 id="heading8">終わり方</h4>
 
 
 
@@ -464,14 +423,11 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 5D<span class='highlight'>pop ebp</span>
 </code></div>
 
-
 <ol>
 <li>ベースアドレスをスタックポインター ESP へ入れる</li>
 <li>保存していたベースアドレスをスタックから取り出す、もとのスタックに戻る</li>
 </ol>
-
-<h4 id="スタックを使う関数の始まり">スタックを使う関数の始まり</h4>
-
+<h4 id="heading9">スタックを使う関数の始まり</h4>
 
 
 
@@ -482,15 +438,11 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 83 EC 50<span class='highlight'>sub esp, 50h</span>
 </code></div>
 
-
 <ol>
 <li>50h のサイズをローカル変数のスタックとして利用する。</li>
 </ol>
-
-<h3 id="代表的な関数の呼び出し規約">代表的な関数の呼び出し規約</h3>
-
+<h3 id="heading10">代表的な関数の呼び出し規約</h3>
 <h4 id="cdecl">__cdecl</h4>
-
 <ul>
 <li>インテル x86 ベースのシステム上の C/C++で使われることが多い</li>
 <li>関数への引数は右から左の順でスタックに積まれる</li>
@@ -498,36 +450,30 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 <li>呼び出された側の関数では EAX, ECX, EDX のレジスタの元の値を保存することなく使用してよい</li>
 <li>呼び出し側の関数では必要ならば呼び出す前にそれらのレジスタをスタック上などに保存する</li>
 <li><strong>スタックポインターの処理は呼び出し側で行う</strong>
-
 <ul>
 <li>スタックポインターの値を引数を積む前の値に戻す処理</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h4 id="stdcall">__stdcall</h4>
-
 <ul>
 <li>主に Win32 API におけるデファクトスタンダード</li>
 <li>関数への引数は右から左の順でスタックに積まれる</li>
 <li>関数の戻り値は EAX に格納される</li>
 <li><strong>関数内でスタックポインターの処理を行う</strong>
-
 <ul>
 <li>スタックポインターの値を引数を積む前の値に戻す処理</li>
 <li><code>retn 8</code> のような形で関数が終わる</li>
 <li>ただし、引数が可変長のときは、<strong>スタックポインターの処理は呼び出し側で行う</strong></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h4 id="fastcall">__fastcall</h4>
-
 <ul>
 <li>高速処理をしたいときに利用</li>
 <li>関数のパラメーターが 2 つ以下の場合、<code>push</code>を使用せず、ECX レジスタ,EDX レジスタを利用</li>
 </ul>
-
 <h4 id="thiscall">__thiscall</h4>
-
 <ul>
 <li>C++のメンバー関数を呼ぶのに用いる</li>
 <li>現在のオブジェクトポインターを ECX に渡す特徴</li>
@@ -536,41 +482,38 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
 <div class="highlight"><pre class="chroma"><code class="language-sample.c" data-lang="sample.c"><span class="n">Class</span> <span class="n">CTemp</span>
 <span class="p">{</span>
   <span class="nl">public</span><span class="p">:</span>
-    <span class="kt">int</span> <span class="n">MemberFunc</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-<span class="p">};</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-nasm:sample.asm" data-lang="nasm:sample.asm"><span class="nf">mov</span>    <span class="nb">eax</span><span class="p">,</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">14h</span><span class="p">]</span>
+    <span class="kt">int</span> <span class="n">MemberFunc</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-nasm:sample.asm" data-lang="nasm:sample.asm"><span class="nf">mov</span>    <span class="nb">eax</span><span class="p">,</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">14h</span><span class="p">]</span>
 <span class="nf">push</span>   <span class="nb">eax</span>
 <span class="nf">mov</span>    <span class="nb">edx</span><span class="p">,</span> <span class="kt">dword</span> <span class="nv">ptr</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">10h</span><span class="p">]</span>
 <span class="nf">push</span>   <span class="nb">edx</span>
 <span class="nf">lea</span>    <span class="nb">ecx</span><span class="p">,</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>     <span class="o">//</span><span class="nv">callの前にオブジェクトポインタをecxに格納</span>
-<span class="nf">call</span>   <span class="mh">402000h</span></code></pre></div>
-<h3 id="基本的な-if-文">基本的な if 文</h3>
-
+<span class="nf">call</span>   <span class="mh">402000h</span>
+</code></pre></div><h3 id="-if-">基本的な if 文</h3>
 <p>条件文のコードは <code>cmp</code> 後に <code>jnz</code> ,<code>jz</code>などで処理するため、レジスタや比較対象となっているスタックを確認することで処理を確認する。</p>
-
-<h3 id="基本的なループ">基本的なループ</h3>
-
+<h3 id="heading11">基本的なループ</h3>
 <p>以下の例は、ローカル変数の加算処理を行い <code>i++</code> 、ループ条件と比較する部分。特定の値と比較し、結果的に処理を再び行うとこを判定しているものはループだと思えば良い。</p>
 <div class="highlight"><pre class="chroma"><code class="language-nasm" data-lang="nasm"><span class="nf">mov</span>  <span class="nb">eax</span><span class="p">,[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">8</span><span class="p">]</span>
 <span class="nf">add</span>  <span class="nb">eax</span><span class="p">,</span><span class="mi">1</span>
 <span class="nf">mov</span>  <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">8</span><span class="p">],</span><span class="nb">eax</span>
 <span class="nf">cmp</span>  <span class="kt">dword</span> <span class="nv">ptr</span><span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mi">8</span><span class="p">],</span> <span class="mh">100h</span>
-<span class="nf">jg</span>   <span class="nv">short</span> <span class="nv">loc_401035</span></code></pre></div>
-<h3 id="構造体と-api-コール">構造体と API コール</h3>
-
-<p>C 言語の文法において構造体は非常に重要な要素である。プログラムを分析する際には構造体の各メンバーがどのように使用されているか確認する必要がある。リバースエンジニアリングにおいて、スタックポインターだけをみて、構造体の大きさとその API の引数にはどのようなものが入るか把握する必要がでてくる。いつスタックを確保し、確保したスタックをどのように使用したかによって、構造体がどのようなものか推定していく必要がある。<br>
+<span class="nf">jg</span>   <span class="nv">short</span> <span class="nv">loc_401035</span>
+</code></pre></div><h3 id="-api-">構造体と API コール</h3>
+<p>C 言語の文法において構造体は非常に重要な要素である。プログラムを分析する際には構造体の各メンバーがどのように使用されているか確認する必要がある。リバースエンジニアリングにおいて、スタックポインターだけをみて、構造体の大きさとその API の引数にはどのようなものが入るか把握する必要がでてくる。いつスタックを確保し、確保したスタックをどのように使用したかによって、構造体がどのようなものか推定していく必要がある。<!-- raw HTML omitted -->
 以下の例は、CreateProcess において、2 つの構造体を利用した C のコードとそのアセンブリの例。</p>
-<div class="highlight"><pre class="chroma"><code class="language-process_create.c" data-lang="process_create.c"><span class="kt">void</span> <span class="nf">RunProcess</span><span class="p">()</span>
+<div class="highlight"><pre class="chroma"><code class="language-process_create.c" data-lang="process_create.c"><span class="kt">void</span> <span class="nf">RunProcess</span><span class="p">(</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">STARTUPINFO</span> <span class="n">si</span><span class="p">;</span>
   <span class="n">PROCESS_INFORMATION</span> <span class="n">pi</span><span class="p">;</span>
 
-  <span class="n">ZeroMemory</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">si</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">));</span>
-  <span class="n">si</span><span class="p">.</span><span class="n">cb</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">);</span>
-  <span class="n">ZeroMemory</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">pi</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">pi</span><span class="p">));</span>
+  <span class="n">ZeroMemory</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">si</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">si</span><span class="p">.</span><span class="n">cb</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="p">;</span>
+  <span class="n">ZeroMemory</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">pi</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
 
   <span class="c1">// Start the child process.
 </span><span class="c1"></span>  <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">CreateProcess</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span>
-    <span class="s">&#34;ChildProcess&#34;</span><span class="p">,</span>
+    <span class="sa"></span><span class="s">&#34;</span><span class="s">ChildProcess</span><span class="s">&#34;</span><span class="p">,</span>
     <span class="nb">NULL</span><span class="p">,</span>
     <span class="nb">NULL</span><span class="p">,</span>
     <span class="n">FALSE</span><span class="p">,</span>
@@ -581,18 +524,18 @@ CS/DS/SS/ES  CS (code segment):命令フェッチ DS (data segment): データ�
     <span class="o">&amp;</span><span class="n">pi</span><span class="p">)</span>
     <span class="p">)</span>
     <span class="p">{</span>
-      <span class="n">printf</span><span class="p">(</span> <span class="s">&#34;CreateProcess failed.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+      <span class="n">printf</span><span class="p">(</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">CreateProcess failed.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
       <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="c1">// Wait until child process exit
-</span><span class="c1"></span>    <span class="n">WaitForSingleObject</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span> <span class="n">INFINITE</span> <span class="p">);</span>
+</span><span class="c1"></span>    <span class="n">WaitForSingleObject</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span><span class="p">,</span> <span class="n">INFINITE</span> <span class="p">)</span><span class="p">;</span>
 
     <span class="c1">// Close process and thread handles.
-</span><span class="c1"></span>    <span class="n">CloseHandle</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span> <span class="p">);</span>
-    <span class="n">CloseHandle</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hThread</span> <span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-
+</span><span class="c1"></span>    <span class="n">CloseHandle</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hProcess</span> <span class="p">)</span><span class="p">;</span>
+    <span class="n">CloseHandle</span><span class="p">(</span> <span class="n">pi</span><span class="p">.</span><span class="n">hThread</span> <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -647,7 +590,6 @@ pop ebp
 retn
 </code></div>
 
-
 <ol>
 <li>0×54byte 分のスタックを増加している</li>
 <li><code>ZeroMemory( &amp;si, sizeof(si));</code> に対応する部分。スタックの 0×44byte を初期化している</li>
@@ -660,20 +602,18 @@ retn
 <li>NULL リターン時のエラー処理</li>
 <li>待機後の Close ルーチン</li>
 </ol>
-
-<h2 id="参考">参考</h2>
-
+<h2 id="heading12">参考</h2>
 <ul>
 <li>リバースエンジニアリングバイブル コード再創造の美学
-
 <ul>
 <li><a href="https://book.impress.co.jp/books/1113101030">https://book.impress.co.jp/books/1113101030</a></li>
-</ul></li>
+</ul>
+</li>
 <li>コンピューターの構成と設計第 5 版上
-
 <ul>
 <li><a href="https://www.nikkeibp.co.jp/atclpubmkt/book/14/P98420/">https://www.nikkeibp.co.jp/atclpubmkt/book/14/P98420/</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 </main>
@@ -729,7 +669,7 @@ disqusComments.style.display = 'block';
 
           <footer role="contentinfo">
   
-    Twitter: <a href="https://twitter.com/t0nny_t">t-tani</a>. Github: <a href="https://github.com/t-tani">t-tani</a>
+    Twitter: <a href="https://twitter.com/_t_tani">t-tani</a>. Github: <a href="https://github.com/t-tani">t-tani</a>
   
 </footer>
 
