@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ReverseEngineering Basic2 | t-tani.github.io</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="description" content="アセンブリを読むために必要な基礎知識まとめ Part2">
+    <link rel="preload" href="/assets/css/0.styles.a1f7ff80.css" as="style"><link rel="preload" href="/assets/js/app.be208ac3.js" as="script"><link rel="preload" href="/assets/js/2.037959b1.js" as="script"><link rel="preload" href="/assets/js/11.aa906999.js" as="script"><link rel="prefetch" href="/assets/js/10.aecebeac.js"><link rel="prefetch" href="/assets/js/12.9db0985d.js"><link rel="prefetch" href="/assets/js/13.c7160623.js"><link rel="prefetch" href="/assets/js/14.bacbeb27.js"><link rel="prefetch" href="/assets/js/3.8368e85f.js"><link rel="prefetch" href="/assets/js/4.0670ce14.js"><link rel="prefetch" href="/assets/js/5.1dd7fb0e.js"><link rel="prefetch" href="/assets/js/6.75621576.js"><link rel="prefetch" href="/assets/js/7.a5c83b5f.js"><link rel="prefetch" href="/assets/js/8.a17a80aa.js"><link rel="prefetch" href="/assets/js/9.7800b603.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a1f7ff80.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">t-tani.github.io</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/posts/" class="nav-link">
+  Posts
+</a></div><div class="nav-item"><a href="/publications/" class="nav-link">
+  Publications
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/posts/" class="nav-link">
+  Posts
+</a></div><div class="nav-item"><a href="/publications/" class="nav-link">
+  Publications
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>ReverseEngineering Basic2</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/2019/03/21/reverseengineeringbasic2/#c-のクラスとリバースエンジニアリング" class="sidebar-link">C++のクラスとリバースエンジニアリング</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/2019/03/21/reverseengineeringbasic2/#分析するpeバイナリのソースコード" class="sidebar-link">分析するPEバイナリのソースコード</a></li><li class="sidebar-sub-header"><a href="/2019/03/21/reverseengineeringbasic2/#disassemble" class="sidebar-link">Disassemble</a></li><li class="sidebar-sub-header"><a href="/2019/03/21/reverseengineeringbasic2/#thisポインターの分析" class="sidebar-link">thisポインターの分析</a></li></ul></li><li><a href="/2019/03/21/reverseengineeringbasic2/#コンパイラによる違い" class="sidebar-link">コンパイラによる違い</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/2019/03/21/reverseengineeringbasic2/#補足-c-の開発環境の準備" class="sidebar-link">補足: C++の開発環境の準備</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/2019/03/21/reverseengineeringbasic2/#ide" class="sidebar-link">IDE</a></li><li class="sidebar-sub-header"><a href="/2019/03/21/reverseengineeringbasic2/#コンパイラ" class="sidebar-link">コンパイラ</a></li></ul></li><li><a href="/2019/03/21/reverseengineeringbasic2/#参考" class="sidebar-link">参考</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="reverseengineering-basic2"><a href="#reverseengineering-basic2" class="header-anchor">#</a> ReverseEngineering Basic2</h1> <div data-v-bcf650bc>
+  Tags:
+  <a href="/tags.html#ReverseEngineering" class="tag" data-v-bcf650bc>
+    ReverseEngineering
+  </a><a href="/tags.html#C" class="tag" data-v-bcf650bc>
+    C
+  </a><a href="/tags.html#C++" class="tag" data-v-bcf650bc>
+    C++
+  </a><a href="/tags.html#Assembly" class="tag" data-v-bcf650bc>
+    Assembly
+  </a></div> <p>C++のプログラムを読むために必要となる基礎知識をまとめる。</p> <h2 id="c-のクラスとリバースエンジニアリング"><a href="#c-のクラスとリバースエンジニアリング" class="header-anchor">#</a> C++のクラスとリバースエンジニアリング</h2> <p>C++で作成した実行バイナリを逆アセンブルしても、コードにはメンバー関数であることやクラスの宣言部であることは明示されない。そのため、スタックの使用状況や関数の構造から、クラスを構成する構造体を判別する必要がある。ここでは簡単なC++のコードをコンパイル/逆アセンブルしてthisポインターやクラスのメンバー関数の呼び出し、メンバー変数へのアクセスを確認する。なお、MSVS2017とGCCでコンパイルしたPEファイルを利用する。</p> <h3 id="分析するpeバイナリのソースコード"><a href="#分析するpeバイナリのソースコード" class="header-anchor">#</a> 分析するPEバイナリのソースコード</h3> <p>以下のソースコードには、簡単なクラスからのオブジェクト作成とメンバー関数、メンバー変数へのアクセスが含まれる。</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token comment">// sample.cpp</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;windows.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&quot;tchar.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">Employee</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">long</span> pay<span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">ShowData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token class-name">Employee</span><span class="token operator">::</span><span class="token function">ShowData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;number: %d\n&quot;</span><span class="token punctuation">,</span> number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;name: %s\n&quot;</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;pay: %d\n&quot;</span><span class="token punctuation">,</span> pay<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token class-name">Employee</span><span class="token operator">::</span><span class="token function">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Test function\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//Employee t_tani;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Employee t_tani<span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;size: %X\n&quot;</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>Employee<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    t_tani<span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token number">0x1111</span><span class="token punctuation">;</span>
+    <span class="token function">_tcscpy</span><span class="token punctuation">(</span>t_tani<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token function">_T</span><span class="token punctuation">(</span><span class="token string">&quot;t_tani&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    t_tani<span class="token punctuation">.</span>pay <span class="token operator">=</span> <span class="token number">0x100</span><span class="token punctuation">;</span>
+    t_tani<span class="token punctuation">.</span><span class="token function">ShowData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="disassemble"><a href="#disassemble" class="header-anchor">#</a> Disassemble</h3> <p>以下はサンプルコードをMSVC2017でコンパイルし、IDA Free 7.0.0.2で逆アセンブルした結果である。</p> <p>Main関数</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token comment">; main()</span>
+     sub_401510      proc near               <span class="token comment">; CODE XREF: sub_4011B3</span>
+
+     var_94          <span class="token operator">=</span> byte ptr <span class="token operator">-</span><span class="token number">94h</span>
+     var_90          <span class="token operator">=</span> dword ptr <span class="token operator">-</span><span class="token number">90h</span>
+     Dest            <span class="token operator">=</span> byte ptr <span class="token operator">-</span><span class="token number">8Ch</span>
+     var_C           <span class="token operator">=</span> dword ptr <span class="token operator">-</span><span class="token number">0Ch</span>
+     var_4           <span class="token operator">=</span> dword ptr <span class="token operator">-</span><span class="token number">4</span>
+
+<span class="token number">55</span>                        push    <span class="token register variable">ebp</span>
+8B EC                     mov     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+<span class="token number">81</span> EC <span class="token number">94</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>         sub     <span class="token register variable">esp</span>, <span class="token number">94h</span>
+<span class="token number">57</span>                        push    <span class="token register variable">edi</span>
+<span class="token number">8D</span> BD 6C FF FF FF         lea     <span class="token register variable">edi</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_94<span class="token operator">]</span>
+B9 <span class="token number">25</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>            mov     <span class="token register variable">ecx</span>, <span class="token number">25h</span>
+B8 CC CC CC CC            mov     <span class="token register variable">eax</span>, <span class="token number">0CCCCCCCCh</span>
+F3 AB                     rep stosd
+A1 <span class="token number">04</span> <span class="token number">90</span> <span class="token number">40</span> <span class="token number">00</span>            mov     <span class="token register variable">eax</span>, ___security_cookie
+<span class="token number">33</span> C5                     xor     <span class="token register variable">eax</span>, <span class="token register variable">ebp</span>
+<span class="token number">89</span> <span class="token number">45</span> FC                  mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>, <span class="token register variable">eax</span>
+<span class="token number">68</span> <span class="token number">88</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>            push    <span class="token number">88h</span>
+<span class="token number">68</span> <span class="token number">64</span> 6B <span class="token number">40</span> <span class="token number">00</span>            push    offset aSizeX   <span class="token comment">; &quot;size: %X\n&quot;</span>
+E8 ED FA FF FF            call    sub_401032
+<span class="token number">83</span> C4 <span class="token number">08</span>                  add     <span class="token register variable">esp</span>, <span class="token number">8</span>
+C7 <span class="token number">85</span> <span class="token number">70</span> FF FF FF <span class="token number">11</span> <span class="token number">11</span><span class="token operator">+</span>  mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_90<span class="token operator">]</span>, <span class="token number">1111h</span>
+<span class="token number">68</span> <span class="token number">70</span> 6B <span class="token number">40</span> <span class="token number">00</span>            push    offset Source   <span class="token comment">; &quot;tani&quot;</span>
+<span class="token number">8D</span> <span class="token number">85</span> <span class="token number">74</span> FF FF FF         lea     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>Dest<span class="token operator">]</span>
+<span class="token number">50</span>                        push    <span class="token register variable">eax</span>             <span class="token comment">; Dest</span>
+E8 8E <span class="token number">34</span> <span class="token number">00</span> <span class="token number">00</span>            call    strcpy
+<span class="token number">83</span> C4 <span class="token number">08</span>                  add     <span class="token register variable">esp</span>, <span class="token number">8</span>
+C7 <span class="token number">45</span> F4 <span class="token number">00</span> <span class="token number">01</span> <span class="token number">00</span> <span class="token number">00</span>      mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_C<span class="token operator">]</span>, <span class="token number">100h</span>
+<span class="token number">8D</span> <span class="token number">8D</span> <span class="token number">70</span> FF FF FF         lea     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_90<span class="token operator">]</span>
+E8 CD FB FF FF            call    sub_401145
+<span class="token number">33</span> C0                     xor     <span class="token register variable">eax</span>, <span class="token register variable">eax</span>
+<span class="token number">52</span>                        push    <span class="token register variable">edx</span>
+8B CD                     mov     <span class="token register variable">ecx</span>, <span class="token register variable">ebp</span>
+<span class="token number">50</span>                        push    <span class="token register variable">eax</span>
+<span class="token number">8D</span> <span class="token number">15</span> A8 <span class="token number">15</span> <span class="token number">40</span> <span class="token number">00</span>         lea     <span class="token register variable">edx</span>, dword_4015A8
+E8 E4 FB FF FF            call    sub_40116D
+<span class="token number">58</span>                        pop     <span class="token register variable">eax</span>
+5A                        pop     <span class="token register variable">edx</span>
+5F                        pop     <span class="token register variable">edi</span>
+8B <span class="token number">4D</span> FC                  mov     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>
+<span class="token number">33</span> CD                     xor     <span class="token register variable">ecx</span>, <span class="token register variable">ebp</span>
+E8 <span class="token number">91</span> FB FF FF            call    j_@__security_check_cookie@<span class="token number">4</span> <span class="token comment">; __security_check_cookie(x)</span>
+<span class="token number">81</span> C4 <span class="token number">94</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>         add     <span class="token register variable">esp</span>, <span class="token number">94h</span>
+3B EC                     cmp     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+E8 AC FB FF FF            call    sub_40114F
+8B E5                     mov     <span class="token register variable">esp</span>, <span class="token register variable">ebp</span>
+<span class="token number">5D</span>                        pop     <span class="token register variable">ebp</span>
+C3                        retn
+          sub_401510      endp
+</code></pre></div><p>メンバー関数 ShowData()</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token comment">; Employee::ShowData(void)</span>
+     sub_401470      proc near               <span class="token comment">; CODE XREF: sub_401145↑j</span>
+
+     var_4           <span class="token operator">=</span> dword ptr <span class="token operator">-</span><span class="token number">4</span>
+
+<span class="token number">55</span>                    push    <span class="token register variable">ebp</span>
+8B EC                 mov     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+<span class="token number">51</span>                    push    <span class="token register variable">ecx</span>
+C7 <span class="token number">45</span> FC CC CC CC CC  mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>, <span class="token number">0CCCCCCCCh</span>
+<span class="token number">89</span> <span class="token number">4D</span> FC              mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>, <span class="token register variable">ecx</span>
+8B <span class="token number">45</span> FC              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>
+8B <span class="token number">08</span>                 mov     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">]</span>
+<span class="token number">51</span>                    push    <span class="token register variable">ecx</span>
+<span class="token number">68</span> <span class="token number">30</span> 6B <span class="token number">40</span> <span class="token number">00</span>        push    offset aNumberD <span class="token comment">; &quot;number: %d\n&quot;</span>
+E8 A4 FB FF FF        call    sub_401032
+<span class="token number">83</span> C4 <span class="token number">08</span>              add     <span class="token register variable">esp</span>, <span class="token number">8</span>
+8B <span class="token number">55</span> FC              mov     <span class="token register variable">edx</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>
+<span class="token number">83</span> C2 <span class="token number">04</span>              add     <span class="token register variable">edx</span>, <span class="token number">4</span>
+<span class="token number">52</span>                    push    <span class="token register variable">edx</span>
+<span class="token number">68</span> 3C 6B <span class="token number">40</span> <span class="token number">00</span>        push    offset aNameS   <span class="token comment">; &quot;name: %s\n&quot;</span>
+E8 <span class="token number">90</span> FB FF FF        call    sub_401032
+<span class="token number">83</span> C4 <span class="token number">08</span>              add     <span class="token register variable">esp</span>, <span class="token number">8</span>
+8B <span class="token number">45</span> FC              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>
+8B <span class="token number">88</span> <span class="token number">84</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>     mov     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">+</span><span class="token number">84h</span><span class="token operator">]</span>
+<span class="token number">51</span>                    push    <span class="token register variable">ecx</span>
+<span class="token number">68</span> <span class="token number">48</span> 6B <span class="token number">40</span> <span class="token number">00</span>        push    offset aPayD    <span class="token comment">; &quot;pay: %d\n&quot;</span>
+E8 <span class="token number">79</span> FB FF FF        call    sub_401032
+<span class="token number">83</span> C4 <span class="token number">08</span>              add     <span class="token register variable">esp</span>, <span class="token number">8</span>
+8B <span class="token number">4D</span> FC              mov     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>
+E8 E5 FC FF FF        call    sub_4011A9
+<span class="token number">83</span> C4 <span class="token number">04</span>              add     <span class="token register variable">esp</span>, <span class="token number">4</span>
+3B EC                 cmp     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+E8 <span class="token number">81</span> FC FF FF        call    sub_40114F
+8B E5                 mov     <span class="token register variable">esp</span>, <span class="token register variable">ebp</span>
+<span class="token number">5D</span>                    pop     <span class="token register variable">ebp</span>
+C3                    retn
+      sub_401470      endp
+</code></pre></div><p>メンバー関数 Test()</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token comment">; Employee::Test(void)</span>
+     sub_4014E0      proc near               <span class="token comment">; CODE XREF: sub_4011A9↑j</span>
+
+     var_4           <span class="token operator">=</span> dword ptr <span class="token operator">-</span><span class="token number">4</span>
+
+<span class="token number">55</span>                    push    <span class="token register variable">ebp</span>
+8B EC                 mov     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+<span class="token number">51</span>                    push    <span class="token register variable">ecx</span>
+C7 <span class="token number">45</span> FC CC CC CC CC  mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>, <span class="token number">0CCCCCCCCh</span>
+<span class="token number">89</span> <span class="token number">4D</span> FC              mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>, <span class="token register variable">ecx</span>
+<span class="token number">68</span> <span class="token number">54</span> 6B <span class="token number">40</span> <span class="token number">00</span>        push    offset aTestFunction <span class="token comment">; &quot;Test function\n&quot;</span>
+E8 3A FB FF FF        call    sub_401032
+<span class="token number">83</span> C4 <span class="token number">04</span>              add     <span class="token register variable">esp</span>, <span class="token number">4</span>
+<span class="token number">83</span> C4 <span class="token number">04</span>              add     <span class="token register variable">esp</span>, <span class="token number">4</span>
+3B EC                 cmp     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+E8 4A FC FF FF        call    sub_40114F
+8B E5                 mov     <span class="token register variable">esp</span>, <span class="token register variable">ebp</span>
+<span class="token number">5D</span>                    pop     <span class="token register variable">ebp</span>
+C3                    retn
+      sub_4014E0      endp
+</code></pre></div><h3 id="thisポインターの分析"><a href="#thisポインターの分析" class="header-anchor">#</a> thisポインターの分析</h3> <p>リバースエンジニアリングする上で構造体とクラスが持つ共通として、メモリ上でスタックサイズを増やして変数を使用する共通点がある。<code>main()</code>の以下のコードで<code>0x94</code>を積んでいるので、この関数では<code>0x94</code>バイトのデータの塊を使用することが分かり、構造体かクラスで使われることが推測される。</p> <h4 id="main関数でスタックを確保するコード"><a href="#main関数でスタックを確保するコード" class="header-anchor">#</a> main関数でスタックを確保するコード</h4> <div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token comment">; main()</span>
+<span class="token number">55</span>                        push    <span class="token register variable">ebp</span>
+8B EC                     mov     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+<span class="token number">81</span> EC <span class="token number">94</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>         sub     <span class="token register variable">esp</span>, <span class="token number">94h</span>
+</code></pre></div><h5 id="main関数でメンバー変数を使用する部分"><a href="#main関数でメンバー変数を使用する部分" class="header-anchor">#</a> main関数でメンバー変数を使用する部分</h5> <p>次に<code>var_90</code>に着目する。以下のコードを見ると、<code>var_90</code>に直接<code>0x1111</code>を代入している。これは、最初のメンバー変数<code>t_tani.number = 0x1111;</code>に該当する部分である。そして、その後に<code>var_94</code>のアドレスを<code>ECX</code>に入れて関数に呼び出し<code>call</code>を行っている。通常、クラスのメンバー関数は__thiscallで呼び出され、オブジェクトのポインターを<code>ECX</code>にいれて呼び出す。そのため、<code>ECX</code>に入った<code>var_90</code>がC++でのthisポインターになる。</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code>C7 <span class="token number">85</span> <span class="token number">70</span> FF FF FF <span class="token number">11</span> <span class="token number">11</span><span class="token operator">+</span>  mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_90<span class="token operator">]</span>, <span class="token number">1111h</span>
+(snip)
+<span class="token number">8D</span> <span class="token number">8D</span> <span class="token number">70</span> FF FF FF         lea     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_90<span class="token operator">]</span>
+E8 CD FB FF FF            call    sub_401145
+</code></pre></div><h5 id="showdataメソッドからメンバー変数へのアクセス"><a href="#showdataメソッドからメンバー変数へのアクセス" class="header-anchor">#</a> ShowDataメソッドからメンバー変数へのアクセス</h5> <p>次にShowData()を確認してみる。<code>ECX</code>にthisポインターが渡され、thisポインターがローカル変数<code>var_4</code>へ格納される。この変数のポインターを増加させながら、クラスの変数を使用することになる。</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token operator">/</span><span class="token operator">/</span> Employee::ShowData(void)
+<span class="token number">89</span> <span class="token number">4D</span> FC              mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>, <span class="token register variable">ecx</span>   <span class="token comment">; ローカル変数var_4へthisポインターを格納</span>
+8B <span class="token number">45</span> FC              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>   <span class="token comment">; EmployeeClassで定義された第1メンバー変数へのポインターを取得</span>
+8B <span class="token number">08</span>                 mov     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">]</span>         <span class="token comment">; 第1メンバー変数の値を取得</span>
+<span class="token number">51</span>                    push    <span class="token register variable">ecx</span>
+<span class="token number">68</span> <span class="token number">30</span> 6B <span class="token number">40</span> <span class="token number">00</span>        push    offset aNumberD    <span class="token comment">; &quot;number: %d\n&quot;</span>
+E8 A4 FB FF FF        call    sub_401032
+</code></pre></div><p><code>var_4</code>を<code>EDX</code>に入れて、第1メンバー変数分オフセット4バイト加算し、次のメンバー変数を取得。</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code>8B <span class="token number">55</span> FC              mov     <span class="token register variable">edx</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>
+<span class="token number">83</span> C2 <span class="token number">04</span>              add     <span class="token register variable">edx</span>, <span class="token number">4</span>          <span class="token comment">; 第一メンバー変数のオフセット4byteを加算し、次のメンバー変数を取得</span>
+<span class="token number">52</span>                    push    <span class="token register variable">edx</span>
+<span class="token number">68</span> 3C 6B <span class="token number">40</span> <span class="token number">00</span>        push    offset aNameS   <span class="token comment">; &quot;name: %s\n&quot;</span>
+</code></pre></div><p>次に84hバイト加算して、第3のメンバー変数を取得。これは2番目の変数が<code>char name[128]</code>であり、1番目のメンバー変数と2番目のメンバー変数分のオフセット 4h+80h バイト加算したものである。さらに、<code>ECX</code>にthisポインターである<code>var_4</code>を渡して、メンバー関数を<code>Employee::Test()</code>呼んでいる。</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code>8B <span class="token number">45</span> FC              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>
+8B <span class="token number">88</span> <span class="token number">84</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>     mov     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">+</span><span class="token number">84h</span><span class="token operator">]</span>    <span class="token comment">; 第3のメンバー変数へアクセスするためオフセット84hバイトを加算</span>
+<span class="token number">51</span>                    push    <span class="token register variable">ecx</span>
+<span class="token number">68</span> <span class="token number">48</span> 6B <span class="token number">40</span> <span class="token number">00</span>        push    offset aPayD      <span class="token comment">; &quot;pay: %d\n&quot;</span>
+E8 <span class="token number">79</span> FB FF FF        call    sub_401032
+<span class="token number">83</span> C4 <span class="token number">08</span>              add     <span class="token register variable">esp</span>, <span class="token number">8</span>
+8B <span class="token number">4D</span> FC              mov     <span class="token register variable">ecx</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>var_4<span class="token operator">]</span>  <span class="token comment">; thisポインターをECXへ格納</span>
+E8 E5 FC FF FF        call    sub_4011A9        <span class="token comment">; Employee::Test()の呼び出し</span>
+</code></pre></div><h2 id="コンパイラによる違い"><a href="#コンパイラによる違い" class="header-anchor">#</a> コンパイラによる違い</h2> <p>参考までにgccでコンパイル -&gt; 逆アセンブルしたコードを掲載。メンバー変数を呼び出す際には、thisポインターを<code>ECX</code>にいれて呼び出す部分には変わりなく、MSVS2017と同じように読める。</p> <div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token comment">;main()</span>
+<span class="token number">55</span>                        push    <span class="token register variable">ebp</span>
+<span class="token number">89</span> E5                     mov     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+<span class="token number">83</span> E4 F0                  and     <span class="token register variable">esp</span>, <span class="token number">0FFFFFFF0h</span>
+<span class="token number">81</span> EC A0 <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>         sub     <span class="token register variable">esp</span>, <span class="token number">0A0h</span>
+E8 DD <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>            call    ___main
+C7 <span class="token number">44</span> <span class="token number">24</span> <span class="token number">04</span> <span class="token number">88</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>   mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">]</span>, <span class="token number">88h</span>
+C7 <span class="token number">04</span> <span class="token number">24</span> <span class="token number">72</span> <span class="token number">90</span> <span class="token number">40</span> <span class="token number">00</span>      mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">]</span>, offset aSizeX <span class="token comment">; this</span>
+E8 C9 <span class="token number">62</span> <span class="token number">00</span> <span class="token number">00</span>            call    printf(char const<span class="token operator">*</span>,...)
+C7 <span class="token number">44</span> <span class="token number">24</span> <span class="token number">18</span> <span class="token number">11</span> <span class="token number">11</span> <span class="token number">00</span> <span class="token number">00</span>   mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">18h</span><span class="token operator">]</span>, <span class="token number">1111h</span>
+<span class="token number">8D</span> <span class="token number">44</span> <span class="token number">24</span> <span class="token number">18</span>               lea     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">18h</span><span class="token operator">]</span>
+<span class="token number">83</span> C0 <span class="token number">04</span>                  add     <span class="token register variable">eax</span>, <span class="token number">4</span>
+C7 <span class="token number">00</span> <span class="token number">74</span> <span class="token number">61</span> 6E <span class="token number">69</span>         mov     dword ptr <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">]</span>, <span class="token string">'inat'</span>
+C6 <span class="token number">40</span> <span class="token number">04</span> <span class="token number">00</span>               mov     byte ptr <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">]</span>, <span class="token number">0</span>
+C7 <span class="token number">84</span> <span class="token number">24</span> 9C <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span><span class="token operator">+</span>  mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">9Ch</span><span class="token operator">]</span>, <span class="token number">100h</span>
+<span class="token number">8D</span> <span class="token number">44</span> <span class="token number">24</span> <span class="token number">18</span>               lea     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">18h</span><span class="token operator">]</span>
+<span class="token number">89</span> C1                     mov     <span class="token register variable">ecx</span>, <span class="token register variable">eax</span>
+E8 3A FF FF FF            call    Employee::ShowData(void)
+B8 <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>            mov     <span class="token register variable">eax</span>, <span class="token number">0</span>
+C9                        leave
+C3                        retn
+</code></pre></div><div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token comment">;Employee::Showdata(void)</span>
+<span class="token number">55</span>                    push    <span class="token register variable">ebp</span>
+<span class="token number">89</span> E5                 mov     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+<span class="token number">83</span> EC <span class="token number">28</span>              sub     <span class="token register variable">esp</span>, <span class="token number">28h</span>
+<span class="token number">89</span> <span class="token number">4D</span> F4              mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>this<span class="token operator">]</span>, <span class="token register variable">ecx</span>
+8B <span class="token number">45</span> F4              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>this<span class="token operator">]</span>
+8B <span class="token number">00</span>                 mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">]</span>
+<span class="token number">89</span> <span class="token number">44</span> <span class="token number">24</span> <span class="token number">04</span>           mov     <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">]</span>, <span class="token register variable">eax</span>
+C7 <span class="token number">04</span> <span class="token number">24</span> <span class="token number">44</span> <span class="token number">90</span> <span class="token number">40</span> <span class="token number">00</span>  mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">]</span>, offset __format <span class="token comment">; &quot;number: %d\n&quot;</span>
+E8 <span class="token number">42</span> <span class="token number">63</span> <span class="token number">00</span> <span class="token number">00</span>        call    printf(char const<span class="token operator">*</span>,...)
+8B <span class="token number">45</span> F4              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>this<span class="token operator">]</span>
+<span class="token number">83</span> C0 <span class="token number">04</span>              add     <span class="token register variable">eax</span>, <span class="token number">4</span>
+<span class="token number">89</span> <span class="token number">44</span> <span class="token number">24</span> <span class="token number">04</span>           mov     <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">]</span>, <span class="token register variable">eax</span>
+C7 <span class="token number">04</span> <span class="token number">24</span> <span class="token number">50</span> <span class="token number">90</span> <span class="token number">40</span> <span class="token number">00</span>  mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">]</span>, offset aNameS <span class="token comment">; &quot;name: %s\n&quot;</span>
+E8 2C <span class="token number">63</span> <span class="token number">00</span> <span class="token number">00</span>        call    printf(char const<span class="token operator">*</span>,...)
+8B <span class="token number">45</span> F4              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>this<span class="token operator">]</span>
+8B <span class="token number">80</span> <span class="token number">84</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>     mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">eax</span><span class="token operator">+</span><span class="token number">84h</span><span class="token operator">]</span>
+<span class="token number">89</span> <span class="token number">44</span> <span class="token number">24</span> <span class="token number">04</span>           mov     <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">]</span>, <span class="token register variable">eax</span>
+C7 <span class="token number">04</span> <span class="token number">24</span> 5A <span class="token number">90</span> <span class="token number">40</span> <span class="token number">00</span>  mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">]</span>, offset aPayD <span class="token comment">; this</span>
+E8 <span class="token number">13</span> <span class="token number">63</span> <span class="token number">00</span> <span class="token number">00</span>        call    printf(char const<span class="token operator">*</span>,...)
+8B <span class="token number">45</span> F4              mov     <span class="token register variable">eax</span>, <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>this<span class="token operator">]</span>
+<span class="token number">89</span> C1                 mov     <span class="token register variable">ecx</span>, <span class="token register variable">eax</span>
+E8 <span class="token number">03</span> <span class="token number">00</span> <span class="token number">00</span> <span class="token number">00</span>        call    Employee::Test(void)
+<span class="token number">90</span>                    nop
+C9                    leave
+C3                    retn
+</code></pre></div><div class="language-nasm extra-class"><pre class="language-nasm"><code><span class="token comment">;Employee::Test(void)</span>
+<span class="token number">55</span>                    push    <span class="token register variable">ebp</span>
+<span class="token number">89</span> E5                 mov     <span class="token register variable">ebp</span>, <span class="token register variable">esp</span>
+<span class="token number">83</span> EC <span class="token number">28</span>              sub     <span class="token register variable">esp</span>, <span class="token number">28h</span>
+<span class="token number">89</span> <span class="token number">4D</span> F4              mov     <span class="token operator">[</span><span class="token register variable">ebp</span><span class="token operator">+</span>this<span class="token operator">]</span>, <span class="token register variable">ecx</span>
+C7 <span class="token number">04</span> <span class="token number">24</span> <span class="token number">63</span> <span class="token number">90</span> <span class="token number">40</span> <span class="token number">00</span>  mov     dword ptr <span class="token operator">[</span><span class="token register variable">esp</span><span class="token operator">]</span>, offset aTestFunction <span class="token comment">; &quot;Test function\n&quot;</span>
+E8 F1 <span class="token number">62</span> <span class="token number">00</span> <span class="token number">00</span>        call    printf(char const<span class="token operator">*</span>,...)
+<span class="token number">90</span>                    nop
+C9                    leave
+C3                    retn
+</code></pre></div><h2 id="補足-c-の開発環境の準備"><a href="#補足-c-の開発環境の準備" class="header-anchor">#</a> 補足: C++の開発環境の準備</h2> <p>C++で書かれたPEファイルを準備するため、Windowsでのコンパイル開発環境を整える。</p> <ul><li>OS 名: Microsoft Windows 10 Pro</li> <li>OS バージョン: 10.0.17134 N/A ビルド 17134</li></ul> <h3 id="ide"><a href="#ide" class="header-anchor">#</a> IDE</h3> <p>Visual Studio Code : https://azure.microsoft.com/ja-jp/products/visual-studio-code/</p> <h3 id="コンパイラ"><a href="#コンパイラ" class="header-anchor">#</a> コンパイラ</h3> <p>コンパイラを入れるため、以下をインストール。</p> <ul><li><p>Visual Studio Community 2017 : https://visualstudio.microsoft.com/ja/downloads/</p> <ul><li>C++によるデスクトップ開発</li></ul></li> <li><p>Msys2 : http://www.msys2.org/</p> <ul><li>インストールファイル : msys2-x86_64-20180531.exe
+<ul><li><code>pacman -S base-devel</code></li> <li><code>pacman -S mingw-w64-x86_64-toolchain</code></li> <li><code>pacman -S mingw-w64-i686-toolchain</code></li></ul></li></ul></li></ul> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li>リバースエンジニアリングバイブル コード再創造の美学
+<ul><li>https://book.impress.co.jp/books/1113101030</li></ul></li> <li>Visual Studio のインストール | Microsoft Docs
+<ul><li>https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio?view=vs-2017</li></ul></li> <li>MSYS2/MinGW-w64 (64bit/32bit) インストール手順メモ
+<ul><li>https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d</li></ul></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/4/2020, 5:30:10 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.be208ac3.js" defer></script><script src="/assets/js/2.037959b1.js" defer></script><script src="/assets/js/11.aa906999.js" defer></script>
+  </body>
+</html>
