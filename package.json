@@ -1,0 +1,17 @@
+{
+  "name": "t-tani.github.io",
+  "version": "1.0.0",
+  "description": "WHY DON'T YOU DO YOUR BEST?",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "t-tani",
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "@vuepress/plugin-blog": "^1.0.0-alpha.49",
+    "@vuepress/theme-blog": "^2.3.3",
+    "vuepress": "^1.0.0-rc.1"
+  }
+}
