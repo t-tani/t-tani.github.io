@@ -14,7 +14,7 @@
         computed: {
             posts() {
                 return this.$site.pages
-                    .filter(page => page.type === 'post');
+                    .filter(page => page.path.substr(1,6) === '_posts');
             }
         }
     }
