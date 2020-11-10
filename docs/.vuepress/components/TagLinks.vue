@@ -4,7 +4,7 @@
     <router-link
       v-for="tag in tags"
       :key="tag"
-      :to="{ path: `/tags.html#${tag}`}"
+      :to="{ path: `/posts/#${tag}`}"
       class="tag"
       >
       {{tag}}
@@ -29,7 +29,7 @@ padding: 0.5% 1.5%;
 color: #fff;
 background: royalblue;
 border-radius: 25px;
-font-size: 75%;
+font-size: 40%;
 font-style: bold;
 text-transform: uppercase;
 text-decoration: none;

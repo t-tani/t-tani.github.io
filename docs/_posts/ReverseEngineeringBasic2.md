@@ -6,7 +6,6 @@ footer: MIT Licensed | Copyright © 2020-present t-tani
 sidebar: auto
 category: ReverseEngineering
 tags:
-  - ReverseEngineering
   - C
   - C++
   - Assembly

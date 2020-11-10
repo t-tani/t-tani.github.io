@@ -6,7 +6,6 @@ footer: MIT Licensed | Copyright © t-tani
 sidebar: auto
 category: ReverseEngineering
 tags:
-  - ReverseEngineering
   - C
   - Assembly
 ---

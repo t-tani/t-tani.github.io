@@ -10,7 +10,7 @@
                     <router-link
                         v-for="tag in post.frontmatter.tags"
                         :key="tag"
-                        :to="{ path: `/blog/#${tag}`}"
+                        :to="{ path: `/posts/#${tag}`}"
                         class="tag"
                         >
                         {{tag}}
@@ -33,11 +33,11 @@ export default {
 <style scoped>
 
 #container {
-  height: 10.625rem;
+  height: 8rem;
 }
 
 .article-details {
-  padding: 1.0rem;
+  padding: 0.3rem;
 }
 
 .blog-card {
@@ -54,24 +54,27 @@ export default {
 
 .post-category {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.0625rem;
-  margin: 0 0 0.50rem 0;
+  margin: 0 0 0.3rem 0;
   padding: 0 0 0.25rem 0;
   border-bottom: 0.05rem solid;
   color:#AAA
 }
 
+.post-description {
+  font-size: 0.5rem;
+}
+
 .post-title {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.4;
   color: #3D3D3D;
   font-weight: 700;
   margin: 0 0 0.5rem 0;
 }
-
 
 .card-link {
   position: relative;
@@ -84,12 +87,12 @@ export default {
 }
 
 .tag {
-margin: 0 5px;
+margin: 0 2px;
 padding: 0.5% 1.5%;
 color: #fff;
 background: royalblue;
 border-radius: 25px;
-font-size: 75%;
+font-size: 40%;
 font-style: bold;
 text-transform: uppercase;
 }
